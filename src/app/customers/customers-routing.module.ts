@@ -1,9 +1,15 @@
-import { AddComponent } from './add/add.component';
-import { ViewComponent } from './view/view.component';
+/**
+ * @author Vaibhavi Prajapati
+ */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// -----------------------------------------//
+import { AddComponent } from './add/add.component';
+import { ViewComponent } from './view/view.component';
 import { DetailComponent } from './detail/detail.component';
-
+/**
+ * Routes for child component and its path
+*/
 const routes: Routes = [
   {
     path:'',

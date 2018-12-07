@@ -1,3 +1,6 @@
+/**
+ * @author Vaibhavi Prajapati
+ */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
