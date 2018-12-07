@@ -1,13 +1,20 @@
-/**
- * @author Sonal Prajapati
- */
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 const routes: Routes = [
-  { path: '', redirectTo: 'quotation', pathMatch: 'full' },
-  { path: 'quotation', loadChildren: './quotations/quotations.module#QuotationsModule' }
+  {
+    path: 'dashboard',
+    loadChildren: './dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'userprofile',
+    loadChildren: './user-profile/user-profile.module#UserProfileModule'
+  },
+  {
+    path: 'quotation',
+    loadChildren: './quotations/quotations.module#QuotationsModule'
+  }
 ];
 
 @NgModule({
