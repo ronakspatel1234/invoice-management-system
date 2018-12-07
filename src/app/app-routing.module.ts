@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: './user-profile/user-profile.module#UserProfileModule'
   },
   {
+    path: 'invoice',
+    loadChildren: './invoices/invoices.module#InvoicesModule'
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
