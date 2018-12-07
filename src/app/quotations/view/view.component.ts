@@ -15,7 +15,7 @@ export class ViewComponent implements OnInit {
 
   ngOnInit() {
   }
-  onNewOqutation() {
+ public onNewOqutation() {
     this.router.navigate(['/quotation/add']);
 
   }
