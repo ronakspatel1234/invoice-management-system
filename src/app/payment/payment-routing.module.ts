@@ -15,7 +15,7 @@ import { AddComponent } from './add/add.component';
 const paymentRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'payment/view',
+    redirectTo: 'view',
     pathMatch: 'full'
   },
   {
