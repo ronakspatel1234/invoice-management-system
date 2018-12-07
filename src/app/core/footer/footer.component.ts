@@ -1,3 +1,7 @@
+/**
+ * @author - Ronak Patel.
+ * @description -
+ */
 import { Component, OnInit } from '@angular/core';
 
 @Component({

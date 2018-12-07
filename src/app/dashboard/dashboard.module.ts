@@ -1,6 +1,10 @@
+/**
+ * @author - Ronak Patel.
+ * @description -
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+// ---------------------------------------------------------------------------------------------------//
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { StatsCardComponent } from './stats-card/stats-card.component';
 import { CardComponent } from './stats-card/card/card.component';
@@ -14,9 +18,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardRoutingModule
   ],
   declarations: [StatsCardComponent,
-     CardComponent,
-      StatsGraphComponent,
-       StatsTableComponent,
-        DashboardComponent]
+    CardComponent,
+    StatsGraphComponent,
+    StatsTableComponent,
+    DashboardComponent]
 })
 export class DashboardModule { }
