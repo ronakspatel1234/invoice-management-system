@@ -9,6 +9,10 @@ import { LoginComponent } from './core/auth/login/login.component';
 const routes: Routes = [
 
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
@@ -21,8 +25,8 @@ const routes: Routes = [
     loadChildren: './invoices/invoices.module#InvoicesModule'
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'payment',
+    loadChildren: './payment/payment.module#PaymentModule'
   },
   {
     path: '**', redirectTo: 'login'
@@ -31,7 +35,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

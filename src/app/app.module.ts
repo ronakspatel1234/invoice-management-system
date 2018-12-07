@@ -21,7 +21,8 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
