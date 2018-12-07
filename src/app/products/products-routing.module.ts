@@ -1,3 +1,8 @@
+/**
+ * @author Akshita Kapadia
+ * apply routing for components and give it path
+ * view component is default routed component 
+ */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ViewComponent } from './view/view.component';
