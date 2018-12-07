@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: './customers/customers.module#CustomersModule'
   },
   {
+    path: 'product',
+    loadChildren: './products/products.module#ProductsModule'
+  },
+  {
     path: 'invoice',
     loadChildren: './invoices/invoices.module#InvoicesModule'
   },
