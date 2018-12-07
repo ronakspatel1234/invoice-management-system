@@ -1,54 +1,49 @@
-<!-- partial -->
-<div class="main-panel bg-light">
-  <div class="content-wrapper">
-    <div class="page-title">
-      <h4 class="mb-3">Create Product</h4>
-    </div>
-    <div class="card border-0">
-      <div class="card-body">
-        <form>
-          <div class="row border-bottom">
-            <div class="form-group col-md-4 col-sm-6">
-              <label for="description">Description</label>
-              <textarea rows="6" class="form-control"></textarea>
+<div class="page-title">
+  <h4 class="mb-3">Create Product</h4>
+</div>
+<div class="card border-0">
+  <div class="card-body">
+    <form>
+      <div class="row border-bottom">
+        <div class="form-group col-md-4 col-sm-6">
+          <label for="description">Description</label>
+          <textarea rows="6" class="form-control"></textarea>
+        </div>
+        <div class="col-md-8 col-sm-6">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="group">Group</label>
+              <select class="form-control">
+                <option>Type or click to select</option>
+              </select>
             </div>
-            <div class="col-md-8 col-sm-6">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="group">Group</label>
-                  <select class="form-control">
-                    <option>Type or click to select</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="unit-price">Unit Price</label>
-                  <input type="text" class="form-control" id="unit-price">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="u.m.o">U.O.M</label>
-                  <select class="form-control">
-                    <option>Type or click to select</option>
-                  </select>
-                </div>
+            <div class="form-group col-md-6">
+              <label for="unit-price">Unit Price</label>
+              <input type="text" class="form-control" id="unit-price">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="u.m.o">U.O.M</label>
+              <select class="form-control">
+                <option>Type or click to select</option>
+              </select>
+            </div>
 
-                <div class="form-group col-md-6">
-                  <label for="upload-file">Upload File</label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="file-upload">
-                    <label class="custom-file-label" for="file-upload">Choose file...</label>
-                  </div>
-                </div>
+            <div class="form-group col-md-6">
+              <label for="upload-file">Upload File</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file-upload">
+                <label class="custom-file-label" for="file-upload">Choose file...</label>
               </div>
             </div>
           </div>
-          <div class="row mt-3">
-            <div class="col-12 text-right">
-              <button routerLink="/product/view"class="btn btn-primary">Save</button>
-              <button routerLink="/product/view" class="btn btn-secondary">Cancel</button>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
+      <div class="row mt-3">
+        <div class="col-12 text-right">
+          <button routerLink="/product/view" class="btn btn-primary">Save</button>
+          <button routerLink="/product/view" class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </form>
   </div>
-  </div>
+</div>
