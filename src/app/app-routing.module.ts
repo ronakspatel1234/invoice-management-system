@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: './products/products.module#ProductsModule'
   },
   {
+    path: 'quotation',
+    loadChildren: './quotations/quotations.module#QuotationsModule'
+  },
+  {
     path: 'invoice',
     loadChildren: './invoices/invoices.module#InvoicesModule'
   },
