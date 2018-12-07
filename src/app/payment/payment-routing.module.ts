@@ -14,6 +14,11 @@ import { AddComponent } from './add/add.component';
  */
 const paymentRoutes: Routes = [
   {
+    path: '',
+    redirectTo: 'payment/view',
+    pathMatch: 'full'
+  },
+  {
     path: 'view',
     component: ViewComponent
   },
