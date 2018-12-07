@@ -3,6 +3,7 @@
   "project": {
     "name": "invoice-management-system"
   },
+
   "apps": [
     {
       "root": "src",
@@ -19,15 +20,16 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ims",
       "styles": [
-        "styles.scss",
-        "../node_modules/font-awesome/css/font-awesome.css"
+        "styles.scss"
+        
       ],
-      "scripts": [
-      ],
+      "scripts": [ ],
+
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "uat": "environments/environment.uat.ts"
       }
     }
   ],

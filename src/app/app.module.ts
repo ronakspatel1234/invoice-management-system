@@ -1,7 +1,11 @@
-
+/**
+ * @author - Ronak Patel.
+ * @description -
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// ---------------------------------------------------------------------------------------//
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -17,7 +21,8 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
