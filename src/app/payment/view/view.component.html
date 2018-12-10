@@ -40,121 +40,17 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Number</th>
+            <th>Payment Number</th>
             <th>Payment Date</th>
-            <th>Document</th>
-            <th>Customer</th>
-            <th>Amount</th>
-            <th>Action</th>
+            <th>Invoice ID</th>
           </tr>
         </thead>
         <tbody>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>47</td>
-            <td>PAY-10017</td>
-            <td>14-Nov-2018</td>
-            <td>IN-10045</td>
-            <td>Idell Bergnaum</td>
-            <td>USD 200.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>46</td>
-            <td>PAY-10016</td>
-            <td>13-Nov-2018</td>
-            <td>PI-10003</td>
-            <td>Dr. Derrick Jerde</td>
-            <td>USD 500.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>45</td>
-            <td>PAY-10015</td>
-            <td>07-Nov-2018</td>
-            <td>IN-10041</td>
-            <td>Dr. Derrick Jerde</td>
-            <td>USD 500.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>44</td>
-            <td>PAY-10014</td>
-            <td>04-Nov-2018</td>
-            <td>IN-10041</td>
-            <td>Dr. Derrick Jerde</td>
-            <td>USD 500.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>43</td>
-            <td>PAY-10013</td>
-            <td>30-Oct-2018</td>
-            <td>IN-10036</td>
-            <td>cari01784</td>
-            <td>USD 10.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>42</td>
-            <td>PAY-10012</td>
-            <td>28-Oct-2018</td>
-            <td>PI-10002</td>
-            <td>Dr. Derrick Jerde</td>
-            <td>USD 2.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>39</td>
-            <td>PAY-10009</td>
-            <td>02-Oct-2018</td>
-            <td>IN-10020</td>
-            <td>Dr. Derrick Jerde</td>
-            <td>USD 6,546.10</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>38</td>
-            <td>PAY-10008</td>
-            <td>15-Oct-2018</td>
-            <td>IN-10019</td>
-            <td>paul-pil</td>
-            <td>USD 9,284.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>37</td>
-            <td>PAY-10007</td>
-            <td>02-Oct-2018</td>
-            <td>IN-10019</td>
-            <td>paul-pil</td>
-            <td>USD 0.00</td>
-            <td align="center">
-              <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
-            </td>
-          </tr>
-          <tr routerLink="/payment/details" class="trCursor">
-            <td>36</td>
-            <td>PAY-10006</td>
-            <td>15-Oct-2018</td>
-            <td>IN-10017</td>
-            <td>Mr. Erin Kris</td>
-            <td>USD 5.70</td>
+          <tr *ngFor="let payment of payments" routerLink="/payment/details" class="trCursor">
+            <td>{{payment.id}}</td>
+            <td>{{payment.payment_number}}</td>
+            <td>{{payment.date}}</td>
+            <td>{{payment.invoice_id}}</td>
             <td align="center">
               <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
             </td>
@@ -162,24 +58,16 @@
         </tbody>
       </table>
     </div>
-    <div class="d-flex flex-wrap align-items-center mt-3">
-      <div class="d-flex align-items-center entry-show mb-sm-0 mb-2">
-        <form class="mr-2">
-          <select class="form-control">
-            <option>10</option>
-            <option>15</option>
-            <option>25</option>
-            <option>50</option>
-            <option>100</option>
-          </select>
-        </form>
-        <small>Showing 1 - 10 of 110 entries.</small>
-      </div>
-      <div class="pagination-button ml-auto">
-        <button class="btn btn-secondary" disabled><span class="fa fa-angle-double-left"></span> Prev</button>
-        <button class="btn btn-secondary">Next <span class="fa fa-angle-double-right"></span></button>
-      </div>
-    </div>
+    <!--Start the pagination-->
+    <ims-pagination
+    [total]="totalItems"
+    [current]="currentPage"
+    [size]="pageSize">
+    </ims-pagination>
+
+   
+   
+    <!--End the pagination-->
   </div>
 </div>
  <!-- End-View-Payment -->
