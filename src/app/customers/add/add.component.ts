@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
-
+  keyValue= ['id','name','company']
   constructor() { }
 
   ngOnInit() {
