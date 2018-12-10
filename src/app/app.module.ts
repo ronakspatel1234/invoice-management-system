@@ -1,10 +1,14 @@
+/**
+ * @author - Ronak Patel.
+ * @description -
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// ---------------------------------------------------------------------------------------//
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -14,9 +18,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule 
+    CoreModule,
+    AngularFontAwesomeModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
