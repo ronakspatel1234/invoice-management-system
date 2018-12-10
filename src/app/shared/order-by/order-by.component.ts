@@ -40,9 +40,6 @@ export class OrderByComponent implements OnInit {
   {
     this.sortValue.emit();
   }
-  changeArrow()
-  {
 
-  }
 }
 
