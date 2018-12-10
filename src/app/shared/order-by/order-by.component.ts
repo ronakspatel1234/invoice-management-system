@@ -35,7 +35,6 @@ export class OrderByComponent implements OnInit {
     this.export.emit();
     console.log("clicked");
   }
-
   sortData(sort:Sort[])
   {
     this.sortValue.emit();
