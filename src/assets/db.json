@@ -2122,7 +2122,7 @@
       "customer_id": 1,
       "grand_total": 6,
       "discount": 0,
-      "sgst": 4.15,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2144,7 +2144,7 @@
       "customer_id": 2,
       "grand_total": 8.6,
       "discount": 0,
-      "sgst": 7.77,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2162,7 +2162,7 @@
       "customer_id": 3,
       "grand_total": 8.4,
       "discount": 0,
-      "sgst": 1.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2180,7 +2180,7 @@
       "customer_id": 4,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 8.59,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2198,7 +2198,7 @@
       "customer_id": 5,
       "grand_total": 9,
       "discount": 0,
-      "sgst": 8.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2220,7 +2220,7 @@
       "customer_id": 6,
       "grand_total": 9.8,
       "discount": 0,
-      "sgst": 5.03,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2238,7 +2238,7 @@
       "customer_id": 7,
       "grand_total": 8.8,
       "discount": 0,
-      "sgst": 3.88,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2256,7 +2256,7 @@
       "customer_id": 8,
       "grand_total": 6.4,
       "discount": 0,
-      "sgst": 0.87,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2274,7 +2274,7 @@
       "customer_id": 9,
       "grand_total": 6.7,
       "discount": 0,
-      "sgst": 4.38,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2292,7 +2292,7 @@
       "customer_id": 10,
       "grand_total": 5.9,
       "discount": 0,
-      "sgst": 1.16,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2310,7 +2310,7 @@
       "customer_id": 11,
       "grand_total": 5.3,
       "discount": 0,
-      "sgst": 0.26,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2328,7 +2328,7 @@
       "customer_id": 12,
       "grand_total": 5.1,
       "discount": 0,
-      "sgst": 8.97,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2346,7 +2346,7 @@
       "customer_id": 13,
       "grand_total": 5.9,
       "discount": 0,
-      "sgst": 9.75,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2364,7 +2364,7 @@
       "customer_id": 14,
       "grand_total": 5.3,
       "discount": 0,
-      "sgst": 5.71,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2382,7 +2382,7 @@
       "customer_id": 15,
       "grand_total": 7.9,
       "discount": 0,
-      "sgst": 0.75,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2400,7 +2400,7 @@
       "customer_id": 16,
       "grand_total": 7.6,
       "discount": 0,
-      "sgst": 2.92,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2418,7 +2418,7 @@
       "customer_id": 17,
       "grand_total": 6.8,
       "discount": 0,
-      "sgst": 9.14,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2436,7 +2436,7 @@
       "customer_id": 18,
       "grand_total": 8.7,
       "discount": 0,
-      "sgst": 7.45,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2454,7 +2454,7 @@
       "customer_id": 19,
       "grand_total": 7.9,
       "discount": 0,
-      "sgst": 3.33,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2472,7 +2472,7 @@
       "customer_id": 20,
       "grand_total": 6.9,
       "discount": 0,
-      "sgst": 8.04,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2490,7 +2490,7 @@
       "customer_id": 21,
       "grand_total": 4.1,
       "discount": 0,
-      "sgst": 0.93,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2508,7 +2508,7 @@
       "customer_id": 22,
       "grand_total": 8.5,
       "discount": 0,
-      "sgst": 8.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2526,7 +2526,7 @@
       "customer_id": 23,
       "grand_total": 9.4,
       "discount": 0,
-      "sgst": 6.77,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2544,7 +2544,7 @@
       "customer_id": 24,
       "grand_total": 4.5,
       "discount": 0,
-      "sgst": 2.15,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2562,7 +2562,7 @@
       "customer_id": 25,
       "grand_total": 4.9,
       "discount": 0,
-      "sgst": 8.74,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2580,7 +2580,7 @@
       "customer_id": 26,
       "grand_total": 6.6,
       "discount": 0,
-      "sgst": 4.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2598,7 +2598,7 @@
       "customer_id": 27,
       "grand_total": 7,
       "discount": 0,
-      "sgst": 3.12,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2616,7 +2616,7 @@
       "customer_id": 28,
       "grand_total": 7.6,
       "discount": 0,
-      "sgst": 5.15,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2634,7 +2634,7 @@
       "customer_id": 29,
       "grand_total": 5.1,
       "discount": 0,
-      "sgst": 0.49,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2652,7 +2652,7 @@
       "customer_id": 30,
       "grand_total": 7.5,
       "discount": 0,
-      "sgst": 0.18,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2670,7 +2670,7 @@
       "customer_id": 31,
       "grand_total": 4.2,
       "discount": 0,
-      "sgst": 5.1,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2688,7 +2688,7 @@
       "customer_id": 32,
       "grand_total": 9.6,
       "discount": 0,
-      "sgst": 1.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2706,7 +2706,7 @@
       "customer_id": 33,
       "grand_total": 8.6,
       "discount": 0,
-      "sgst": 8.74,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2724,7 +2724,7 @@
       "customer_id": 34,
       "grand_total": 9.4,
       "discount": 0,
-      "sgst": 0.74,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2742,7 +2742,7 @@
       "customer_id": 35,
       "grand_total": 7.2,
       "discount": 0,
-      "sgst": 1.54,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2760,7 +2760,7 @@
       "customer_id": 36,
       "grand_total": 8,
       "discount": 0,
-      "sgst": 2.28,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2778,7 +2778,7 @@
       "customer_id": 37,
       "grand_total": 5.6,
       "discount": 0,
-      "sgst": 5.49,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2796,7 +2796,7 @@
       "customer_id": 38,
       "grand_total": 7.6,
       "discount": 0,
-      "sgst": 7.42,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2814,7 +2814,7 @@
       "customer_id": 39,
       "grand_total": 6.1,
       "discount": 0,
-      "sgst": 1.29,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2832,7 +2832,7 @@
       "customer_id": 40,
       "grand_total": 6.4,
       "discount": 0,
-      "sgst": 7.75,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2850,7 +2850,7 @@
       "customer_id": 41,
       "grand_total": 8.9,
       "discount": 0,
-      "sgst": 5.14,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2868,7 +2868,7 @@
       "customer_id": 42,
       "grand_total": 5.2,
       "discount": 0,
-      "sgst": 0.6,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2886,7 +2886,7 @@
       "customer_id": 43,
       "grand_total": 5.9,
       "discount": 0,
-      "sgst": 4.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2904,7 +2904,7 @@
       "customer_id": 44,
       "grand_total": 4.1,
       "discount": 0,
-      "sgst": 8.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2922,7 +2922,7 @@
       "customer_id": 45,
       "grand_total": 5.2,
       "discount": 0,
-      "sgst": 3.69,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2940,7 +2940,7 @@
       "customer_id": 46,
       "grand_total": 6.4,
       "discount": 0,
-      "sgst": 5.8,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2958,7 +2958,7 @@
       "customer_id": 47,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 5.41,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2976,7 +2976,7 @@
       "customer_id": 48,
       "grand_total": 6.8,
       "discount": 0,
-      "sgst": 3.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2994,7 +2994,7 @@
       "customer_id": 49,
       "grand_total": 8.4,
       "discount": 0,
-      "sgst": 4.8,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3012,7 +3012,7 @@
       "customer_id": 50,
       "grand_total": 6.7,
       "discount": 0,
-      "sgst": 6.6,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3030,7 +3030,7 @@
       "customer_id": 51,
       "grand_total": 5.1,
       "discount": 0,
-      "sgst": 9.48,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3066,7 +3066,7 @@
       "customer_id": 53,
       "grand_total": 8.6,
       "discount": 0,
-      "sgst": 0.08,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3084,7 +3084,7 @@
       "customer_id": 54,
       "grand_total": 6.4,
       "discount": 0,
-      "sgst": 0.81,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3102,7 +3102,7 @@
       "customer_id": 55,
       "grand_total": 5.5,
       "discount": 0,
-      "sgst": 9.27,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3120,7 +3120,7 @@
       "customer_id": 56,
       "grand_total": 9.1,
       "discount": 0,
-      "sgst": 0.14,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3138,7 +3138,7 @@
       "customer_id": 57,
       "grand_total": 6.7,
       "discount": 0,
-      "sgst": 8.87,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3156,7 +3156,7 @@
       "customer_id": 58,
       "grand_total": 7.5,
       "discount": 0,
-      "sgst": 9.57,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3174,7 +3174,7 @@
       "customer_id": 59,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 3.65,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3192,7 +3192,7 @@
       "customer_id": 60,
       "grand_total": 9.4,
       "discount": 0,
-      "sgst": 3.68,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3210,7 +3210,7 @@
       "customer_id": 61,
       "grand_total": 5.3,
       "discount": 0,
-      "sgst": 2.78,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3228,7 +3228,7 @@
       "customer_id": 62,
       "grand_total": 5,
       "discount": 0,
-      "sgst": 7.94,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3246,7 +3246,7 @@
       "customer_id": 63,
       "grand_total": 4.7,
       "discount": 0,
-      "sgst": 2.88,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3264,7 +3264,7 @@
       "customer_id": 64,
       "grand_total": 5,
       "discount": 0,
-      "sgst": 8.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3282,7 +3282,7 @@
       "customer_id": 65,
       "grand_total": 5,
       "discount": 0,
-      "sgst": 8.95,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3300,7 +3300,7 @@
       "customer_id": 66,
       "grand_total": 4.6,
       "discount": 0,
-      "sgst": 5.91,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3318,7 +3318,7 @@
       "customer_id": 67,
       "grand_total": 8.7,
       "discount": 0,
-      "sgst": 5.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3336,7 +3336,7 @@
       "customer_id": 68,
       "grand_total": 4.1,
       "discount": 0,
-      "sgst": 2.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3354,7 +3354,7 @@
       "customer_id": 69,
       "grand_total": 4.4,
       "discount": 0,
-      "sgst": 2.37,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3372,7 +3372,7 @@
       "customer_id": 70,
       "grand_total": 8.7,
       "discount": 0,
-      "sgst": 9.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3390,7 +3390,7 @@
       "customer_id": 71,
       "grand_total": 4.7,
       "discount": 0,
-      "sgst": 7.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3408,7 +3408,7 @@
       "customer_id": 72,
       "grand_total": 9.9,
       "discount": 0,
-      "sgst": 9.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3426,7 +3426,7 @@
       "customer_id": 73,
       "grand_total": 4.1,
       "discount": 0,
-      "sgst": 4.01,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3444,7 +3444,7 @@
       "customer_id": 74,
       "grand_total": 6.1,
       "discount": 0,
-      "sgst": 8.93,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3462,7 +3462,7 @@
       "customer_id": 75,
       "grand_total": 7.8,
       "discount": 0,
-      "sgst": 5.68,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3480,7 +3480,7 @@
       "customer_id": 76,
       "grand_total": 4.9,
       "discount": 0,
-      "sgst": 9.09,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3498,7 +3498,7 @@
       "customer_id": 77,
       "grand_total": 9.3,
       "discount": 0,
-      "sgst": 0.97,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3516,7 +3516,7 @@
       "customer_id": 78,
       "grand_total": 9.6,
       "discount": 0,
-      "sgst": 9.02,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3534,7 +3534,7 @@
       "customer_id": 79,
       "grand_total": 9.1,
       "discount": 0,
-      "sgst": 3.47,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3552,7 +3552,7 @@
       "customer_id": 80,
       "grand_total": 8.8,
       "discount": 0,
-      "sgst": 8.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3570,7 +3570,7 @@
       "customer_id": 81,
       "grand_total": 6.3,
       "discount": 0,
-      "sgst": 4.53,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3588,7 +3588,7 @@
       "customer_id": 82,
       "grand_total": 8.3,
       "discount": 0,
-      "sgst": 0.94,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3606,7 +3606,7 @@
       "customer_id": 83,
       "grand_total": 9.6,
       "discount": 0,
-      "sgst": 7.41,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3624,7 +3624,7 @@
       "customer_id": 84,
       "grand_total": 4.2,
       "discount": 0,
-      "sgst": 5.96,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3642,7 +3642,7 @@
       "customer_id": 85,
       "grand_total": 9.6,
       "discount": 0,
-      "sgst": 0.52,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3660,7 +3660,7 @@
       "customer_id": 86,
       "grand_total": 8.4,
       "discount": 0,
-      "sgst": 9.07,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3678,7 +3678,7 @@
       "customer_id": 87,
       "grand_total": 6.7,
       "discount": 0,
-      "sgst": 3.73,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3714,7 +3714,7 @@
       "customer_id": 89,
       "grand_total": 7.1,
       "discount": 0,
-      "sgst": 2.34,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3732,7 +3732,7 @@
       "customer_id": 90,
       "grand_total": 8,
       "discount": 0,
-      "sgst": 8.03,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3750,7 +3750,7 @@
       "customer_id": 91,
       "grand_total": 8.3,
       "discount": 0,
-      "sgst": 2.58,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3768,7 +3768,7 @@
       "customer_id": 92,
       "grand_total": 6.6,
       "discount": 0,
-      "sgst": 8.96,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3786,7 +3786,7 @@
       "customer_id": 93,
       "grand_total": 6.4,
       "discount": 0,
-      "sgst": 4.65,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3804,7 +3804,7 @@
       "customer_id": 94,
       "grand_total": 4.5,
       "discount": 0,
-      "sgst": 9.96,
+      "sgst": 0,
       "cgst": 0,
       "product_id": 94,
       "products": [
@@ -3822,7 +3822,7 @@
       "customer_id": 95,
       "grand_total": 6.6,
       "discount": 0,
-      "sgst": 0.03,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3840,7 +3840,7 @@
       "customer_id": 96,
       "grand_total": 9,
       "discount": 0,
-      "sgst": 2.82,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3858,7 +3858,7 @@
       "customer_id": 97,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 8.04,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3876,7 +3876,7 @@
       "customer_id": 98,
       "grand_total": 9.5,
       "discount": 0,
-      "sgst": 6.59,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3894,7 +3894,7 @@
       "customer_id": 99,
       "grand_total": 5.8,
       "discount": 0,
-      "sgst": 2.21,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3912,7 +3912,7 @@
       "customer_id": 100,
       "grand_total": 5.1,
       "discount": 0,
-      "sgst": 3.52,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3930,7 +3930,7 @@
       "customer_id": 101,
       "grand_total": 7.7,
       "discount": 0,
-      "sgst": 1.29,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3948,7 +3948,7 @@
       "customer_id": 102,
       "grand_total": 6.6,
       "discount": 0,
-      "sgst": 6.56,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3966,7 +3966,7 @@
       "customer_id": 103,
       "grand_total": 9.8,
       "discount": 0,
-      "sgst": 6.9,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3984,7 +3984,7 @@
       "customer_id": 104,
       "grand_total": 5.8,
       "discount": 0,
-      "sgst": 1.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4002,7 +4002,7 @@
       "customer_id": 105,
       "grand_total": 7.5,
       "discount": 0,
-      "sgst": 9.16,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4020,7 +4020,7 @@
       "customer_id": 106,
       "grand_total": 6.7,
       "discount": 0,
-      "sgst": 2.61,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4038,7 +4038,7 @@
       "customer_id": 107,
       "grand_total": 7.4,
       "discount": 0,
-      "sgst": 0.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4056,7 +4056,7 @@
       "customer_id": 108,
       "grand_total": 6.3,
       "discount": 0,
-      "sgst": 6.91,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4074,7 +4074,7 @@
       "customer_id": 109,
       "grand_total": 4.3,
       "discount": 0,
-      "sgst": 7.42,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4092,7 +4092,7 @@
       "customer_id": 110,
       "grand_total": 8.5,
       "discount": 0,
-      "sgst": 4.64,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4110,7 +4110,7 @@
       "customer_id": 111,
       "grand_total": 7.9,
       "discount": 0,
-      "sgst": 6.24,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4128,7 +4128,7 @@
       "customer_id": 112,
       "grand_total": 4.2,
       "discount": 0,
-      "sgst": 5.33,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4146,7 +4146,7 @@
       "customer_id": 113,
       "grand_total": 8.7,
       "discount": 0,
-      "sgst": 7.86,
+      "sgst": 0,
       "cgst": 0,
       "product_id": 113,
       "products": [
@@ -4164,7 +4164,7 @@
       "customer_id": 114,
       "grand_total": 5.9,
       "discount": 0,
-      "sgst": 3.59,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4182,7 +4182,7 @@
       "customer_id": 115,
       "grand_total": 9.3,
       "discount": 0,
-      "sgst": 6.38,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4200,7 +4200,7 @@
       "customer_id": 116,
       "grand_total": 7.3,
       "discount": 0,
-      "sgst": 7.26,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4218,7 +4218,7 @@
       "customer_id": 117,
       "grand_total": 8.4,
       "discount": 0,
-      "sgst": 1.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4236,7 +4236,7 @@
       "customer_id": 118,
       "grand_total": 6.5,
       "discount": 0,
-      "sgst": 8.27,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4254,7 +4254,7 @@
       "customer_id": 119,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 6.61,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4272,7 +4272,7 @@
       "customer_id": 120,
       "grand_total": 7,
       "discount": 0,
-      "sgst": 9.51,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4290,7 +4290,7 @@
       "customer_id": 121,
       "grand_total": 8.5,
       "discount": 0,
-      "sgst": 6.71,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4308,7 +4308,7 @@
       "customer_id": 122,
       "grand_total": 8,
       "discount": 0,
-      "sgst": 7.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4326,7 +4326,7 @@
       "customer_id": 123,
       "grand_total": 4.4,
       "discount": 0,
-      "sgst": 7.83,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4344,7 +4344,7 @@
       "customer_id": 124,
       "grand_total": 5.2,
       "discount": 0,
-      "sgst": 0.7,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4362,7 +4362,7 @@
       "customer_id": 125,
       "grand_total": 4.3,
       "discount": 0,
-      "sgst": 3.9,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4380,7 +4380,7 @@
       "customer_id": 126,
       "grand_total": 4.8,
       "discount": 0,
-      "sgst": 1.38,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4398,7 +4398,7 @@
       "customer_id": 127,
       "grand_total": 5.8,
       "discount": 0,
-      "sgst": 5.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4416,7 +4416,7 @@
       "customer_id": 128,
       "grand_total": 8.2,
       "discount": 0,
-      "sgst": 8.33,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4434,7 +4434,7 @@
       "customer_id": 129,
       "grand_total": 8.6,
       "discount": 0,
-      "sgst": 9.61,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4452,7 +4452,7 @@
       "customer_id": 130,
       "grand_total": 4.8,
       "discount": 0,
-      "sgst": 6.4,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4470,7 +4470,7 @@
       "customer_id": 131,
       "grand_total": 6.7,
       "discount": 0,
-      "sgst": 1.46,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4488,7 +4488,7 @@
       "customer_id": 132,
       "grand_total": 5.5,
       "discount": 0,
-      "sgst": 8.55,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4506,7 +4506,7 @@
       "customer_id": 133,
       "grand_total": 9.8,
       "discount": 0,
-      "sgst": 7.29,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4524,7 +4524,7 @@
       "customer_id": 134,
       "grand_total": 4.9,
       "discount": 0,
-      "sgst": 0.52,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4542,7 +4542,7 @@
       "customer_id": 135,
       "grand_total": 9,
       "discount": 0,
-      "sgst": 0.51,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4560,7 +4560,7 @@
       "customer_id": 136,
       "grand_total": 6.6,
       "discount": 0,
-      "sgst": 0.01,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4578,7 +4578,7 @@
       "customer_id": 137,
       "grand_total": 8.8,
       "discount": 0,
-      "sgst": 4.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4596,7 +4596,7 @@
       "customer_id": 138,
       "grand_total": 8.1,
       "discount": 0,
-      "sgst": 2.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4614,7 +4614,7 @@
       "customer_id": 139,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 9.07,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4632,7 +4632,7 @@
       "customer_id": 140,
       "grand_total": 5.3,
       "discount": 0,
-      "sgst": 9.8,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4650,7 +4650,7 @@
       "customer_id": 141,
       "grand_total": 8.5,
       "discount": 0,
-      "sgst": 3.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4668,7 +4668,7 @@
       "customer_id": 142,
       "grand_total": 6.5,
       "discount": 0,
-      "sgst": 1.55,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4686,7 +4686,7 @@
       "customer_id": 143,
       "grand_total": 4.1,
       "discount": 0,
-      "sgst": 3.18,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4704,7 +4704,7 @@
       "customer_id": 144,
       "grand_total": 8.7,
       "discount": 0,
-      "sgst": 5.31,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4722,7 +4722,7 @@
       "customer_id": 145,
       "grand_total": 5.2,
       "discount": 0,
-      "sgst": 6.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4740,7 +4740,7 @@
       "customer_id": 146,
       "grand_total": 9.7,
       "discount": 0,
-      "sgst": 3.32,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4758,7 +4758,7 @@
       "customer_id": 147,
       "grand_total": 9.1,
       "discount": 0,
-      "sgst": 3.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4776,7 +4776,7 @@
       "customer_id": 148,
       "grand_total": 5,
       "discount": 0,
-      "sgst": 9.37,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4794,7 +4794,7 @@
       "customer_id": 149,
       "grand_total": 8.5,
       "discount": 0,
-      "sgst": 7.06,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4812,7 +4812,7 @@
       "customer_id": 150,
       "grand_total": 8.6,
       "discount": 0,
-      "sgst": 8.37,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -4821,9 +4821,6 @@
         }
       ],
       "status": "Draft"
-    },
-    {
-      "id": 151
     }
   ],
   "invoice": [

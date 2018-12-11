@@ -39,7 +39,8 @@ const routes: Routes = [
   {
     path: 'payment',
     loadChildren: './payment/payment.module#PaymentModule'
-  },
+  }
+  ,
   {
     path: '**', redirectTo: 'login'
   },
