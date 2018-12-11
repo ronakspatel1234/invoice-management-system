@@ -7,7 +7,6 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
 
-
 @NgModule({
   imports: [
     CommonModule

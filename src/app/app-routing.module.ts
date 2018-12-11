@@ -4,9 +4,6 @@
  */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// ------------------------------------------------ //
-import { SharedModule } from './shared/shared.module';
-
 import { LoginComponent } from './core/auth/login/login.component';
 
 const routes: Routes = [
@@ -42,7 +39,8 @@ const routes: Routes = [
   {
     path: 'payment',
     loadChildren: './payment/payment.module#PaymentModule'
-  },
+  }
+  ,
   {
     path: '**', redirectTo: 'login'
   },
@@ -51,7 +49,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    SharedModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
