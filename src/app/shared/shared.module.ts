@@ -7,6 +7,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
 
+
 @NgModule({
   imports: [
     CommonModule
@@ -16,14 +17,16 @@ import { TableComponent } from './table/table.component';
     OrderByComponent,
     PaginationComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+  
   ],
   exports: [
     ItemDescriptionComponent,
     OrderByComponent,
     PaginationComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    
   ]
 })
 export class SharedModule { }

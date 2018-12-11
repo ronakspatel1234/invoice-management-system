@@ -9,6 +9,7 @@ import { ViewComponent } from './view/view.component';
 import { DetailsComponent } from './details/details.component';
 import { InvoicesRoutingModule } from './invoices-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { ItemDesTestComponent } from './item-des-test/item-des-test.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     InvoicesRoutingModule,
     SharedModule
   ],
-  declarations: [AddComponent, ViewComponent, DetailsComponent]
+  declarations: [AddComponent, ViewComponent, DetailsComponent,ItemDesTestComponent]
  
 })
 export class InvoicesModule { }

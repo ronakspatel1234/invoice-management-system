@@ -6,8 +6,8 @@
         <thead _ngcontent-c4="">
           <tr _ngcontent-c4="">
             <th _ngcontent-c4="">
-              <div _ngcontent-c4="" class="d-flex align-items-center">
-                Item Description<a _ngcontent-c4="" class="ml-auto" data-toggle="modal" href="#product-modal"></a>
+              <div _ngcontent-c4="" class="d-flex align-items-center" > 
+                Item Description<a _ngcontent-c4="" class="ml-auto" data-toggle="modal" href="#product-modal" > </a>
               </div>
             </th>
             <th _ngcontent-c4="">U.O.M</th>
@@ -16,25 +16,33 @@
             <th _ngcontent-c4="">Total</th>
           </tr>
         </thead>
-        <tbody _ngcontent-c4="">
-          <tr _ngcontent-c4="">
-            <td _ngcontent-c4="">
-              <select _ngcontent-c4="" class="form-control">
-                <option _ngcontent-c4="">Type or click to select</option>
+        <tbody _ngcontent-c4="" >
+          <tr _ngcontent-c4="" *ngFor = "let list of itemList">
+                        <td _ngcontent-c4="">    
+              <ng-container >
+              <select _ngcontent-c4="" class="form-control"  >
+                <ng-container  *ngFor = "let keys of key">                  
+                <option _ngcontent-c4="" >{{list.description}}</option>
+              </ng-container>
               </select>
+            </ng-container>
             </td>
             <td _ngcontent-c4="">
-              <input _ngcontent-c4="" class="form-control" name="u-m-o" type="text">
+              <select _ngcontent-c4="" class="form-control" name="u-m-o" type="text">
+          
+           <option _ngcontent-c4="">{{list.uom}}</option>
+            <!-- <option _ngcontent-c4="">cm</option> -->
+            </select>
+            </td>
+            <td _ngcontent-c4="" >{{list.unitPrice}}
+              <input _ngcontent-c4="" class="form-control" name="unit-price" type="text" ngModel>
             </td>
             <td _ngcontent-c4="">
-              <input _ngcontent-c4="" class="form-control" name="unit-price" type="text">
-            </td>
-            <td _ngcontent-c4="">
-              <input _ngcontent-c4="" class="form-control" name="qty" type="text">
+              <input _ngcontent-c4="" class="form-control" name="qty" type="text">{{list.qty}}
             </td>
             <td _ngcontent-c4="">
               <div _ngcontent-c4="" class="d-flex">
-                <input _ngcontent-c4="" class="form-control" name="total" type="text">
+                <input _ngcontent-c4="" class="form-control" name="total" type="text">{{list.unitPrice*list.qty}}
                 <button _ngcontent-c4="" class="btn bg-transparent border-0"><span _ngcontent-c4="" class="fa fa-times text-danger"></span></button>
               </div>
             </td>
@@ -51,7 +59,6 @@
               Sub Total:
             </td>
             <td _ngcontent-c4="" class="text-right pr-5">
-              0.00
             </td>
           </tr>
           <tr _ngcontent-c4="">
