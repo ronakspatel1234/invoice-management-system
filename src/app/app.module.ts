@@ -4,11 +4,14 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 // ---------------------------------------------------------------------------------------//
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import {ProductsModule} from './products/products.module'
 
 
 @NgModule({
@@ -17,11 +20,15 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
+    ToastModule.forRoot(),
+    BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule,
-    AngularFontAwesomeModule
+    ProductsModule,
+    CoreModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
