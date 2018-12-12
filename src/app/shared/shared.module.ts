@@ -6,7 +6,7 @@ import { OrderByComponent } from './order-by/order-by.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
-
+import {  StatusDirective } from './table/status.directive';
 @NgModule({
   imports: [
     CommonModule
@@ -16,14 +16,16 @@ import { TableComponent } from './table/table.component';
     OrderByComponent,
     PaginationComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    StatusDirective
   ],
   exports: [
     ItemDescriptionComponent,
     OrderByComponent,
     PaginationComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    StatusDirective
   ]
 })
 export class SharedModule { }

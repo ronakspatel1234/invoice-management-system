@@ -1,8 +1,11 @@
 /**
  * @author Sonal Prajapati
+ * @description this class represent for view the quotation.
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// -------------------------------//
+import { QuotationService } from '../quotation.service';
 
 @Component({
   selector: 'ims-view',
@@ -11,12 +14,28 @@ import { Router } from '@angular/router';
 })
 export class ViewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  action = ['EDIT', 'DELETE'];
+  heading = {
+    name: ['ID', 'Number', 'Issue Date', 'Expiry Date', 'Customer', 'Grand Total', 'Status'],
+    key: ['id', 'quotation_number', 'issue_date', 'expiry_date', 'customer_id', 'grand_total', 'status']
+  };
+  qoutation;
+  constructor(private router: Router, private quotationService: QuotationService) { }
 
   ngOnInit() {
+    this.quotation();
   }
- public onNewOqutation() {
-    this.router.navigate(['/quotation/add']);
+  public quotation() {
+    this.quotationService.getQoutation().subscribe((qoutations) => {
+      this.qoutation = qoutations;
+      console.log(this.qoutation);
 
+    });
+  }
+  public onNewOqutation() {
+    this.router.navigate(['/quotation/add']);
+  }
+  actionClick(id, id1) {
+    this.router.navigate(['/qoutation/add']);
   }
 }
