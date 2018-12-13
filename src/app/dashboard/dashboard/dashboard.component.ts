@@ -96,7 +96,7 @@ export class DashboardComponent implements OnInit {
   private getPayments(): void {
     this.service.getPayments().subscribe(
       (payments: any[]) => {
-      this.payments = payments; console.log(payments);
+      this.payments = payments;
       });
   }
 
