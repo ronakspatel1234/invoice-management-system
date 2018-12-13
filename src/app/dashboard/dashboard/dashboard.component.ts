@@ -33,6 +33,7 @@ export class DashboardComponent implements OnInit {
   public totalInvoices: Dashboard;
   public invoiceChart: Chart[];
 
+
   constructor(private service: DashboardService) {
     this.customers = [];
     this.invoices = [];
@@ -60,6 +61,8 @@ export class DashboardComponent implements OnInit {
       (customers: Customers[]) => {
         this.customers = customers,
           this.customersLength = customers.length;
+
+
       });
   }
   /**
@@ -96,7 +99,7 @@ export class DashboardComponent implements OnInit {
   private getPayments(): void {
     this.service.getPayments().subscribe(
       (payments: any[]) => {
-      this.payments = payments;
+        this.payments = payments;
       });
   }
 

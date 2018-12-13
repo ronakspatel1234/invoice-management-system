@@ -39,13 +39,11 @@ export class ViewComponent implements OnInit, OnDestroy {
   public quotation(): void {
     this.qoutationSubscription = this.quotationService.getQoutation().subscribe((qoutations) => {
       this.qoutation = qoutations;
-      console.log(this.qoutation, this.customer);
     });
   }
   public Customer(): void {
     this.quotationService.getCustomer().subscribe((customer) => {
       this.customer = customer;
-      console.log(this.customer);
     });
   }
   public onNewOqutation() {
