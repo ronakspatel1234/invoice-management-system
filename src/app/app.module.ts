@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 // ---------------------------------------------------------------------------------------//
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import {ProductsModule} from './products/products.module'
   ],
   imports: [
     BrowserModule,
+    // NgbModule,
     ToastModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,

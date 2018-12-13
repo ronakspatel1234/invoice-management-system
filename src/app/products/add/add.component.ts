@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../products.service';
 import { Products } from '../products.model';
-import { INVALID, VALID } from '@angular/forms/src/model';
+// import { NgbModal} from '@ng-bootstrap/ng-bootstrap'
 
 
 @Component({
@@ -13,6 +13,8 @@ import { INVALID, VALID } from '@angular/forms/src/model';
   styleUrls: ['./add.component.scss']
 
 })
+
+
 export class AddComponent implements OnInit {
 /**
  * @property productForm to add the product
@@ -39,13 +41,18 @@ export class AddComponent implements OnInit {
     private productService: ProductsService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    // public modal: NgbActiveModal
   ) {
     this.toastr.setRootViewContainerRef(vcr);
     this.numberRegEx = '^[0-9]*$';
     this.path = '/assets/product-images/';
     this.fileName='';
   }
+  // MODALS = {
+  //   focusFirst:AddComponent ,
+  //   // autofocus: NgbdModalConfirmAutofocus
+  // };
 
   ngOnInit() {
     this.loadForm();
@@ -133,31 +140,52 @@ export class AddComponent implements OnInit {
   imagePath(event) {
   this.fileName=event.srcElement.files[0].name;
   }
- 
-  //  open() {
-  //   confirm("are you sure you want to leave??")
-  //   {
-      
-  //       if (true && (this.productForm.untouched)) {
-  //         this.router.navigate(['product/view'])
-          
-  //         console.log("true");
 
-  //       }
-     
-  //     }
-  //   }
+  showSuccess() {
+
+    this.toastr.success('Success!');
+
+  }
+ 
+  
+// const MODALS = {
+//   focusFirst: AddComponent,
+//   // autofocus: NgbdModalConfirmAutofocus
+// };
 
   
+// @Component({
+//   selector: 'ngbd-modal-confirm',
+//   template: `
+//   <div class="modal-header">
+    
+//     <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+//       <span aria-hidden="true">&times;</span>
+//     </button>
+//   </div>
+//   <div class="modal-body">
+//     <p><strong>sure you want to leave this page??</strong></p>
+    
+//   </div>
+//   <div class="modal-footer">
+//     <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+//     <button type="button" class="btn btn-danger" (click)="modal.close('Ok click')">Ok</button>
+//   </div>
+//   `
+// })
+// export class NgbdModalConfirm {
+
+//   constructor(private _modalService: NgbModal) {}
+
+//   open(name) {
+//     this._modalService.open(this.MODALS[name]);
+//   }
+// }
 
 /**
  * toaster method calls when click on save button of the form
  */
-  showSuccess() {
-   
-    this.toastr.success('Success!');
 
-  }
 
 
 

@@ -8,7 +8,8 @@ import { AddComponent } from './add/add.component';
 import {ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
 import { ProductsService } from './products.service';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   imports: [
