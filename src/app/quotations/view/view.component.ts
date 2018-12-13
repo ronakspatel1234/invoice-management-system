@@ -58,6 +58,12 @@ export class ViewComponent implements OnInit, OnDestroy {
   actionClick(id, id1) {
     this.router.navigate(['/qoutation/add']);
   }
+  goToPage(pageSize: number): void {
+    this.pageSize = pageSize;
+    this.page = 1;
+    this.quotation();
+  }
+
   ngOnDestroy() {
     this.qoutationSubscription.unsubscribe();
   }

@@ -4,14 +4,8 @@
 <div class="card border-0">
   <div class="card-body">
     <div class="d-flex flex-wrap align-items-center">
-      <form>
-        <div class="input-group mb-sm-0">
-          <input type="text" class="form-control" placeholder="Search..." />
-          <div class="input-group-append">
-            <button class="btn btn-primary"><span class="fa fa-search"></span></button>
-          </div>
-        </div>
-      </form>
+        <ims-search (searchClick)="search($event)" ></ims-search>
+    
       <a routerLink="/product/add" class="btn btn-primary ml-auto">New Product</a>
     </div>
   </div>
@@ -49,7 +43,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="product-detail.html">48</a></td>
+            <td><a routerLink="/product/edit/48">48</a></td>
             <td>P-10015</td>
             <td>aaa</td>
             <td>pcsd</td>

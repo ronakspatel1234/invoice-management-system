@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+/**
+ * @author Akshita Kapadia
+ */
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ims-search',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  @Output() searchClick;
+  constructor() {
+    this.searchClick = new EventEmitter();
+  }
 
   ngOnInit() {
+  }
+
+  data:any;
+
+  /**
+   * emits an event called searchClick
+   * and pass it to parent component
+   */
+  public search(data) {
+    this.searchClick.emit();
+    
+   console.log(this.data);
+   
+
   }
 
 }

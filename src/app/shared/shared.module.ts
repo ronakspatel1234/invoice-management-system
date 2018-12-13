@@ -4,6 +4,10 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+
+import { ToastModule } from 'ng2-toastr';
+import { FormsModule } from '@angular/forms';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 // ------------------------------------------- //
 import { ItemDescriptionComponent } from './item-description/item-description.component';
 import { CustomCurrencyPipe } from './custome-currency.pipe';
@@ -16,28 +20,30 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-    imports: [
-        CommonModule,
-        // ReactiveFormsModule
-
-    ],
-    declarations: [
-        ItemDescriptionComponent,
-        OrderByComponent,
-        PaginationComponent,
-        SearchComponent,
-        TableComponent,
-        StatusDirective,
-        CustomCurrencyPipe
-    ],
-    exports: [
-        ItemDescriptionComponent,
-        OrderByComponent,
-        PaginationComponent,
-        SearchComponent,
-        TableComponent,
-        StatusDirective,
-        CustomCurrencyPipe
-    ]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule
+ToastModule,
+    FormsModule,
+    NgbModalModule
+  ],
+  declarations: [
+    ItemDescriptionComponent,
+    OrderByComponent,
+    PaginationComponent,
+    SearchComponent,
+    TableComponent,
+    StatusDirective,
+    CustomCurrencyPipe
+  ],
+  exports: [
+    ItemDescriptionComponent,
+    OrderByComponent,
+    PaginationComponent,
+    SearchComponent,
+    TableComponent,
+    StatusDirective,
+    CustomCurrencyPipe
+  ]
 })
 export class SharedModule { }

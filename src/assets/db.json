@@ -2111,6 +2111,14 @@
       "image": "assets/product-images/redwar.jpg",
       "date": "04-Nov-2018",
       "group": "Office Supplies"
+    },
+    {
+      "description": "gdsfg",
+      "uom": "in",
+      "price": "45",
+      "image": "C:\\fakepath\\black-shoes.jpg",
+      "group": "Office Supplies",
+      "id": 101
     }
   ],
   "quotation": [

@@ -13,7 +13,9 @@ import { Quotation } from './quotations.model';
 export class QuotationService {
   // URL To webAPI
   readonly url: string;
-
+  /**
+   * @param http -Inject httpClient service for server interaction.
+   */
   constructor(private http: HttpClient) {
     this.url = environment.baseUrl;
 
