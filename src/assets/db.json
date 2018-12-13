@@ -1109,6 +1109,39 @@
       "email": "lindsaylogan@genmex.com",
       "mobile_number": 8174283990,
       "address": "400 Beayer Place, Seymour, Rhode Island, 1303"
+    },
+    {
+      "name": "vaibhavi",
+      "company": "1rivet",
+      "group": "General",
+      "email": "pvaibhavi.104@gmail.com",
+      "mobileNumber": "8401953389",
+      "address": "dgdfg",
+      "note": "",
+      "GSTIN": "",
+      "id": 101
+    },
+    {
+      "name": "vaibhavi",
+      "company": "1rivet",
+      "group": "General",
+      "email": "pvaibhavi.104@gmail.com",
+      "mobileNumber": "8401953389",
+      "address": "bili anavil street, bilimora",
+      "note": "",
+      "GSTIN": "",
+      "id": 102
+    },
+    {
+      "name": "sonal",
+      "company": "1rivet",
+      "group": "Wholesaler",
+      "email": "sonal@gmail.com",
+      "mobileNumber": "8200512356",
+      "address": "halar,valsad",
+      "note": "",
+      "GSTIN": "",
+      "id": 103
     }
   ],
   "product": [
@@ -2992,7 +3025,7 @@
       "issue_date": "09-Jun-2017",
       "expiry_date": "27-Jul-2017",
       "customer_id": 49,
-      "grand_total":434,
+      "grand_total": 434,
       "discount": 0,
       "sgst": 0,
       "cgst": 0,
@@ -3568,7 +3601,7 @@
       "issue_date": "31-Dec-2015",
       "expiry_date": "10-Jan-2016",
       "customer_id": 81,
-      "grand_total":153,
+      "grand_total": 153,
       "discount": 0,
       "sgst": 0,
       "cgst": 0,

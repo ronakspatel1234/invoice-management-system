@@ -1,3 +1,4 @@
+import { CustomersService } from './customers.service';
 /**
  * @author Vaibhavi Prajapati
  */
@@ -10,14 +11,16 @@ import { CustomersRoutingModule } from './customers-routing.module';
 import { DetailComponent } from './detail/detail.component';
 import { AddComponent } from './add/add.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
     CustomersRoutingModule,
     SharedModule,
-    // ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  declarations: [ViewComponent, DetailComponent, AddComponent]
+  declarations: [ViewComponent, DetailComponent, AddComponent],
+  providers: [CustomersService]
 })
 export class CustomersModule { }
