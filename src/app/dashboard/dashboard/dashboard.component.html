@@ -1,10 +1,11 @@
 <div class="page-title">
   <h4 class="mb-3">Dashboard</h4>
 </div>
-<ims-stats-card></ims-stats-card>
 <div class="card border-0">
+  <ims-stats-card [customers]="customersLength" [dashboard]="totalInvoices"></ims-stats-card>
   <div class="card-body">
-    Customers activity in the last year
+    <ims-stats-graph [invoiceChart]="invoiceChart"></ims-stats-graph>
   </div>
 </div>
+
 

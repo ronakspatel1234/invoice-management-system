@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" (click)="onSubmit()" [disabled]="!loginForm.valid" class="btn btn-block btn-primary">Submit</button>
+        <button type="submit" (click)="onSubmit(loginForm.value)" [disabled]="!loginForm.valid" class="btn btn-block btn-primary">Submit</button>
       </form>
     </div>
   </div>

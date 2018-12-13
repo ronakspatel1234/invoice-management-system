@@ -1,3 +1,7 @@
+/**
+ * @author - Shahbaz Shaikh
+ * @description - This shared module are used for reusable Component, pipe and directives in application.
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // ------------------------------------------- //

@@ -1,3 +1,8 @@
-<p>
-  stats-graph works!
-</p>
+<div>
+  <h5>Invoice Status</h5>
+  <ngx-charts-pie-chart [view]="[500, 500]" [results]="invoiceChart" [labels]="true" [legend]="true" [legendTitle]="InvoiceStatus"
+    [explodeSlices]="true" [doughnut]="true" [arcWidth]="0.40" [gradient]="true" [tooltipDisabled]="false"></ngx-charts-pie-chart>
+
+</div>
+<ngx-charts-bar-vertical [view]="[300, 300]" [results]="paymentChart"></ngx-charts-bar-vertical>
+<ngx-charts-line-chart [view]="[300, 300]" [results]="customerChart"></ngx-charts-line-chart>

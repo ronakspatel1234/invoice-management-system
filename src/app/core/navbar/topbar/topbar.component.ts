@@ -15,5 +15,7 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  public logout(): void {
+    localStorage.removeItem('token');
+  }
 }
