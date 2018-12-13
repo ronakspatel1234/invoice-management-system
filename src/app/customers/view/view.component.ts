@@ -9,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-
+  key=['id','name']
   constructor() { }
 
   ngOnInit() {
   }
-
+ public sort(data)
+ {
+   console.log("sorting......");
+ }
+ public export(data)
+ {
+   console.log("export......");
+ }
 }
