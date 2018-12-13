@@ -16,12 +16,12 @@ import { Products } from '../products.model';
 
 
 export class AddComponent implements OnInit {
-/**
- * @property productForm to add the product
- * @property numberRegEx to apply validation of number to price field
- * @property patth to take default path for evey image
- * @property fileName to concate file name with prefix path
- */
+  /**
+   * @property productForm to add the product
+   * @property numberRegEx to apply validation of number to price field
+   * @property patth to take default path for evey image
+   * @property fileName to concate file name with prefix path
+   */
   productForm: FormGroup;
   public numberRegEx: string;
   public path: string;
@@ -47,7 +47,7 @@ export class AddComponent implements OnInit {
     this.toastr.setRootViewContainerRef(vcr);
     this.numberRegEx = '^[0-9]*$';
     this.path = '/assets/product-images/';
-    this.fileName='';
+    this.fileName = '';
   }
   // MODALS = {
   //   focusFirst:AddComponent ,
@@ -81,12 +81,12 @@ export class AddComponent implements OnInit {
 
 
   public addProducts(product: Products): void {
-    product.image=this.path+this.fileName;
+    product.image = this.path + this.fileName;
 
     this.productService.addProduct(product).subscribe(
       () => {
         this.productForm.value, console.log(this.productForm.value)
-       
+
       }
     )
   }
@@ -102,12 +102,12 @@ export class AddComponent implements OnInit {
       (product) => { this.loadData(product) }
     )
   }
-/**
- * 
- * @param product to store products
- *@description using patchvalue we can get the data of perticular id ,
- when form is loaded  
- */
+  /**
+   * 
+   * @param product to store products
+   *@description using patchvalue we can get the data of perticular id ,
+   when form is loaded  
+   */
   public loadData(product: Products): void {
     this.productForm.patchValue(
       {
@@ -138,54 +138,26 @@ export class AddComponent implements OnInit {
    * stores file name
    */
   imagePath(event) {
-  this.fileName=event.srcElement.files[0].name;
+    this.fileName = event.srcElement.files[0].name;
   }
 
+
+
+
+
+  /**
+   * toaster method calls when click on save button of the form
+   */
   showSuccess() {
 
     this.toastr.success('Success!');
 
   }
- 
-  
-// const MODALS = {
-//   focusFirst: AddComponent,
-//   // autofocus: NgbdModalConfirmAutofocus
-// };
 
-  
-// @Component({
-//   selector: 'ngbd-modal-confirm',
-//   template: `
-//   <div class="modal-header">
-    
-//     <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
-//       <span aria-hidden="true">&times;</span>
-//     </button>
-//   </div>
-//   <div class="modal-body">
-//     <p><strong>sure you want to leave this page??</strong></p>
-    
-//   </div>
-//   <div class="modal-footer">
-//     <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
-//     <button type="button" class="btn btn-danger" (click)="modal.close('Ok click')">Ok</button>
-//   </div>
-//   `
-// })
-// export class NgbdModalConfirm {
+  // open(add) {
+  //   console.log("jhgk", add);
 
-//   constructor(private _modalService: NgbModal) {}
-
-//   open(name) {
-//     this._modalService.open(this.MODALS[name]);
-//   }
-// }
-
-/**
- * toaster method calls when click on save button of the form
- */
-
+  // }
 
 
 

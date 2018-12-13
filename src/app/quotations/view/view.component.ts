@@ -1,17 +1,11 @@
 /**
  * @author Sonal Prajapati
-<<<<<<< HEAD
- */
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-=======
  * @description this class represent for view the quotation.
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // -------------------------------//
 import { QuotationService } from '../quotation.service';
->>>>>>> 6d7c746c35d02a81b671cb1cd9e84457814b1ed3
 
 @Component({
   selector: 'ims-view',
@@ -20,15 +14,6 @@ import { QuotationService } from '../quotation.service';
 })
 export class ViewComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
-  onNewOqutation() {
-    this.router.navigate(['/quotation/add']);
-
-=======
   action = ['EDIT', 'DELETE'];
   heading = {
     name: ['ID', 'Number', 'Issue Date', 'Expiry Date', 'Customer', 'Grand Total', 'Status'],
@@ -52,6 +37,5 @@ export class ViewComponent implements OnInit {
   }
   actionClick(id, id1) {
     this.router.navigate(['/qoutation/add']);
->>>>>>> 6d7c746c35d02a81b671cb1cd9e84457814b1ed3
   }
 }

@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import {ProductsModule} from './products/products.module'
-
+// import {NgbdModalFocus} from './shared/confirmation-box/confirmation-box.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import {ProductsModule} from './products/products.module'
     BrowserAnimationsModule,
     AppRoutingModule,
     ProductsModule,
-    CoreModule
+    CoreModule,
+    // NgbdModalFocus
   ],
   
   bootstrap: [
