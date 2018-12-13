@@ -40,14 +40,14 @@ export class ViewComponent implements OnInit, OnDestroy {
     this.qoutationSubscription = this.quotationService.getQoutation().subscribe((qoutations) => {
       this.qoutation = qoutations;
       console.log(this.qoutation, this.customer);
-      this.quotationService.getCustomer().subscribe((customer) => {
-        this.customer = customer;
-        console.log(this.customer);
-      });
     });
   }
-  // public Customer(): void {
-  // }
+  public Customer(): void {
+    this.quotationService.getCustomer().subscribe((customer) => {
+      this.customer = customer;
+      console.log(this.customer);
+    });
+  }
   public onNewOqutation() {
     this.router.navigate(['/quotation/add']);
   }
