@@ -4,8 +4,13 @@
  */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+<<<<<<< HEAD
 import { LoginComponent } from './core/auth/login/login.component';
 import { AuthGuard } from './core/auth/auth.guard';
+=======
+// ------------------------------------------------ //
+
+>>>>>>> 9d932f931e793605c6eb34ee9f864d9feca0163c
 
 const routes: Routes = [
 

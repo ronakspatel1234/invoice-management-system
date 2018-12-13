@@ -6,8 +6,8 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// ---------------------------------------------------------------------------------------//
+
+// ------------------------------- //
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -21,9 +21,8 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    CoreModule
   ],
   bootstrap: [
     AppComponent

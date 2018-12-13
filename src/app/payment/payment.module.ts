@@ -10,11 +10,13 @@ import { ViewComponent } from './view/view.component';
 import { AddComponent } from './add/add.component';
 import { DetailsComponent } from './details/details.component';
 import { PaymentService } from './payment.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    PaymentRoutingModule
+    PaymentRoutingModule,
+    SharedModule
   ],
   declarations: [
     ViewComponent,

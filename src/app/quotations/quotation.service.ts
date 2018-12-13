@@ -1,6 +1,6 @@
 /**
  * @author Sonal Prajapati
- * @description this service is used to communicate with the backend.
+ * @description this service is used to communicate with the component and backend.
  */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
