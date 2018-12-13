@@ -18,7 +18,7 @@ export class PaymentService {
     this.dbUrl = 'http://localhost:3000/payment';
   }
 
-  public getPayments(): Observable<Payment[]> {
+  public getPayments(payment: Payment[]): Observable<Payment[]> {
 
     return this.http.get<Payment[]>(this.dbUrl);
   }

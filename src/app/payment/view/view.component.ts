@@ -16,10 +16,10 @@ export class ViewComponent implements OnInit {
 
   payments: any[];
 
-  totalItems: number = 0;
-  currentPage: number = 0;
-  pageSize: number = 10;
-  data: any;
+  loading = false;
+  total = 0;
+  page = 1;
+  limit = 20;
 
   constructor(private service: PaymentService) {
     this.payments = [];
@@ -29,12 +29,30 @@ export class ViewComponent implements OnInit {
     this.getPayments();
   }
 
-  getPayments() {
-    this.service.getPayments().subscribe(
-      (data) => {
-        console.log(data);
-        this.payments= data;
-      });
+  getPayments(): void {
+    this.loading = true;
+    this.service.getPayments().subscribe(res => {
+      console.log(res);
+      this.total = res.total;
+      this.payments = res.payments;
+      console.log(this.payments);
+      this.loading = false;
+    })
+  }
+
+  goToPage(n: number): void {
+    this.page = n;
+    this.getPayments();
+  }
+
+  onNext(): void {
+    this.page++;
+    this.getPayments();
+  }
+
+  onPrev(): void {
+    this.page--;
+    this.getPayments();
   }
 
 }

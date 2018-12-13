@@ -1,7 +1,9 @@
 /**
  * @author - Shahbaz Shaikh
+ * @description - This Pagination Component are reusable component for Table  Pagination.
  */
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+// ----------------------------------------------------- //
 
 @Component({
   selector: 'ims-pagination',
@@ -10,64 +12,93 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
 
-  @Input('prefix') prefix: string = "Showing";
-  @Input('postfix') postfix: string = "Total Records";
+  // Declear the variable
+  public start: number; // Starting Page number
+  public end: number; // Ending Page number
+  public pageSize: number; // Number of items on each page
+  public currentPage: number; // Returns the current page number
+  public total: number; // Total number of items in the records
+  public readonly pageLimitOptions; // Page change limit value declear
 
-  start: number = 0;
-  end: number = 0;
-  pageSize: number;
-  currentPage: number;
-  total: number;
+  // Triggers on Next and previous button page change
+  @Output() public pageChange = new EventEmitter();
+  // Triggers the pageSizeChange event with the page number
+  @Output() public pageSizeChange = new EventEmitter<number>();
 
-  @Input('total')
-  set TotatRecord(total: number) {
-    if (total) {
-      this.total = total;
-    }
-    else {
-      this.total = 0;
+  // Set the Page Size
+  @Input('size')
+  set PageSize(pageSize: number) {
+    if (pageSize) {
+      this.pageSize = pageSize;
+    } else {
+      this.pageSize = 0;
     }
     this.calculate();
   }
 
+  // Set Current page number
   @Input('current')
   set CurrentPage(currentPage: number) {
     if (currentPage) {
       this.currentPage = currentPage;
-    }
-    else {
+    } else {
       this.currentPage = 0;
     }
     this.calculate();
   }
 
-  @Input('size')
-  set PageSize(pageSize: number) {
-    if (pageSize) {
-      this.pageSize = pageSize;
-    }
-    else {
-      this.pageSize = 0;
+  // Set total record
+  @Input('total')
+  set TotatRecord(total: number) {
+    if (total) {
+      this.total = total;
+    } else {
+      this.total = 0;
     }
     this.calculate();
   }
-  
-  constructor() { }
+
+  constructor() {
+    // Define the variables
+    this.start = 0;
+    this.end = 0;
+
+    // Define the page change limit opation
+    this.pageLimitOptions = [
+      { value: 10 },
+      { value: 20 },
+      { value: 30 },
+      { value: 40 },
+      { value: 50 },
+      { value: 100 },
+    ];
+  }
 
   ngOnInit() {
   }
 
-  calculate() {
+
+  // When user user change of page limit change the page limit
+  public goToPage(event) {
+    this.pageSizeChange.emit(event.target.value);
+  }
+
+  // When user click on Next or Previous button emit the value and passed to parent
+  public goNextPrev(e) {
+    this.pageChange.emit(e.target.value);
+  }
+
+  private calculate() {
     if (this.total > 0) {
-      let startIndex = (this.currentPage - 1) * this.total;
-      let endIndex = startIndex + this.pageSize;
+      const startIndex = (this.currentPage * this.pageSize) - this.pageSize;
+      const endIndex = this.currentPage * this.pageSize;
 
       this.start = startIndex + 1;
       this.end = endIndex > this.total ? this.total : endIndex;
-    }
-    else {
+    } else {
       this.start = 0;
       this.end = 0;
     }
   }
 }
+
