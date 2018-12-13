@@ -20,7 +20,8 @@ import { TableComponent } from './table/table.component';
     OrderByComponent,
     PaginationComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    StatusDirective
   ],
   exports: [
     ItemDescriptionComponent,
@@ -28,7 +29,7 @@ import { TableComponent } from './table/table.component';
     PaginationComponent,
     SearchComponent,
     TableComponent,
-    ToastModule
+    StatusDirective
   ]
 })
 export class SharedModule { }
