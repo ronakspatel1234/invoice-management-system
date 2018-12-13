@@ -18,13 +18,13 @@ export class AddComponent implements OnInit {
   /**
    * navigate to the view page
    */
-  onSave() {
+ public onSave() {
     this.router.navigate(['/quotation/view']);
   }
   /**
   * navigate to the view page
   */
-  onCancel() {
+  public onCancel() {
     confirm('Are You Sure?');
     this.router.navigate(['/quotation/view']);
 

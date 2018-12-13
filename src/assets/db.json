@@ -2113,16 +2113,16 @@
       "group": "Office Supplies"
     }
   ],
-  "quatation": [
+  "quotation": [
     {
       "id": 1,
       "quotation_number": "QT-10001",
       "issue_date": "02-Jun-2014",
       "expiry_date": "31-Jul-2014",
       "customer_id": 1,
-      "grand_total": 6,
+      "grand_total": 535,
       "discount": 0,
-      "sgst": 4.15,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2142,9 +2142,9 @@
       "issue_date": "22-Nov-2016",
       "expiry_date": "12-Dec-2016",
       "customer_id": 2,
-      "grand_total": 8.6,
+      "grand_total": 973,
       "discount": 0,
-      "sgst": 7.77,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2160,9 +2160,9 @@
       "issue_date": "26-Apr-2016",
       "expiry_date": "26-May-2016",
       "customer_id": 3,
-      "grand_total": 8.4,
+      "grand_total": 459,
       "discount": 0,
-      "sgst": 1.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2178,9 +2178,9 @@
       "issue_date": "01-Jan-2018",
       "expiry_date": "24-Feb-2018",
       "customer_id": 4,
-      "grand_total": 9.7,
+      "grand_total": 40,
       "discount": 0,
-      "sgst": 8.59,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2196,9 +2196,9 @@
       "issue_date": "21-May-2016",
       "expiry_date": "15-Jun-2016",
       "customer_id": 5,
-      "grand_total": 9,
+      "grand_total": 916,
       "discount": 0,
-      "sgst": 8.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2218,9 +2218,9 @@
       "issue_date": "31-Dec-2015",
       "expiry_date": "16-Jan-2016",
       "customer_id": 6,
-      "grand_total": 9.8,
+      "grand_total": 90,
       "discount": 0,
-      "sgst": 5.03,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2236,9 +2236,9 @@
       "issue_date": "18-May-2014",
       "expiry_date": "07-jun-2014",
       "customer_id": 7,
-      "grand_total": 8.8,
+      "grand_total": 488,
       "discount": 0,
-      "sgst": 3.88,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2254,9 +2254,9 @@
       "issue_date": "20-Mar-2017",
       "expiry_date": "05-May-2017",
       "customer_id": 8,
-      "grand_total": 6.4,
+      "grand_total": 705,
       "discount": 0,
-      "sgst": 0.87,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2272,9 +2272,9 @@
       "issue_date": "23-Nov-2017",
       "expiry_date": "04-Dec-2017",
       "customer_id": 9,
-      "grand_total": 6.7,
+      "grand_total": 555,
       "discount": 0,
-      "sgst": 4.38,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2290,9 +2290,9 @@
       "issue_date": "02-Oct-2017",
       "expiry_date": "03-Nov-2017",
       "customer_id": 10,
-      "grand_total": 5.9,
+      "grand_total": 293,
       "discount": 0,
-      "sgst": 1.16,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2308,9 +2308,9 @@
       "issue_date": "03-Apr-2014",
       "expiry_date": "23-May-2014",
       "customer_id": 11,
-      "grand_total": 5.3,
+      "grand_total": 32,
       "discount": 0,
-      "sgst": 0.26,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2326,9 +2326,9 @@
       "issue_date": "08-Jan-2014",
       "expiry_date": "29-Feb-2014",
       "customer_id": 12,
-      "grand_total": 5.1,
+      "grand_total": 175,
       "discount": 0,
-      "sgst": 8.97,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2344,9 +2344,9 @@
       "issue_date": "08-Aug-2015",
       "expiry_date": "22-Sep-2015",
       "customer_id": 13,
-      "grand_total": 5.9,
+      "grand_total": 884,
       "discount": 0,
-      "sgst": 9.75,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2362,9 +2362,9 @@
       "issue_date": "25-Oct-2016",
       "expiry_date": "26-Nov-2016",
       "customer_id": 14,
-      "grand_total": 5.3,
+      "grand_total": 186,
       "discount": 0,
-      "sgst": 5.71,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2380,9 +2380,9 @@
       "issue_date": "10-Jul-2017",
       "expiry_date": "15-Oct-2017",
       "customer_id": 15,
-      "grand_total": 7.9,
+      "grand_total": 163,
       "discount": 0,
-      "sgst": 0.75,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2398,9 +2398,9 @@
       "issue_date": "10-Feb-2015",
       "expiry_date": "21-Mar-2015",
       "customer_id": 16,
-      "grand_total": 7.6,
+      "grand_total": 368,
       "discount": 0,
-      "sgst": 2.92,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2416,9 +2416,9 @@
       "issue_date": "22-Apr-2016",
       "expiry_date": "09-May-2016",
       "customer_id": 17,
-      "grand_total": 6.8,
+      "grand_total": 931,
       "discount": 0,
-      "sgst": 9.14,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2434,9 +2434,9 @@
       "issue_date": "20-Mar-2018",
       "expiry_date": "10-Apr-2018",
       "customer_id": 18,
-      "grand_total": 8.7,
+      "grand_total": 25,
       "discount": 0,
-      "sgst": 7.45,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2452,9 +2452,9 @@
       "issue_date": "04-Nov-2015",
       "expiry_date": "24-Dec-2015",
       "customer_id": 19,
-      "grand_total": 7.9,
+      "grand_total": 618,
       "discount": 0,
-      "sgst": 3.33,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2470,9 +2470,9 @@
       "issue_date": "29-Jan-2016",
       "expiry_date": "31-Feb-2016",
       "customer_id": 20,
-      "grand_total": 6.9,
+      "grand_total": 83,
       "discount": 0,
-      "sgst": 8.04,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2488,9 +2488,9 @@
       "issue_date": "15-Apr-2014",
       "expiry_date": "15-May-2014",
       "customer_id": 21,
-      "grand_total": 4.1,
+      "grand_total": 852,
       "discount": 0,
-      "sgst": 0.93,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2506,9 +2506,9 @@
       "issue_date": "27-Feb-2015",
       "expiry_date": "12-Mar-2015",
       "customer_id": 22,
-      "grand_total": 8.5,
+      "grand_total": 763,
       "discount": 0,
-      "sgst": 8.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2524,9 +2524,9 @@
       "issue_date": "24-Sep-2017",
       "expiry_date": "29-Oct-2017",
       "customer_id": 23,
-      "grand_total": 9.4,
+      "grand_total": 505,
       "discount": 0,
-      "sgst": 6.77,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2542,9 +2542,9 @@
       "issue_date": "28-Jun-2014",
       "expiry_date": "27-Jul-2014",
       "customer_id": 24,
-      "grand_total": 4.5,
+      "grand_total": 522,
       "discount": 0,
-      "sgst": 2.15,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2560,9 +2560,9 @@
       "issue_date": "21-May-2018",
       "expiry_date": "17-Jun-2018",
       "customer_id": 25,
-      "grand_total": 4.9,
+      "grand_total": 865,
       "discount": 0,
-      "sgst": 8.74,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2578,9 +2578,9 @@
       "issue_date": "26-Oct-2014",
       "expiry_date": "05-Nov-2014",
       "customer_id": 26,
-      "grand_total": 6.6,
+      "grand_total": 137,
       "discount": 0,
-      "sgst": 4.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2596,9 +2596,9 @@
       "issue_date": "04-Nov-2018",
       "expiry_date": "28-Dec-2018",
       "customer_id": 27,
-      "grand_total": 7,
+      "grand_total": 218,
       "discount": 0,
-      "sgst": 3.12,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2614,9 +2614,9 @@
       "issue_date": "02-Jan-2015",
       "expiry_date": "16-Feb-2015",
       "customer_id": 28,
-      "grand_total": 7.6,
+      "grand_total": 200,
       "discount": 0,
-      "sgst": 5.15,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2632,9 +2632,9 @@
       "issue_date": "02-Oct-2016",
       "expiry_date": "16-Nov-2016",
       "customer_id": 29,
-      "grand_total": 5.1,
+      "grand_total": 590,
       "discount": 0,
-      "sgst": 0.49,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2650,9 +2650,9 @@
       "issue_date": "17-Jan-2018",
       "expiry_date": "30-Feb-2018",
       "customer_id": 30,
-      "grand_total": 7.5,
+      "grand_total": 792,
       "discount": 0,
-      "sgst": 0.18,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2668,9 +2668,9 @@
       "issue_date": "03-May-2015",
       "expiry_date": "23-Jun-2015",
       "customer_id": 31,
-      "grand_total": 4.2,
+      "grand_total": 290,
       "discount": 0,
-      "sgst": 5.1,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2686,9 +2686,9 @@
       "issue_date": "15-Aug-2017",
       "expiry_date": "22-Nov-2017",
       "customer_id": 32,
-      "grand_total": 9.6,
+      "grand_total": 222,
       "discount": 0,
-      "sgst": 1.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2704,9 +2704,9 @@
       "issue_date": "28-Apr-2017",
       "expiry_date": "07-May-2017",
       "customer_id": 33,
-      "grand_total": 8.6,
+      "grand_total": 850,
       "discount": 0,
-      "sgst": 8.74,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2722,9 +2722,9 @@
       "issue_date": "20-Aug-2016",
       "expiry_date": "26-Nov-2016",
       "customer_id": 34,
-      "grand_total": 9.4,
+      "grand_total": 462,
       "discount": 0,
-      "sgst": 0.74,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2740,9 +2740,9 @@
       "issue_date": "03-May-2017",
       "expiry_date": "28-Jun-2017",
       "customer_id": 35,
-      "grand_total": 7.2,
+      "grand_total": 888,
       "discount": 0,
-      "sgst": 1.54,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2758,9 +2758,9 @@
       "issue_date": "13-Jun-2014",
       "expiry_date": "18-Jul-2014",
       "customer_id": 36,
-      "grand_total": 8,
+      "grand_total": 206,
       "discount": 0,
-      "sgst": 2.28,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2776,9 +2776,9 @@
       "issue_date": "16-Jun-2014",
       "expiry_date": "17-Jul-2014",
       "customer_id": 37,
-      "grand_total": 5.6,
+      "grand_total": 57,
       "discount": 0,
-      "sgst": 5.49,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2794,9 +2794,9 @@
       "issue_date": "21-Mar-2017",
       "expiry_date": "23-Apr-2017",
       "customer_id": 38,
-      "grand_total": 7.6,
+      "grand_total": 112,
       "discount": 0,
-      "sgst": 7.42,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2812,9 +2812,9 @@
       "issue_date": "07-Apr-2016",
       "expiry_date": "09-May-2016",
       "customer_id": 39,
-      "grand_total": 6.1,
+      "grand_total": 161,
       "discount": 0,
-      "sgst": 1.29,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2830,9 +2830,9 @@
       "issue_date": "20-Apr-2017",
       "expiry_date": "15-May-2017",
       "customer_id": 40,
-      "grand_total": 6.4,
+      "grand_total": 39,
       "discount": 0,
-      "sgst": 7.75,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2848,9 +2848,9 @@
       "issue_date": "24-Oct-2016",
       "expiry_date": "28-Nov-2016",
       "customer_id": 41,
-      "grand_total": 8.9,
+      "grand_total": 762,
       "discount": 0,
-      "sgst": 5.14,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2866,9 +2866,9 @@
       "issue_date": "01-Jan-2016",
       "expiry_date": "26-Jul-2016",
       "customer_id": 42,
-      "grand_total": 5.2,
+      "grand_total": 889,
       "discount": 0,
-      "sgst": 0.6,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2884,9 +2884,9 @@
       "issue_date": "14-Apr-2016",
       "expiry_date": "02-May-2016",
       "customer_id": 43,
-      "grand_total": 5.9,
+      "grand_total": 315,
       "discount": 0,
-      "sgst": 4.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2902,9 +2902,9 @@
       "issue_date": "06-Jul-2014",
       "expiry_date": "09-Jul-2014",
       "customer_id": 44,
-      "grand_total": 4.1,
+      "grand_total": 332,
       "discount": 0,
-      "sgst": 8.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2920,9 +2920,9 @@
       "issue_date": "19-Nov-2016",
       "expiry_date": "25-Dec-2016",
       "customer_id": 45,
-      "grand_total": 5.2,
+      "grand_total": 73,
       "discount": 0,
-      "sgst": 3.69,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2938,9 +2938,9 @@
       "issue_date": "04-Feb-2014",
       "expiry_date": "23-Mar-2014",
       "customer_id": 46,
-      "grand_total": 6.4,
+      "grand_total": 190,
       "discount": 0,
-      "sgst": 5.8,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2956,9 +2956,9 @@
       "issue_date": "16-Oct-2015",
       "expiry_date": "03-Nov-2015",
       "customer_id": 47,
-      "grand_total": 9.7,
+      "grand_total": 351,
       "discount": 0,
-      "sgst": 5.41,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2974,9 +2974,9 @@
       "issue_date": "25-Apr-2014",
       "expiry_date": "23-May-2014",
       "customer_id": 48,
-      "grand_total": 6.8,
+      "grand_total": 450,
       "discount": 0,
-      "sgst": 3.67,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -2992,9 +2992,9 @@
       "issue_date": "09-Jun-2017",
       "expiry_date": "27-Jul-2017",
       "customer_id": 49,
-      "grand_total": 8.4,
+      "grand_total":434,
       "discount": 0,
-      "sgst": 4.8,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3010,9 +3010,9 @@
       "issue_date": "08-May-2017",
       "expiry_date": "16-Jun-2017",
       "customer_id": 50,
-      "grand_total": 6.7,
+      "grand_total": 115,
       "discount": 0,
-      "sgst": 6.6,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3028,9 +3028,9 @@
       "issue_date": "02-May-2016",
       "expiry_date": "31-Jun-2016",
       "customer_id": 51,
-      "grand_total": 5.1,
+      "grand_total": 965,
       "discount": 0,
-      "sgst": 9.48,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3046,7 +3046,7 @@
       "issue_date": "28-Feb-2018",
       "expiry_date": "13-Mar-2018",
       "customer_id": 52,
-      "grand_total": 6.1,
+      "grand_total": 80,
       "discount": 0,
       "sgst": 7.68,
       "cgst": 0,
@@ -3064,9 +3064,9 @@
       "issue_date": "10-Feb-2017",
       "expiry_date": "10-Mar-2017",
       "customer_id": 53,
-      "grand_total": 8.6,
+      "grand_total": 693,
       "discount": 0,
-      "sgst": 0.08,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3082,9 +3082,9 @@
       "issue_date": "18-Feb-2015",
       "expiry_date": "28-Mar-2015",
       "customer_id": 54,
-      "grand_total": 6.4,
+      "grand_total": 788,
       "discount": 0,
-      "sgst": 0.81,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3100,9 +3100,9 @@
       "issue_date": "23-Nov-2014",
       "expiry_date": "20-Dec-2014",
       "customer_id": 55,
-      "grand_total": 5.5,
+      "grand_total": 436,
       "discount": 0,
-      "sgst": 9.27,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3118,9 +3118,9 @@
       "issue_date": "14-Jan-2015",
       "expiry_date": "30-Feb-2015",
       "customer_id": 56,
-      "grand_total": 9.1,
+      "grand_total": 24,
       "discount": 0,
-      "sgst": 0.14,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3136,9 +3136,9 @@
       "issue_date": "30-Oct-2016",
       "expiry_date": "04-Nov-2016",
       "customer_id": 57,
-      "grand_total": 6.7,
+      "grand_total": 529,
       "discount": 0,
-      "sgst": 8.87,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3154,9 +3154,9 @@
       "issue_date": "08-Jan-2014",
       "expiry_date": "07-Feb-2014",
       "customer_id": 58,
-      "grand_total": 7.5,
+      "grand_total": 234,
       "discount": 0,
-      "sgst": 9.57,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3172,9 +3172,9 @@
       "issue_date": "28-Jul-2014",
       "expiry_date": "16-Aug-2014",
       "customer_id": 59,
-      "grand_total": 9.7,
+      "grand_total": 572,
       "discount": 0,
-      "sgst": 3.65,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3190,9 +3190,9 @@
       "issue_date": "02-Jun-2016",
       "expiry_date": "06-Jul-2016",
       "customer_id": 60,
-      "grand_total": 9.4,
+      "grand_total": 263,
       "discount": 0,
-      "sgst": 3.68,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3208,9 +3208,9 @@
       "issue_date": "15-Aug-2018",
       "expiry_date": "11-Nov-2018",
       "customer_id": 61,
-      "grand_total": 5.3,
+      "grand_total": 70,
       "discount": 0,
-      "sgst": 2.78,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3226,9 +3226,9 @@
       "issue_date": "11-May-2016",
       "expiry_date": "04-Jun-2016",
       "customer_id": 62,
-      "grand_total": 5,
+      "grand_total": 997,
       "discount": 0,
-      "sgst": 7.94,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3244,9 +3244,9 @@
       "issue_date": "06-Mar-2015",
       "expiry_date": "29-Apr-2015",
       "customer_id": 63,
-      "grand_total": 4.7,
+      "grand_total": 314,
       "discount": 0,
-      "sgst": 2.88,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3262,9 +3262,9 @@
       "issue_date": "10-Sep-2016",
       "expiry_date": "11-Oct-2016",
       "customer_id": 64,
-      "grand_total": 5,
+      "grand_total": 394,
       "discount": 0,
-      "sgst": 8.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3280,9 +3280,9 @@
       "issue_date": "17-Nov-2018",
       "expiry_date": "11-Dec-2018",
       "customer_id": 65,
-      "grand_total": 5,
+      "grand_total": 404,
       "discount": 0,
-      "sgst": 8.95,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3298,9 +3298,9 @@
       "issue_date": "23-Jun-2015",
       "expiry_date": "04-Jul-2015",
       "customer_id": 66,
-      "grand_total": 4.6,
+      "grand_total": 726,
       "discount": 0,
-      "sgst": 5.91,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3316,9 +3316,9 @@
       "issue_date": "18-Aug-2018",
       "expiry_date": "21-Sep-2018",
       "customer_id": 67,
-      "grand_total": 8.7,
+      "grand_total": 324,
       "discount": 0,
-      "sgst": 5.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3334,9 +3334,9 @@
       "issue_date": "20-Nov-2017",
       "expiry_date": "20-Dec-2017",
       "customer_id": 68,
-      "grand_total": 4.1,
+      "grand_total": 736,
       "discount": 0,
-      "sgst": 2.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3352,9 +3352,9 @@
       "issue_date": "28-Sep-2016",
       "expiry_date": "11-Oct-2016",
       "customer_id": 69,
-      "grand_total": 4.4,
+      "grand_total": 116,
       "discount": 0,
-      "sgst": 2.37,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3370,9 +3370,9 @@
       "issue_date": "03-Aug-2018",
       "expiry_date": "09-Sep-2018",
       "customer_id": 70,
-      "grand_total": 8.7,
+      "grand_total": 538,
       "discount": 0,
-      "sgst": 9.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3388,9 +3388,9 @@
       "issue_date": "13-Sep-2014",
       "expiry_date": "26-Oct-2014",
       "customer_id": 71,
-      "grand_total": 4.7,
+      "grand_total": 427,
       "discount": 0,
-      "sgst": 7.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3406,9 +3406,9 @@
       "issue_date": "28-Jul-2014",
       "expiry_date": "27-Aug-2014",
       "customer_id": 72,
-      "grand_total": 9.9,
+      "grand_total": 834,
       "discount": 0,
-      "sgst": 9.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3424,9 +3424,9 @@
       "issue_date": "15-Jul-2015",
       "expiry_date": "24-Aug-2015",
       "customer_id": 73,
-      "grand_total": 4.1,
+      "grand_total": 732,
       "discount": 0,
-      "sgst": 4.01,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3442,9 +3442,9 @@
       "issue_date": "22-Nov-2017",
       "expiry_date": "18-Dec-2017",
       "customer_id": 74,
-      "grand_total": 6.1,
+      "grand_total": 387,
       "discount": 0,
-      "sgst": 8.93,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3460,9 +3460,9 @@
       "issue_date": "11-Aug-2015",
       "expiry_date": "29-Sep-2015",
       "customer_id": 75,
-      "grand_total": 7.8,
+      "grand_total": 167,
       "discount": 0,
-      "sgst": 5.68,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3478,9 +3478,9 @@
       "issue_date": "08-Apr-2017",
       "expiry_date": "03-May-2017",
       "customer_id": 76,
-      "grand_total": 4.9,
+      "grand_total": 149,
       "discount": 0,
-      "sgst": 9.09,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3496,9 +3496,9 @@
       "issue_date": "24-Nov-2018",
       "expiry_date": "22-Dec-2018",
       "customer_id": 77,
-      "grand_total": 9.3,
+      "grand_total": 204,
       "discount": 0,
-      "sgst": 0.97,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3514,9 +3514,9 @@
       "issue_date": "29-May-2016",
       "expiry_date": "12-Jun-2016",
       "customer_id": 78,
-      "grand_total": 9.6,
+      "grand_total": 734,
       "discount": 0,
-      "sgst": 9.02,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3532,9 +3532,9 @@
       "issue_date": "08-Oct-2017",
       "expiry_date": "29-Nov-2017",
       "customer_id": 79,
-      "grand_total": 9.1,
+      "grand_total": 985,
       "discount": 0,
-      "sgst": 3.47,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3550,9 +3550,9 @@
       "issue_date": "05-Aug-2018",
       "expiry_date": "31-Sep-2018",
       "customer_id": 80,
-      "grand_total": 8.8,
+      "grand_total": 375,
       "discount": 0,
-      "sgst": 8.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3568,9 +3568,9 @@
       "issue_date": "31-Dec-2015",
       "expiry_date": "10-Jan-2016",
       "customer_id": 81,
-      "grand_total": 6.3,
+      "grand_total":153,
       "discount": 0,
-      "sgst": 4.53,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3586,9 +3586,9 @@
       "issue_date": "04-Jan-2016",
       "expiry_date": "26-Feb-2017",
       "customer_id": 82,
-      "grand_total": 8.3,
+      "grand_total": 158,
       "discount": 0,
-      "sgst": 0.94,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3604,9 +3604,9 @@
       "issue_date": "22-Dec-2014",
       "expiry_date": "28-Jan-2015",
       "customer_id": 83,
-      "grand_total": 9.6,
+      "grand_total": 273,
       "discount": 0,
-      "sgst": 7.41,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3622,9 +3622,9 @@
       "issue_date": "06-May-2014",
       "expiry_date": "11-Jun-2014",
       "customer_id": 84,
-      "grand_total": 4.2,
+      "grand_total": 907,
       "discount": 0,
-      "sgst": 5.96,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3640,9 +3640,9 @@
       "issue_date": "31-Aug-2017",
       "expiry_date": "02-Sep-2017",
       "customer_id": 85,
-      "grand_total": 9.6,
+      "grand_total": 912,
       "discount": 0,
-      "sgst": 0.52,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3658,9 +3658,9 @@
       "issue_date": "06-Oct-2015",
       "expiry_date": "17-Nov-2015",
       "customer_id": 86,
-      "grand_total": 8.4,
+      "grand_total": 895,
       "discount": 0,
-      "sgst": 9.07,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3676,9 +3676,9 @@
       "issue_date": "08-May-2017",
       "expiry_date": "30-Jun-2017",
       "customer_id": 87,
-      "grand_total": 6.7,
+      "grand_total": 714,
       "discount": 0,
-      "sgst": 3.73,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3694,7 +3694,7 @@
       "issue_date": "17-Oct-2015",
       "expiry_date": "10-Nov-2015",
       "customer_id": 88,
-      "grand_total": 4.3,
+      "grand_total": 160,
       "discount": 0,
       "sgst": 0,
       "cgst": 0,
@@ -3712,9 +3712,9 @@
       "issue_date": "22-Jan-2015",
       "expiry_date": "01-Feb-2015",
       "customer_id": 89,
-      "grand_total": 7.1,
+      "grand_total": 745,
       "discount": 0,
-      "sgst": 2.34,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3730,9 +3730,9 @@
       "issue_date": "20-Jan-2015",
       "expiry_date": "23-Feb-2015",
       "customer_id": 90,
-      "grand_total": 8,
+      "grand_total": 468,
       "discount": 0,
-      "sgst": 8.03,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3748,9 +3748,9 @@
       "issue_date": "14-Oct-2017",
       "expiry_date": "05-Nov-2017",
       "customer_id": 91,
-      "grand_total": 8.3,
+      "grand_total": 460,
       "discount": 0,
-      "sgst": 2.58,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3766,9 +3766,9 @@
       "issue_date": "28-Jul-2015",
       "expiry_date": "13-Aug-2015",
       "customer_id": 92,
-      "grand_total": 6.6,
+      "grand_total": 447,
       "discount": 0,
-      "sgst": 8.96,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3784,9 +3784,9 @@
       "issue_date": "09-Mar-2018",
       "expiry_date": "01-Apr-2018",
       "customer_id": 93,
-      "grand_total": 6.4,
+      "grand_total": 755,
       "discount": 0,
-      "sgst": 4.65,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3802,9 +3802,9 @@
       "issue_date": "11-Oct-2016",
       "expiry_date": "22-Nov-2016",
       "customer_id": 94,
-      "grand_total": 4.5,
+      "grand_total": 41,
       "discount": 0,
-      "sgst": 9.96,
+      "sgst": 0,
       "cgst": 0,
       "product_id": 94,
       "products": [
@@ -3820,9 +3820,9 @@
       "issue_date": "11-Mar-2016",
       "expiry_date": "07-Apr-2016",
       "customer_id": 95,
-      "grand_total": 6.6,
+      "grand_total": 14,
       "discount": 0,
-      "sgst": 0.03,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3838,9 +3838,9 @@
       "issue_date": "25-Apr-2016",
       "expiry_date": "15-May-2016",
       "customer_id": 96,
-      "grand_total": 9,
+      "grand_total": 172,
       "discount": 0,
-      "sgst": 2.82,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3856,9 +3856,9 @@
       "issue_date": "25-Feb-2015",
       "expiry_date": "15-Mar-2015",
       "customer_id": 97,
-      "grand_total": 9.7,
+      "grand_total": 458,
       "discount": 0,
-      "sgst": 8.04,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3874,9 +3874,9 @@
       "issue_date": "18-Jan-2014",
       "expiry_date": "03-Feb-2014",
       "customer_id": 98,
-      "grand_total": 9.5,
+      "grand_total": 728,
       "discount": 0,
-      "sgst": 6.59,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3892,9 +3892,9 @@
       "issue_date": "27-Apr-2014",
       "expiry_date": "25-May-2014",
       "customer_id": 99,
-      "grand_total": 5.8,
+      "grand_total": 730,
       "discount": 0,
-      "sgst": 2.21,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3910,9 +3910,9 @@
       "issue_date": "05-Oct-2015",
       "expiry_date": "17-Nov-2015",
       "customer_id": 100,
-      "grand_total": 5.1,
+      "grand_total": 733,
       "discount": 0,
-      "sgst": 3.52,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
@@ -3928,13 +3928,13 @@
       "issue_date": "21-Dec-2016",
       "expiry_date": "12-Jan-2017",
       "customer_id": 101,
-      "grand_total": 7.7,
+      "grand_total": 488,
       "discount": 0,
-      "sgst": 1.29,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 101,
+          "product_id": 7,
           "qty": 1
         }
       ],
@@ -3946,13 +3946,13 @@
       "issue_date": "01-Dec-2018",
       "expiry_date": "06-Jan-2019",
       "customer_id": 102,
-      "grand_total": 6.6,
+      "grand_total": 186,
       "discount": 0,
-      "sgst": 6.56,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 102,
+          "product_id": 14,
           "qty": 1
         }
       ],
@@ -3964,13 +3964,13 @@
       "issue_date": "24-Aug-2018",
       "expiry_date": "29-Sep-2018",
       "customer_id": 103,
-      "grand_total": 9.8,
+      "grand_total": 83,
       "discount": 0,
-      "sgst": 6.9,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 103,
+          "product_id": 20,
           "qty": 1
         }
       ],
@@ -3982,13 +3982,13 @@
       "issue_date": "26-Oct-2014",
       "expiry_date": "16-Nov-2014",
       "customer_id": 104,
-      "grand_total": 5.8,
+      "grand_total": 852,
       "discount": 0,
-      "sgst": 1.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 104,
+          "product_id": 21,
           "qty": 1
         }
       ],
@@ -4000,13 +4000,13 @@
       "issue_date": "03-Jan-2016",
       "expiry_date": "04-Feb-2016",
       "customer_id": 105,
-      "grand_total": 7.5,
+      "grand_total": 200,
       "discount": 0,
-      "sgst": 9.16,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 105,
+          "product_id": 28,
           "qty": 1
         }
       ],
@@ -4018,13 +4018,13 @@
       "issue_date": "11-Oct-2015",
       "expiry_date": "07-Nov-2015",
       "customer_id": 106,
-      "grand_total": 6.7,
+      "grand_total": 590,
       "discount": 0,
-      "sgst": 2.61,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 106,
+          "product_id": 29,
           "qty": 1
         }
       ],
@@ -4036,13 +4036,13 @@
       "issue_date": "23-Jul-2017",
       "expiry_date": "30-Jul-2017",
       "customer_id": 107,
-      "grand_total": 7.4,
+      "grand_total": 792,
       "discount": 0,
-      "sgst": 0.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 107,
+          "product_id": 30,
           "qty": 1
         }
       ],
@@ -4054,13 +4054,13 @@
       "issue_date": "29-Jun-2017",
       "expiry_date": "10-Feb-2017",
       "customer_id": 108,
-      "grand_total": 6.3,
+      "grand_total": 290,
       "discount": 0,
-      "sgst": 6.91,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 108,
+          "product_id": 31,
           "qty": 1
         }
       ],
@@ -4072,13 +4072,13 @@
       "issue_date": "09-Jul-2014",
       "expiry_date": "01-Aug-2014",
       "customer_id": 109,
-      "grand_total": 4.3,
+      "grand_total": 222,
       "discount": 0,
-      "sgst": 7.42,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 109,
+          "product_id": 32,
           "qty": 1
         }
       ],
@@ -4090,13 +4090,13 @@
       "issue_date": "22-Oct-2014",
       "expiry_date": "23-Nov-2014",
       "customer_id": 110,
-      "grand_total": 8.5,
+      "grand_total": 850,
       "discount": 0,
-      "sgst": 4.64,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 110,
+          "product_id": 33,
           "qty": 1
         }
       ],
@@ -4108,13 +4108,13 @@
       "issue_date": "02-Dec-2016",
       "expiry_date": "23-Jan-2016",
       "customer_id": 111,
-      "grand_total": 7.9,
+      "grand_total": 462,
       "discount": 0,
-      "sgst": 6.24,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 111,
+          "product_id": 34,
           "qty": 1
         }
       ],
@@ -4126,13 +4126,13 @@
       "issue_date": "05-Jun-2018",
       "expiry_date": "03-Feb-2018",
       "customer_id": 112,
-      "grand_total": 4.2,
+      "grand_total": 888,
       "discount": 0,
-      "sgst": 5.33,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 112,
+          "product_id": 35,
           "qty": 1
         }
       ],
@@ -4144,13 +4144,13 @@
       "issue_date": "12-Nov-2018",
       "expiry_date": "29-Dec-2018",
       "customer_id": 113,
-      "grand_total": 8.7,
+      "grand_total": 206,
       "discount": 0,
-      "sgst": 7.86,
+      "sgst": 0,
       "cgst": 0,
-      "product_id": 113,
       "products": [
         {
+          "product_id": 36,
           "qty": 1
         }
       ],
@@ -4162,13 +4162,13 @@
       "issue_date": "17-Feb-2017",
       "expiry_date": "03-Mar-2017",
       "customer_id": 114,
-      "grand_total": 5.9,
+      "grand_total": 57,
       "discount": 0,
-      "sgst": 3.59,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 114,
+          "product_id": 37,
           "qty": 1
         }
       ],
@@ -4179,14 +4179,14 @@
       "quotation_number": "QT-10115",
       "issue_date": "30-Oct-2017",
       "expiry_date": "16-Nov-2017",
-      "customer_id": 115,
+      "customer_id": 112,
       "grand_total": 9.3,
       "discount": 0,
-      "sgst": 6.38,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 115,
+          "product_id": 38,
           "qty": 1
         }
       ],
@@ -4198,13 +4198,13 @@
       "issue_date": "27-Jun-2017",
       "expiry_date": "26-Feb-2017",
       "customer_id": 116,
-      "grand_total": 7.3,
+      "grand_total": 161,
       "discount": 0,
-      "sgst": 7.26,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 116,
+          "product_id": 39,
           "qty": 1
         }
       ],
@@ -4216,13 +4216,13 @@
       "issue_date": "09-Jul-2015",
       "expiry_date": "14-Aug-2015",
       "customer_id": 117,
-      "grand_total": 8.4,
+      "grand_total": 39,
       "discount": 0,
-      "sgst": 1.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 117,
+          "product_id": 40,
           "qty": 1
         }
       ],
@@ -4234,13 +4234,13 @@
       "issue_date": "03-May-2015",
       "expiry_date": "27-Jun-2015",
       "customer_id": 118,
-      "grand_total": 6.5,
+      "grand_total": 762,
       "discount": 0,
-      "sgst": 8.27,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 118,
+          "product_id": 41,
           "qty": 1
         }
       ],
@@ -4252,13 +4252,13 @@
       "issue_date": "22-Jul-2016",
       "expiry_date": "22-Aug-2016",
       "customer_id": 119,
-      "grand_total": 9.7,
+      "grand_total": 889,
       "discount": 0,
-      "sgst": 6.61,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 119,
+          "product_id": 42,
           "qty": 1
         }
       ],
@@ -4270,13 +4270,13 @@
       "issue_date": "16-Oct-2014",
       "expiry_date": "13-Nov-2014",
       "customer_id": 120,
-      "grand_total": 7,
+      "grand_total": 315,
       "discount": 0,
-      "sgst": 9.51,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 120,
+          "product_id": 43,
           "qty": 1
         }
       ],
@@ -4288,13 +4288,13 @@
       "issue_date": "14-Apr-2017",
       "expiry_date": "26-May-2017",
       "customer_id": 121,
-      "grand_total": 8.5,
+      "grand_total": 332,
       "discount": 0,
-      "sgst": 6.71,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 121,
+          "product_id": 44,
           "qty": 1
         }
       ],
@@ -4306,13 +4306,13 @@
       "issue_date": "25-Mar-2016",
       "expiry_date": "05-Apr-2016",
       "customer_id": 122,
-      "grand_total": 8,
+      "grand_total": 73,
       "discount": 0,
-      "sgst": 7.25,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 122,
+          "product_id": 45,
           "qty": 1
         }
       ],
@@ -4324,13 +4324,13 @@
       "issue_date": "28-May-2017",
       "expiry_date": "04-Jun-2017",
       "customer_id": 123,
-      "grand_total": 4.4,
+      "grand_total": 190,
       "discount": 0,
-      "sgst": 7.83,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 123,
+          "product_id": 46,
           "qty": 1
         }
       ],
@@ -4342,13 +4342,13 @@
       "issue_date": "18-Apr-2018",
       "expiry_date": "25-May-2018",
       "customer_id": 124,
-      "grand_total": 5.2,
+      "grand_total": 351,
       "discount": 0,
-      "sgst": 0.7,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 124,
+          "product_id": 47,
           "qty": 1
         }
       ],
@@ -4360,13 +4360,13 @@
       "issue_date": "26-Feb-2015",
       "expiry_date": "25-Mar-2015",
       "customer_id": 125,
-      "grand_total": 4.3,
+      "grand_total": 450,
       "discount": 0,
-      "sgst": 3.9,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 125,
+          "product_id": 48,
           "qty": 1
         }
       ],
@@ -4378,13 +4378,13 @@
       "issue_date": "03-Jan-2015",
       "expiry_date": "15-Feb-2015",
       "customer_id": 126,
-      "grand_total": 4.8,
+      "grand_total": 434,
       "discount": 0,
-      "sgst": 1.38,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 126,
+          "product_id": 49,
           "qty": 1
         }
       ],
@@ -4396,13 +4396,13 @@
       "issue_date": "21-May-2018",
       "expiry_date": "18-Jun-2018",
       "customer_id": 127,
-      "grand_total": 5.8,
+      "grand_total": 115,
       "discount": 0,
-      "sgst": 5.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 127,
+          "product_id": 50,
           "qty": 1
         }
       ],
@@ -4414,13 +4414,13 @@
       "issue_date": "30-Apr-2014",
       "expiry_date": "29-May-2014",
       "customer_id": 128,
-      "grand_total": 8.2,
+      "grand_total": 733,
       "discount": 0,
-      "sgst": 8.33,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 128,
+          "product_id": 100,
           "qty": 1
         }
       ],
@@ -4432,13 +4432,13 @@
       "issue_date": "07-Aug-2016",
       "expiry_date": "18-Sep-2016",
       "customer_id": 129,
-      "grand_total": 8.6,
+      "grand_total": 330,
       "discount": 0,
-      "sgst": 9.61,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 129,
+          "product_id": 99,
           "qty": 1
         }
       ],
@@ -4450,13 +4450,13 @@
       "issue_date": "30-Nov-2014",
       "expiry_date": "26-Dec-2014",
       "customer_id": 130,
-      "grand_total": 4.8,
+      "grand_total": 728,
       "discount": 0,
-      "sgst": 6.4,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 130,
+          "product_id": 98,
           "qty": 1
         }
       ],
@@ -4468,13 +4468,13 @@
       "issue_date": "03-Dec-2015",
       "expiry_date": "11-Jan-2016",
       "customer_id": 131,
-      "grand_total": 6.7,
+      "grand_total": 172,
       "discount": 0,
-      "sgst": 1.46,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 131,
+          "product_id": 96,
           "qty": 1
         }
       ],
@@ -4486,13 +4486,13 @@
       "issue_date": "15-Jan-2017",
       "expiry_date": "08-Feb-2017",
       "customer_id": 132,
-      "grand_total": 5.5,
+      "grand_total": 14,
       "discount": 0,
-      "sgst": 8.55,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 132,
+          "product_id": 95,
           "qty": 1
         }
       ],
@@ -4504,13 +4504,13 @@
       "issue_date": "09-May-2018",
       "expiry_date": "11-Jun-2018",
       "customer_id": 133,
-      "grand_total": 9.8,
+      "grand_total": 41,
       "discount": 0,
-      "sgst": 7.29,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 133,
+          "product_id": 94,
           "qty": 1
         }
       ],
@@ -4522,13 +4522,13 @@
       "issue_date": "07-Sep-2015",
       "expiry_date": "04-Oct-2015",
       "customer_id": 134,
-      "grand_total": 4.9,
+      "grand_total": 755,
       "discount": 0,
-      "sgst": 0.52,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 134,
+          "product_id": 93,
           "qty": 1
         }
       ],
@@ -4540,13 +4540,13 @@
       "issue_date": "07-Sep-2016",
       "expiry_date": "12-Oct-2016",
       "customer_id": 135,
-      "grand_total": 9,
+      "grand_total": 447,
       "discount": 0,
-      "sgst": 0.51,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 135,
+          "product_id": 92,
           "qty": 1
         }
       ],
@@ -4558,13 +4558,13 @@
       "issue_date": "11-Jun-2016",
       "expiry_date": "22-Jul-2016",
       "customer_id": 136,
-      "grand_total": 6.6,
+      "grand_total": 460,
       "discount": 0,
-      "sgst": 0.01,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 136,
+          "product_id": 91,
           "qty": 1
         }
       ],
@@ -4576,13 +4576,13 @@
       "issue_date": "21-Jul-2018",
       "expiry_date": "30-Jul-2018",
       "customer_id": 137,
-      "grand_total": 8.8,
+      "grand_total": 468,
       "discount": 0,
-      "sgst": 4.36,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 137,
+          "product_id": 90,
           "qty": 1
         }
       ],
@@ -4594,13 +4594,13 @@
       "issue_date": "07-Aug-2017",
       "expiry_date": "11-Sep-2017",
       "customer_id": 138,
-      "grand_total": 8.1,
+      "grand_total": 160,
       "discount": 0,
-      "sgst": 2.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 138,
+          "product_id": 88,
           "qty": 1
         }
       ],
@@ -4612,13 +4612,13 @@
       "issue_date": "24-Apr-2018",
       "expiry_date": "07-May-2018",
       "customer_id": 139,
-      "grand_total": 9.7,
+      "grand_total": 741,
       "discount": 0,
-      "sgst": 9.07,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 139,
+          "product_id": 87,
           "qty": 1
         }
       ],
@@ -4630,13 +4630,13 @@
       "issue_date": "04-Jun-2014",
       "expiry_date": "20-Jul-2014",
       "customer_id": 140,
-      "grand_total": 5.3,
+      "grand_total": 895,
       "discount": 0,
-      "sgst": 9.8,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 140,
+          "product_id": 86,
           "qty": 1
         }
       ],
@@ -4648,13 +4648,13 @@
       "issue_date": "09-Oct-2018",
       "expiry_date": "29-Nov-2018",
       "customer_id": 141,
-      "grand_total": 8.5,
+      "grand_total": 912,
       "discount": 0,
-      "sgst": 3.23,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 141,
+          "product_id": 85,
           "qty": 1
         }
       ],
@@ -4666,13 +4666,13 @@
       "issue_date": "24-Jun-2018",
       "expiry_date": "09-Jul-2018",
       "customer_id": 142,
-      "grand_total": 6.5,
+      "grand_total": 907,
       "discount": 0,
-      "sgst": 1.55,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 142,
+          "product_id": 84,
           "qty": 1
         }
       ],
@@ -4684,13 +4684,13 @@
       "issue_date": "03-Dec-2014",
       "expiry_date": "26-Jan-2015",
       "customer_id": 143,
-      "grand_total": 4.1,
+      "grand_total": 273,
       "discount": 0,
-      "sgst": 3.18,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 143,
+          "product_id": 83,
           "qty": 1
         }
       ],
@@ -4702,13 +4702,13 @@
       "issue_date": "07-Jan-2018",
       "expiry_date": "22-Feb-2018",
       "customer_id": 144,
-      "grand_total": 8.7,
+      "grand_total": 158,
       "discount": 0,
-      "sgst": 5.31,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 144,
+          "product_id": 82,
           "qty": 1
         }
       ],
@@ -4720,13 +4720,13 @@
       "issue_date": "20-Nov-2017",
       "expiry_date": "14-Dec-2017",
       "customer_id": 145,
-      "grand_total": 5.2,
+      "grand_total": 153,
       "discount": 0,
-      "sgst": 6.66,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 145,
+          "product_id": 81,
           "qty": 1
         }
       ],
@@ -4738,13 +4738,13 @@
       "issue_date": "16-Jun-2014",
       "expiry_date": "21-Aug-2014",
       "customer_id": 146,
-      "grand_total": 9.7,
+      "grand_total": 153,
       "discount": 0,
-      "sgst": 3.32,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 146,
+          "product_id": 81,
           "qty": 1
         }
       ],
@@ -4756,13 +4756,13 @@
       "issue_date": "18-Sep-2018",
       "expiry_date": "14-Oct-2018",
       "customer_id": 147,
-      "grand_total": 9.1,
+      "grand_total": 153,
       "discount": 0,
-      "sgst": 3.43,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 147,
+          "product_id": 81,
           "qty": 1
         }
       ],
@@ -4774,13 +4774,13 @@
       "issue_date": "22-Feb-2015",
       "expiry_date": "04-Mar-2015",
       "customer_id": 148,
-      "grand_total": 5,
+      "grand_total": 24,
       "discount": 0,
-      "sgst": 9.37,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 148,
+          "product_id": 56,
           "qty": 1
         }
       ],
@@ -4792,13 +4792,13 @@
       "issue_date": "05-Jun-2016",
       "expiry_date": "08-Jul-2016",
       "customer_id": 149,
-      "grand_total": 8.5,
+      "grand_total": 572,
       "discount": 0,
-      "sgst": 7.06,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 149,
+          "product_id": 59,
           "qty": 1
         }
       ],
@@ -4810,20 +4810,17 @@
       "issue_date": "06-Feb-2017",
       "expiry_date": "02-Mar-2017",
       "customer_id": 150,
-      "grand_total": 8.6,
+      "grand_total": 186,
       "discount": 0,
-      "sgst": 8.37,
+      "sgst": 0,
       "cgst": 0,
       "products": [
         {
-          "product_id": 150,
+          "product_id": 14,
           "qty": 1
         }
       ],
       "status": "Draft"
-    },
-    {
-      "id": 151
     }
   ],
   "invoice": [

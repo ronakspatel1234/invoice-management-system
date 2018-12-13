@@ -22,5 +22,4 @@ export class Customers {
   email: string;
   mobileNumber: number;
   address: string;
-
 }
