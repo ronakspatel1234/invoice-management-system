@@ -5,19 +5,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
+import { Customers } from '../customers/customers.model';
+import { Quotation } from './quotations.model';
 
 @Injectable()
 export class QuotationService {
   // URL To webAPI
-  readonly url = 'http://localhost:3000/quotation';
+  readonly url: string;
 
-  readonly urlCustomer = 'http://localhost:3000/customer';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.url = environment.baseUrl;
 
-  public getQoutation(): Observable<any> {
-    return this.http.get<any>(this.url);
   }
-  public getCustomer(): Observable<any> {
-    return this.http.get<any>(this.urlCustomer);
+/**
+ * @description use for get th qoutation list
+ */
+  public getQoutation(): Observable<Quotation[]> {
+    const url = this.url + '/quotation';
+    return this.http.get<Quotation[]>(url);
+  }
+  public getCustomer(): Observable<Customers[]> {
+    const url = this.url + '/customer';
+    return this.http.get<Customers[]>(url);
   }
 }
