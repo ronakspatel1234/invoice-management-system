@@ -3,6 +3,7 @@
  * @description - Create class for calculation.
  */
 import { Dashboard, Chart } from './dashboard.model';
+import { Customers } from '../customers/customers.model';
 
 export default class DashboardUtility {
     /**
@@ -73,6 +74,30 @@ export default class DashboardUtility {
         { name: 'Sent', value: sent }];
 
         return invoiceData;
+    }
+    static customerChart(customers): Chart[] {
+        const customerData: Chart[] = [];
+        const chart: Chart = new Chart();
+        customers.forEach(element => {
+
+        });
+        return customerData;
+    }
+    // create for last 10 invoice display.
+    static lastTenInvoices(invoices): any[] {
+        const lastTenRecord: any[] = [];
+        for (let index = invoices.length - 10; index < invoices.length; index++) {
+            lastTenRecord.push(invoices[index]);
+        }
+        return lastTenRecord;
+    }
+    // create for last 10 customer display.
+    static lastTenCustomers(customers): Customers[] {
+        const lastTenRecord: Customers[] = [];
+        for (let index = customers.length - 10; index < customers.length; index++) {
+            lastTenRecord.push(customers[index]);
+        }
+        return lastTenRecord;
     }
 }
 

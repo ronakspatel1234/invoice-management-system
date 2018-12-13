@@ -1,6 +1,6 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - Create for card status.
  */
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Card } from './card/card.model';

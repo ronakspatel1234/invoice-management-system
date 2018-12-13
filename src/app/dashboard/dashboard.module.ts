@@ -13,6 +13,7 @@ import { StatsGraphComponent } from './stats-graph/stats-graph.component';
 import { StatsTableComponent } from './stats-table/stats-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardService } from './dashboard.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { DashboardService } from './dashboard.service';
     DashboardRoutingModule,
     PieChartModule,
     LineChartModule,
-    BarChartModule
+    BarChartModule,
+    SharedModule
   ],
   declarations: [StatsCardComponent,
     CardComponent,

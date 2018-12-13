@@ -8,6 +8,8 @@ import { DashboardService } from '../dashboard.service';
 import { Customers } from '../../customers/customers.model';
 import util from '../dashboard.utility';
 import { Dashboard, Chart } from '../dashboard.model';
+import { Quotation } from '../../quotations/quotations.model';
+import { Payment } from '../../payment/payment.model';
 
 @Component({
   selector: 'ims-dashboard',
@@ -23,15 +25,20 @@ export class DashboardComponent implements OnInit {
    * @property totalQuotationsId store paid and unpaid quotation id type Dashboard.
    * @property totalInvoices store paid and unpaid invoices amount type Dashboard.
    * @property invoiceChart store invoice data for chars type Chart.
+   * @property lastTenInvoice store last ten invoice record.
+   * @property lastTenCustomer store last ten customer record.
    */
   public customers: Customers[];
   public invoices: any[];
-  public quotations: any[];
-  public payments: any[];
+  public quotations: Quotation[];
+  public payments: Payment[];
   public customersLength: number;
   public totalQuotationsId: Dashboard;
   public totalInvoices: Dashboard;
   public invoiceChart: Chart[];
+  public customerChart: Chart[];
+  public lastTenInvoice: any[];
+  public lastTenCustomer: Customers[];
 
 
   constructor(private service: DashboardService) {
@@ -41,6 +48,9 @@ export class DashboardComponent implements OnInit {
     this.totalQuotationsId = new Dashboard();
     this.totalInvoices = new Dashboard();
     this.invoiceChart = [];
+    this.customerChart = [];
+    this.lastTenInvoice = [];
+    this.lastTenCustomer = [];
     this.customersLength = 0;
 
   }
@@ -59,9 +69,10 @@ export class DashboardComponent implements OnInit {
   private getCustomers(): void {
     this.service.getCustomers().subscribe(
       (customers: Customers[]) => {
-        this.customers = customers,
-          this.customersLength = customers.length;
-
+        this.customers = customers;
+        this.customersLength = customers.length;
+        this.customerChart = util.customerChart(customers);
+        this.lastTenCustomer = util.lastTenCustomers(customers);
 
       });
   }
@@ -71,11 +82,12 @@ export class DashboardComponent implements OnInit {
   private getInvoices(): void {
     this.service.getInvoices().subscribe(
       (invoices: any[]) => {
-        this.invoices = invoices,
-          // Call utility class function and store data.
-          this.totalQuotationsId = util.quotationIdTotal(invoices);
+        this.invoices = invoices;
+        // Call utility class function and store data.
+        this.totalQuotationsId = util.quotationIdTotal(invoices);
         // Call utility class function and store data.
         this.invoiceChart = util.invoicesChart(invoices);
+        this.lastTenInvoice = util.lastTenInvoices(invoices);
       });
   }
   /**
@@ -83,7 +95,7 @@ export class DashboardComponent implements OnInit {
    */
   private getQuotations(): void {
     this.service.getQuotations().subscribe(
-      (quotations: any[]) => {
+      (quotations: Quotation[]) => {
         this.quotations = quotations,
           // Call utility class function and store data.
           this.totalInvoices = util.invoiceTotal(quotations, this.totalQuotationsId);
@@ -98,7 +110,7 @@ export class DashboardComponent implements OnInit {
    */
   private getPayments(): void {
     this.service.getPayments().subscribe(
-      (payments: any[]) => {
+      (payments: Payment[]) => {
         this.payments = payments;
       });
   }

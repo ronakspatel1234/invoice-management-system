@@ -1,8 +1,55 @@
 <div>
+  
+  <ngx-charts-pie-chart 
+  [view]="[600, 600]" 
+  [results]="invoiceChart" 
+  [labels]="true" 
+  [legend]="true" 
+  [legendTitle]="InvoiceStatus"
+  [explodeSlices]="true" 
+  [doughnut]="true" 
+  [arcWidth]="0.40" 
+  [gradient]="true" 
+  [tooltipDisabled]="false"></ngx-charts-pie-chart>
   <h5>Invoice Status</h5>
-  <ngx-charts-pie-chart [view]="[500, 500]" [results]="invoiceChart" [labels]="true" [legend]="true" [legendTitle]="InvoiceStatus"
-    [explodeSlices]="true" [doughnut]="true" [arcWidth]="0.40" [gradient]="true" [tooltipDisabled]="false"></ngx-charts-pie-chart>
+</div>
+<div>
+  <ngx-charts-bar-vertical
+  [view]="[600, 600]"
+  [results]="paymentChart"
+  [xAxis]="true"
+  [yAxis]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxisLabel]="name"
+  [yAxisLabel]="month"
+  [yScaleMax]="100"
+  [yScaleMin]="100"
+  ></ngx-charts-bar-vertical>
+  <!-- <h5>customer Visit</h5> -->
 
 </div>
-<ngx-charts-bar-vertical [view]="[300, 300]" [results]="paymentChart"></ngx-charts-bar-vertical>
-<ngx-charts-line-chart [view]="[300, 300]" [results]="customerChart"></ngx-charts-line-chart>
+<ngx-charts-line-chart 
+[view]="[600, 600]" 
+[results]="customerChart"
+[rangeFillOpacity]="0.15"
+[legend]="true"
+[legendTitle]="Customers"
+
+[xAxis]="true"
+[yAxis]="true"
+[roundDomains]="true"
+[showXAxisLabel]="true"
+[showYAxisLabel]="true"
+[xAxisLabel]="name"
+[yAxisLabel]="value"
+[xAxisTicks]=""
+[yAxisTicks]=""
+[timeline]="true"
+[autoScale]="true"
+[gradient]="true"
+[showRefLines]="true"
+[xScaleMin]=""
+[xScaleMax]=""
+[yScaleMin]="1000"
+[yScaleMax]="10000"></ngx-charts-line-chart>
