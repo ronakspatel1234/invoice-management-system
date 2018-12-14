@@ -2,11 +2,11 @@
   <h4 class="mb-3">Dashboard</h4>
   <ims-stats-card [customers]="customersLength" [dashboard]="totalInvoices"></ims-stats-card>
 </div>
-<ims-stats-table [lastTenCustomer]="lastTenCustomer" [lastTenInvoice]="lastTenInvoice"></ims-stats-table>
+<ims-stats-graph [invoiceChart]="invoiceChart"></ims-stats-graph>
 <div class="card border-0">
   <div class="card-body">
-    <ims-stats-graph [invoiceChart]="invoiceChart"></ims-stats-graph>
   </div>
+  <ims-stats-table [lastTenCustomer]="lastTenCustomer" [lastTenInvoice]="lastTenInvoice"></ims-stats-table>
 </div>
 
 

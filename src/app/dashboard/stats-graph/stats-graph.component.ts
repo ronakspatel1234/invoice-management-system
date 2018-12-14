@@ -2,122 +2,78 @@
  * @author - Ronak Patel.
  * @description -
  */
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
-import { Key } from 'protractor';
 
 @Component({
   selector: 'ims-stats-graph',
   templateUrl: './stats-graph.component.html',
   styleUrls: ['./stats-graph.component.scss']
 })
-export class StatsGraphComponent implements OnInit, OnChanges {
+export class StatsGraphComponent implements OnInit {
   @Input() public invoiceChart;
-  @Input() public paymentChart;
-  @Input() public customerChart;
+  public paymentChart;
+  public customerChart;
+  public customerData: any;
+  public paymentData: any;
+  public invoiceData: any;
+  public invoiceMerge: any = [];
+  public isBoolean: boolean;
   constructor(private service: DashboardService) {
-    this.paymentChart = [
-      {
-        "name": "jan",
-        "value": 40
-      },
-      {
-        "name": "fab ",
-        "value": 49
-      },
-      {
-        "name": "France",
-        "value": 36
-      },
-      {
-        "name": "United Kingdom",
-        "value": 36
-      },
-      {
-        "name": "Spain",
-        "value": 33
-      },
-      {
-        "name": "Italy",
-        "value": 35
-      },
-      {
-        "name": "Italy",
-        "value": 35
-      },
-      {
-        "name": "lakhan",
-        "value": 35
-      },
-      {
-        "name": "mayank",
-        "value": 35
-      },
-      {
-        "name": "ronak",
-        "value": 35
-      }
-    ];
-    this.customerChart = [
-      {
-        "name": "Timor-Leste",
-        "series": [
-          {
-            "value": 6623,
-            "name": "2016-09-18T11:40:07.381Z"
-          },
-          {
-            "value": 5127,
-            "name": "2016-09-15T00:31:08.848Z"
-          },
-          {
-            "value": 4676,
-            "name": "2016-09-19T09:58:54.433Z"
-          },
-          {
-            "value": 3679,
-            "name": "2016-09-14T20:53:04.102Z"
-          },
-          {
-            "value": 3698,
-            "name": "2016-09-13T21:04:26.447Z"
-          }
-        ]
-      }
-    ];
+    this.customerData = [];
+    this.paymentData = [];
+    this.isBoolean = false;
   }
-  public data = []
   ngOnInit() {
     this.mothWiseData();
+    this.getpayment();
   }
-  mothWiseData(): void {
-    const month = ['-Jan-', '-Feb-', '-Mar-', '-Apr-', '-May-', '-Jun-', '-Jul-', '-Aug-', '-Sep-', '-Oct-', '-Nov-', '-Dec-'];
 
-    month.forEach(element => {
-      this.service.getCustomerByMonth(element).subscribe(data => {
-        this.data.push({ 'name': element, 'value': data.length });
-        
+  public mothWiseData(): void {
+    const months = ['-Jan-', '-Feb-', '-Mar-', '-Apr-', '-May-', '-Jun-', '-Jul-', '-Aug-', '-Sep-', '-Oct-', '-Nov-', '-Dec-'];
+    months.forEach(month => {
+      this.service.getCustomerByMonth(month).subscribe(customer => {
+        this.customerData.push({ 'name': month, 'value': customer.length, 'customer': customer });
+        this.service.getPaymentByMonth(month).subscribe(payment => {
+          this.paymentData.push({ 'name': month, 'value': payment });
+        });
+      });
+    });
+  }
+
+  public getpayment(): void {
+    const status = 'Paid';
+    this.service.getInvoiceByStatus(status).subscribe(invoices => {
+      invoices.forEach(invoice => {
+        this.service.getQuotationsByID(invoice.quotation_id).subscribe((quotation: any) => {
+          this.invoiceMerge.push({ invoice: invoice.id, quotation: quotation.grand_total });
+        });
       });
 
-    })
-
-
-
-
+    });
   }
-  ngOnChanges() {
-    // console.log(this.paymentChart);
-    // this.paymentChart = this.data;
 
-    console.log(this.data);
-
-
-  }
-  change() {
-    this.paymentChart = this.data;
+  public change() {
+    this.isBoolean = !this.isBoolean;
+    const payment = this.paymentData;
+    const quotations = this.invoiceMerge;
+    this.paymentChart = [];
     this.customerChart = [{
-      'name': 'Mozambique', 'series': this.data
+      'name': 'Customer Visit', 'series': this.customerData
     }
     ];
+    payment.forEach(element => {
+      let value = 0;
+      element.value.forEach(invoice => {
+        for (let index = 0; index < quotations.length; index++) {
+          if (invoice.invoice_id === quotations[index].invoice) {
+            value = value + quotations[index].quotation;
+            break;
+          }
+        }
+      });
+      this.paymentChart.push({ 'name': element.name, 'value': value });
+    });
+
   }
 }

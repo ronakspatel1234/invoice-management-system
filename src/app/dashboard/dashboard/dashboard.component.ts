@@ -71,7 +71,6 @@ export class DashboardComponent implements OnInit {
       (customers: Customers[]) => {
         this.customers = customers;
         this.customersLength = customers.length;
-        this.customerChart = util.customerChart(customers);
         this.lastTenCustomer = util.lastTenCustomers(customers);
 
       });

@@ -35,7 +35,9 @@ export default class DashboardUtility {
     static invoiceTotal(quotations, quotationId): Dashboard {
         const dashboard: Dashboard = new Dashboard();
         dashboard.paidQuotationsId = quotationId.paidQuotationsId;
-        dashboard.UnpaidQuotationsId = quotationId.UnpaidQuotationsId.length;
+        if (dashboard.UnpaidQuotationsId !== []) {
+            dashboard.UnpaidQuotationsId = quotationId.UnpaidQuotationsId.length;
+        }
         dashboard.totalPaidInvoices = 0;
         dashboard.totalUnpaidInvoices = 0;
         // collect total amount and store in totalPaidInvoices and totalUnpaidInvoices.
@@ -75,14 +77,8 @@ export default class DashboardUtility {
 
         return invoiceData;
     }
-    static customerChart(customers): Chart[] {
-        const customerData: Chart[] = [];
-        const chart: Chart = new Chart();
-        customers.forEach(element => {
 
-        });
-        return customerData;
-    }
+
     // create for last 10 invoice display.
     static lastTenInvoices(invoices): any[] {
         const lastTenRecord: any[] = [];
