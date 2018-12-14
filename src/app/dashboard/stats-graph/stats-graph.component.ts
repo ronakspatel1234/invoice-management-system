@@ -2,74 +2,122 @@
  * @author - Ronak Patel.
  * @description -
  */
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { DashboardService } from '../dashboard.service';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'ims-stats-graph',
   templateUrl: './stats-graph.component.html',
   styleUrls: ['./stats-graph.component.scss']
 })
-export class StatsGraphComponent implements OnInit {
+export class StatsGraphComponent implements OnInit, OnChanges {
   @Input() public invoiceChart;
   @Input() public paymentChart;
   @Input() public customerChart;
-  constructor() {
+  constructor(private service: DashboardService) {
     this.paymentChart = [
       {
-        'name': 'Germany',
-        'value': 40632
+        "name": "jan",
+        "value": 40
       },
       {
-        'name': 'United States',
-        'value': 49737
+        "name": "fab ",
+        "value": 49
       },
       {
-        'name': 'France',
-        'value': 36745
+        "name": "France",
+        "value": 36
       },
       {
-        'name': 'United Kingdom',
-        'value': 36240
+        "name": "United Kingdom",
+        "value": 36
       },
       {
-        'name': 'Spain',
-        'value': 33000
+        "name": "Spain",
+        "value": 33
       },
       {
-        'name': 'Italy',
-        'value': 35800
+        "name": "Italy",
+        "value": 35
+      },
+      {
+        "name": "Italy",
+        "value": 35
+      },
+      {
+        "name": "lakhan",
+        "value": 35
+      },
+      {
+        "name": "mayank",
+        "value": 35
+      },
+      {
+        "name": "ronak",
+        "value": 35
       }
     ];
     this.customerChart = [
       {
-        'name': 'Mozambique',
-        'series': [
+        "name": "Timor-Leste",
+        "series": [
           {
-            'value': 5797,
-            'name': '2016-09-17'
+            "value": 6623,
+            "name": "2016-09-18T11:40:07.381Z"
           },
           {
-            'value': 3605,
-            'name': '2016-09-16'
+            "value": 5127,
+            "name": "2016-09-15T00:31:08.848Z"
           },
           {
-            'value': 5526,
-            'name': '2016-09-22'
+            "value": 4676,
+            "name": "2016-09-19T09:58:54.433Z"
           },
           {
-            'value': 4653,
-            'name': '2016-09-1'
+            "value": 3679,
+            "name": "2016-09-14T20:53:04.102Z"
           },
           {
-            'value': 3126,
-            'name': '2016-09-24'
+            "value": 3698,
+            "name": "2016-09-13T21:04:26.447Z"
           }
         ]
       }
     ];
   }
-
+  public data = []
   ngOnInit() {
+    this.mothWiseData();
   }
+  mothWiseData(): void {
+    const month = ['-Jan-', '-Feb-', '-Mar-', '-Apr-', '-May-', '-Jun-', '-Jul-', '-Aug-', '-Sep-', '-Oct-', '-Nov-', '-Dec-'];
 
+    month.forEach(element => {
+      this.service.getCustomerByMonth(element).subscribe(data => {
+        this.data.push({ 'name': element, 'value': data.length });
+        
+      });
+
+    })
+
+
+
+
+  }
+  ngOnChanges() {
+    // console.log(this.paymentChart);
+    // this.paymentChart = this.data;
+
+    console.log(this.data);
+
+
+  }
+  change() {
+    this.paymentChart = this.data;
+    this.customerChart = [{
+      'name': 'Mozambique', 'series': this.data
+    }
+    ];
+  }
 }

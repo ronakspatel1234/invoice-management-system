@@ -23,8 +23,8 @@
   [showYAxisLabel]="true"
   [xAxisLabel]="name"
   [yAxisLabel]="month"
-  [yScaleMax]="100"
-  [yScaleMin]="100"
+  [yScaleMax]="20"
+  [yScaleMin]="0"
   ></ngx-charts-bar-vertical>
   <!-- <h5>customer Visit</h5> -->
 
@@ -51,5 +51,6 @@
 [showRefLines]="true"
 [xScaleMin]=""
 [xScaleMax]=""
-[yScaleMin]="1000"
-[yScaleMax]="10000"></ngx-charts-line-chart>
+[yScaleMin]="0"
+[yScaleMax]="20"></ngx-charts-line-chart>
+<button (click)="change()">Customer</button>

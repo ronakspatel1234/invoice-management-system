@@ -30,5 +30,9 @@ export class DashboardService {
     return this.http.get<Payment[]>(url);
 
   }
+  public getCustomerByMonth(month: string): Observable<Customers[]> {
+    const url = this.baseUrl + '/customer';
+    return this.http.get<Customers[]>(url, {params:{q:month}});
+  }
 
 }
