@@ -1,3 +1,5 @@
+import { Customers } from './../customers.model';
+import { CustomersService } from './../customers.service';
 /**
  * @author Vaibhavi Prajapati
  */
@@ -10,10 +12,12 @@ import * as html2canvas from "html2canvas"
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-  key=['id','number','person','company','group','createdAt']
-  constructor() { }
+  key=['id','number','person','company','group','createdAt'];
+  public customers :Customers[];
+  constructor(private customersService :CustomersService) { }
 
   ngOnInit() {
+    this.getCustomers();
   }
  public sort(data)
  {
@@ -35,6 +39,11 @@ export class ViewComponent implements OnInit {
     });
 
  }
-
+  getCustomers()
+  {
+    this.customersService.getCustomer().
+    subscribe(data=>{this.customers = data;});
+    console.log("aaaaa");
+  }
 
 }

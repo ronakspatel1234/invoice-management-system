@@ -54,13 +54,19 @@
             </span>
          </span>
         </div>
+
+        <div class="form-group col-md-4 col-sm-6">
+          <input type="text" class="form-control" id="created_at" formControlName="created_at">
+        </div>
       </div>
       <div class="row border-bottom mt-2">
         <div class="form-group col-md-4 col-sm-6">
           <label for="billing-address"> Address</label>
           <textarea rows="4" class="form-control" formControlName="address"></textarea>
         </div>
-
+        <div class="form-group col-md-4 col-sm-6">
+            <input type="hidden" class="form-control" id="customer_number" formControlName="customer_number">
+          </div>
       </div>
       <div class="row border-bottom mt-2">
         <div class="form-group col-md-4 col-sm-6">

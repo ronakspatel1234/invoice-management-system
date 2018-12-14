@@ -11,8 +11,14 @@ export class CustomersService {
    public customerURL="http://localhost:3000/customer";
 
   constructor(private http:HttpClient) { }
-   addCustomer(customer:Customers):Observable<any>
+   public addCustomer(customer:Customers):Observable<any>
   {
-      return this.http.post<any>(this.customerURL,customer)
+
+      return this.http.post<any>(this.customerURL,customer);
   }
+  getCustomer():Observable<Customers[]>
+  {
+      return this.http.get<Customers[]>(this.customerURL);
+  }
+
 }
