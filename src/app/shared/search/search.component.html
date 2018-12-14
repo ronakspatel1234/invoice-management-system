@@ -1,7 +1,7 @@
 
 <form>
     <div class="input-group mb-sm-0">
-      <input type="text" class="form-control" placeholder="Search..."  [(ngModel)]="data" name='data'/>
+      <input type="text" class="form-control" placeholder="Search..." #data/>
       <div class="input-group-append">
         <button (click)="search(data.value)" class="btn btn-primary"><span class="fa fa-search"></span></button>
       </div>

@@ -16,7 +16,7 @@ export class ProductsService {
    * 
    * add products to server using observable
    */
-  public addProduct(product):Observable<Products>
+  public addProduct(product:Products):Observable<Products>
   {
     return this.http.post<Products>(this.url,product);
   }

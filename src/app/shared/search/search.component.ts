@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  data:any;
 
   /**
    * emits an event called searchClick
@@ -27,7 +26,7 @@ export class SearchComponent implements OnInit {
   public search(data) {
     this.searchClick.emit();
     
-   console.log(this.data);
+   console.log(data);
    
 
   }

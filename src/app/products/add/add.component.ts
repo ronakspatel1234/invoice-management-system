@@ -64,9 +64,11 @@ export class AddComponent implements OnInit {
   public loadForm(): void {
     this.productForm = this.fb.group(
       {
+        product_number:["",Validators.required],
         description: ["", Validators.required],
         uom: ["", Validators.required],
         price: ["", [Validators.required, Validators.pattern(this.numberRegEx)]],
+        date:["",Validators.required],
         image: ["", Validators.required],
         group: ["", Validators.required]
       }
@@ -80,17 +82,19 @@ export class AddComponent implements OnInit {
    */
 
 
-  public addProducts(product: Products): void {
+  public addProducts(product): void {
+   
     product.image = this.path + this.fileName;
-
     this.productService.addProduct(product).subscribe(
       () => {
+       
         this.productForm.value, console.log(this.productForm.value)
-
+        this.router.navigate(['product/view']);
       }
     )
   }
 
+ 
   /**
    * take the snapshot of id and get data of perticular product
    * and give it to service
@@ -154,11 +158,16 @@ export class AddComponent implements OnInit {
 
   }
 
-  // open(add) {
-  //   console.log("jhgk", add);
-
+  // cancel()
+  // {
+  //   if(this.productForm.value)
+  //   {
+  //     this.productForm.reset
+  //   }
+  //   else
   // }
 
+ 
 
 
 }
