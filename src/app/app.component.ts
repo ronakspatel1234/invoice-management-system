@@ -1,6 +1,6 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - Create class for root component.
  */
 import { Component } from '@angular/core';
 

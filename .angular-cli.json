@@ -21,9 +21,10 @@
       "prefix": "ims",
       "styles": [
         "styles.scss"
-        
+
       ],
-      "scripts": [ 
+      "scripts": [
+        "assets/js/jquery.min.js", 
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "assets/js/popper.min.js",

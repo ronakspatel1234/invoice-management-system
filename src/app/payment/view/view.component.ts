@@ -3,6 +3,8 @@
  * @description - This component file are display the payment data.
  */
 import { Component, OnInit } from '@angular/core';
+import { PaymentService } from '../payment.service';
+import { Payment } from '../payment.model';
 // -------------------------------------- //
 
 @Component({
@@ -12,9 +14,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private service: PaymentService) {
+
+  }
 
   ngOnInit() {
+
   }
+
 
 }
