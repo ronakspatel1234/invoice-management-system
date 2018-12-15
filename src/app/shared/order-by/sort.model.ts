@@ -1,9 +1,8 @@
-export class Sort
-{
+export class Sort {
   value: string;
-  mode: string
+  mode: string;
 }
-export enum Mode{
+export enum Mode {
   ASC = 'asc',
-  DESC= 'desc'
+  DESC = 'desc'
 }
