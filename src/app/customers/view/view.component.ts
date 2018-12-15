@@ -26,6 +26,10 @@ export class ViewComponent implements OnInit {
     name: ['ID', 'Number', 'Person', 'Company', 'Group', 'CreatedAt'],
     key: ['id', 'customer_number', 'name', 'company', 'group', 'created_at']
   };
+  public totalItems = '';
+  public page = '';
+  public pageSize = '';
+
   public customers: Customers[];
   public map;
   constructor(
@@ -39,11 +43,9 @@ export class ViewComponent implements OnInit {
   actionClick(id, id1) {
     this.router.navigate(['customer/add']);
   }
-  public sort(sort: Sort) {
-
-  }
+  public sort(sort: Sort) {}
   public search(data) {
-   console.log(data);
+    console.log(data);
   }
   /**this method generate pdf file
    * in data variable contenttoConvert contain id of table with we display in pdf
@@ -66,7 +68,12 @@ export class ViewComponent implements OnInit {
     this.customersService.getCustomer().subscribe(customer => {
       // this.customers = this.mapData(data);
       this.customers = customer;
-
+    });
+  }
+  serch(data) {
+    this.customersService.searchData().subscribe(cust => {
+      this.customers = cust;
+      console.log(this.customers);
     });
   }
 

@@ -24,10 +24,9 @@ export class SearchComponent implements OnInit {
    * and pass it to parent component
    */
   public search(data) {
-    this.searchClick.emit();
-    
+    this.searchClick.emit(data);
    console.log(data);
-   
+
 
   }
 

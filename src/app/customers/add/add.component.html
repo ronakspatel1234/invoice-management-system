@@ -20,6 +20,12 @@
         <div class="form-group col-md-4 col-sm-6">
           <label for="company" class="d-flex">Company<small class="ml-auto">(optional)</small></label>
           <input type="text" class="form-control" id="company" formControlName="company">
+          <span *ngIf="(customerForm.get('company').touched || customerForm.get('company').dirty ) && customerForm.get('company').errors ">
+
+            <span *ngIf="customerForm.get('company').errors" >
+              only the alphabets,number and a space between the words should be allowed
+            </span>
+         </span>
         </div>
         <div class="form-group col-md-4 col-sm-6">
           <label for="group" class="d-flex">Group<a href="#group-modal" data-toggle="modal" class="ml-auto"><small>+New</small></a></label>
@@ -48,8 +54,8 @@
         <div class="form-group col-md-4 col-sm-6">
           <label for="mobile-number" class="d-flex">Mobile Number<small class="ml-auto">(optional)</small></label>
           <input type="text" class="form-control" id="mobile-number" formControlName="mobile_number">
-          <span *ngIf="(customerForm.get('mobileNumber').touched || customerForm.get('mobileNumber').dirty ) && customerForm.get('mobileNumber').errors ">
-            <span *ngIf="customerForm.get('mobileNumber').errors" >
+          <span *ngIf="(customerForm.get('mobile_number').touched || customerForm.get('mobile_number').dirty ) && customerForm.get('mobile_number').errors ">
+            <span *ngIf="customerForm.get('mobile_number').errors" >
               only 10 digit Number is allowed
             </span>
          </span>
@@ -80,7 +86,7 @@
       </div>
       <div class="row mt-3">
         <div class="col-12 text-right">
-          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-primary" [disabled]="!customerForm.valid">Save</button>
           <button class="btn btn-secondary">Cancel</button>
         </div>
       </div>
@@ -103,7 +109,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary" >Save</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

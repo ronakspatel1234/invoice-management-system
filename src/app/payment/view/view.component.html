@@ -38,7 +38,7 @@
     <div class="table-responsive border-bottom">
       <table class="table table-striped table-sm">
         <thead>
-          <tr> 
+          <tr>
             <th>Id</th>
             <th>Number</th>
             <th>Payment Date</th>
@@ -48,7 +48,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let payment of payments" routerLink="/payment/details" class="trCursor">
+          <!-- <tr *ngFor="let payment of payments" routerLink="/payment/details" class="trCursor">
             <td>{{payment.id}}</td>
             <td>{{payment.payment_number}}</td>
             <td>{{payment.date | date:'dd-MMM-yyyy'}}</td>
@@ -58,21 +58,21 @@
             <td align="center">
               <a href="#" class="text-danger" title="Delete"><span class="fa fa-times"></span></a>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
 
     <!--Start the shared component of pagination-->
-    <ims-pagination
+    <!-- <ims-pagination
     [total]="totalItems"
     [current]="page"
     [size]="pageSize"
     (pageChange)="goNextPrev($event)"
     (pageSizeChange)="goToPage($event)">
-    </ims-pagination>
+    </ims-pagination> -->
     <!--End the shared component of pagination-->
-    
+
   </div>
 </div>
  <!-- End-View-Payment -->

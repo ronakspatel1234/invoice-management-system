@@ -10,7 +10,7 @@ import { environment } from './../../environments/environment';
 
 @Injectable()
 export class CustomersService {
- /**URL for web API */
+  /**URL for web API */
   public customerURL = environment.baseUrl + '/customer';
 
   constructor(private http: HttpClient) {}
@@ -22,13 +22,16 @@ export class CustomersService {
   public addCustomer(customer: Customers): Observable<any> {
     return this.http.post<any>(this.customerURL, customer);
   }
-   /**
+  /**
    * @description this method get customer dada
    * its takes url and send to the server
    */
   getCustomer(): Observable<Customers[]> {
     return this.http.get<Customers[]>(this.customerURL);
   }
+  /**for searching data from table */
+  searchData(): Observable<Customers[]> {
 
-
+      return this.http.get<Customers[]>(this.customerURL, { params: { q: '/?=' } });
+  }
 }
