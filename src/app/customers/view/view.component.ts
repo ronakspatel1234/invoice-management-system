@@ -1,28 +1,33 @@
-import { Router } from '@angular/router';
-import { Customers } from './../customers.model';
-import { CustomersService } from './../customers.service';
 /**
  * @author Vaibhavi Prajapati
  */
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as jspdf from 'jspdf';
 import * as html2canvas from 'html2canvas';
+// --------------------------------------//
+import { Customers } from './../customers.model';
+import { CustomersService } from './../customers.service';
 import { Sort } from '../../shared/order-by/sort.model';
-import { forEach } from '@angular/router/src/utils/collection';
 @Component({
   selector: 'ims-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
+  /**key for table header which display in dropdown of order-by */
   key = ['id', 'number', 'person', 'company', 'group', 'created At'];
-  public customers: Customers[];
+
+  /**action for perform operation */
   public action = ['EDIT', 'DELETE'];
+
+  /**heading for table */
   public heading = {
     name: ['ID', 'Number', 'Person', 'Company', 'Group', 'CreatedAt'],
     key: ['id', 'customer_number', 'name', 'company', 'group', 'created_at']
   };
-  public  map;
+  public customers: Customers[];
+  public map;
   constructor(
     private customersService: CustomersService,
     private router: Router
@@ -37,10 +42,12 @@ export class ViewComponent implements OnInit {
   public sort(sort: Sort) {
     console.log('sorting......');
   }
+  /**this method generate pdf file
+   * in data variable contenttoConvert contain id of table with we display in pdf
+   */
   public export() {
-     const data = document.getElementById('contentToConvert');
+    const data = document.getElementById('contentToConvert');
     html2canvas(data).then(canvas => {
-      // Few necessary setting options
       const imgWidth = 208;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
@@ -51,11 +58,11 @@ export class ViewComponent implements OnInit {
       pdf.save('MYPdf.pdf'); // Generated PDF
     });
   }
+  /** this methos get all data from the server using service */
   getCustomers() {
-    this.customersService.getCustomer().subscribe(data => {
+    this.customersService.getCustomer().subscribe(customer => {
       // this.customers = this.mapData(data);
-      this.customers = data;
-      console.log(data);
+      this.customers = customer;
 
     });
   }

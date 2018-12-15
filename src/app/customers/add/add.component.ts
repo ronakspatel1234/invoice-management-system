@@ -1,12 +1,12 @@
-import { Router } from '@angular/router';
-import { Customers } from './../customers.model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatePipe } from '@angular/common';
-
 /**
  * @author Vaibhavi Prajapati
  */
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+// ------------------------------------------//
+import { Customers } from './../customers.model';
 import { CustomersService } from '../customers.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class AddComponent implements OnInit {
   public customerForm: FormGroup;
   public addCustomers: Customers[];
   public createdAt: any = new Date();
-  customer_number: any = 10001;
+
   constructor(
     private fb: FormBuilder,
     private customerService: CustomersService,

@@ -4,14 +4,14 @@ import { CustomersService } from './customers.service';
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // ------------------------------------------//
 import { ViewComponent } from './view/view.component';
 import { SharedModule } from './../shared/shared.module';
 import { CustomersRoutingModule } from './customers-routing.module';
 import { DetailComponent } from './detail/detail.component';
 import { AddComponent } from './add/add.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     ReactiveFormsModule,
     FormsModule
+
   ],
   declarations: [ViewComponent, DetailComponent, AddComponent],
   providers: [CustomersService]
