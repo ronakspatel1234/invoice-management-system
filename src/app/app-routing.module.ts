@@ -3,14 +3,13 @@
  * @description - Create class for entry component.
  */
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadingStrategy } from '@angular/router';
 // ------------------------------------------------ //
 import { LoginComponent } from './core/auth/login/login.component';
 import { AuthGuard } from './core/auth/auth.guard';
 
 
 const routes: Routes = [
-
   {
     path: 'login',
     component: LoginComponent
@@ -18,6 +17,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule',
+    data: { preloadingStrategy: PreloadingStrategy },
     canActivate: [AuthGuard]
   },
   {
@@ -64,5 +64,6 @@ const routes: Routes = [
   exports: [
     RouterModule
   ]
+
 })
 export class AppRoutingModule { }

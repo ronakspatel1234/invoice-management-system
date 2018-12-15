@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
-import { CodegenComponentFactoryResolver } from '@angular/core/src/linker/component_factory_resolver';
+import { Action } from '../../shared/table/table.model';
+import { Router } from '@angular/router';
+import { id } from '@swimlane/ngx-charts/release/utils';
+
+
 
 @Component({
   selector: 'ims-view',
@@ -13,29 +17,30 @@ export class ViewComponent implements OnInit {
     key: ["id","product_number","description","uom","price","group"]
   }
   public products=[];
-  public sction=['EDIT','DELETE','VIEW']
-  constructor(private service: ProductsService) { }
+  public action=[Action.EDIT,Action.DELETE,Action.VIEW];
+  constructor(private service: ProductsService,
+    private router:Router) { }
 
   ngOnInit() {
    
-  //  this.getProducts();
+    this.getProducts();
   }
 
-  // getProducts()
-  // {
-  //   this.service.getProduct().subscribe(product =>{
-  //     this.products = product;
-  // });
-  // }
-  // search() {
+  getProducts()
+  {
+    this.service.getProduct().subscribe(product =>{
+      this.products = product;
+  });
+  }
+  search() {
 
-  //   console.log("dnsv");
+    console.log("dnsv");
     
-  // }
+  }
 
-  // public actionClick(id,id1)
-  // {
-
-  // }
+  public actionClick(EDIT,id1):void
+  {
+    this.router.navigate(['product/add/:id'])
+  }
 
 }

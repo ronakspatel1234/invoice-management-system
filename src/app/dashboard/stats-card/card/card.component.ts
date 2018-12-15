@@ -1,6 +1,6 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - create class for crad component.
  */
 import { Component, OnInit, Input } from '@angular/core';
 import { Card } from './card.model';

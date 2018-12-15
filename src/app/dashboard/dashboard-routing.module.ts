@@ -1,6 +1,6 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - Create class for pre loding module.
  */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

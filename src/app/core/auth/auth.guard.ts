@@ -4,7 +4,7 @@
  * AuthGuard class implements CanActive interface and their method.
  */
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanDeactivate } from '@angular/router';
 // ---------------------------------------------------------------------------------------------------------//
 import { AuthService } from './auth.service';
 
@@ -24,8 +24,12 @@ export class AuthGuard implements CanActivate {
         if (localStorage.getItem('token') != null) {
             return true;
         } else {
-            this.router.navigate(['login']);
+            // this.router.navigate(['login']);
+            alert('Your are not authenticate without login');
             return false;
         }
+
     }
+
+
 }

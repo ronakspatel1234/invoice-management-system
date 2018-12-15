@@ -44,6 +44,8 @@ export class ViewComponent implements OnInit, OnDestroy {
   public quotation(): void {
     this.qoutationSubscription = this.quotationService.getQoutation().subscribe((qoutations) => {
       this.qoutation = qoutations;
+
+
     });
   }
   public Customer(): void {

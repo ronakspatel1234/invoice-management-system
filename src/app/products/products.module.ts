@@ -18,7 +18,8 @@ import {FormsModule} from '@angular/forms';
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    
   ],
   providers:[ProductsService],
   declarations: [ViewComponent, DetailsComponent, AddComponent],
