@@ -5,7 +5,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ToastModule } from 'ng2-toastr';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 // ------------------------------------------- //
@@ -43,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     TableComponent,
     StatusDirective,
-    CustomCurrencyPipe
+    CustomCurrencyPipe,
+    ToastModule
   ]
 })
 export class SharedModule { }

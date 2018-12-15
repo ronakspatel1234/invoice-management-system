@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr';
+import { Component, OnInit, ViewContainerRef, OnChanges } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../products.service';
@@ -15,7 +15,7 @@ import { Products } from '../products.model';
 })
 
 
-export class AddComponent implements OnInit {
+export class AddComponent implements OnInit ,OnChanges{
   /**
    * @property productForm to add the product
    * @property numberRegEx to apply validation of number to price field
@@ -26,7 +26,7 @@ export class AddComponent implements OnInit {
   public numberRegEx: string;
   public path: string;
   public fileName: string;
-
+  product;
   /**
    * 
    * @param toastr to pass toast on save click
@@ -55,7 +55,16 @@ export class AddComponent implements OnInit {
   // };
 
   ngOnInit() {
+    if(this.productForm==undefined)
     this.loadForm();
+  }
+
+  ngOnChanges()
+  {
+    if(this.productForm!=undefined)
+    {
+      this.loadData(this.product);
+    }
   }
 
   /**
@@ -64,9 +73,11 @@ export class AddComponent implements OnInit {
   public loadForm(): void {
     this.productForm = this.fb.group(
       {
+        product_number:["",Validators.required],
         description: ["", Validators.required],
         uom: ["", Validators.required],
         price: ["", [Validators.required, Validators.pattern(this.numberRegEx)]],
+        date:["",Validators.required],
         image: ["", Validators.required],
         group: ["", Validators.required]
       }
@@ -80,17 +91,19 @@ export class AddComponent implements OnInit {
    */
 
 
-  public addProducts(product: Products): void {
+  public addProducts(product): void {
+   
     product.image = this.path + this.fileName;
-
     this.productService.addProduct(product).subscribe(
       () => {
+       
         this.productForm.value, console.log(this.productForm.value)
-
+        this.router.navigate(['product/view']);
       }
     )
   }
 
+ 
   /**
    * take the snapshot of id and get data of perticular product
    * and give it to service
@@ -108,15 +121,28 @@ export class AddComponent implements OnInit {
    *@description using patchvalue we can get the data of perticular id ,
    when form is loaded  
    */
-  public loadData(product: Products): void {
+  public loadData(product:Products): void {
+    this.productForm = this.fb.group(
+      {
+        id:[],
+        product_number:["",Validators.required],
+        description: ["", Validators.required],
+        uom: ["", Validators.required],
+        price: ["", [Validators.required, Validators.pattern(this.numberRegEx)]],
+        date:["",Validators.required],
+        image: ["", Validators.required],
+        group: ["", Validators.required]
+      }
+    )
+
     this.productForm.patchValue(
       {
-        id: product.id,
-        description: product.description,
-        uom: product.uom,
-        price: product.price,
-        image: product.image,
-        group: product.group
+        id: this.product.id,
+        description: this.product.description,
+        uom: this.product.uom,
+        price: this.product.price,
+        image:this. product.image,
+        group: this.product.group
       }
     )
   }
@@ -154,11 +180,16 @@ export class AddComponent implements OnInit {
 
   }
 
-  // open(add) {
-  //   console.log("jhgk", add);
-
+  // cancel()
+  // {
+  //   if(this.productForm.value)
+  //   {
+  //     this.productForm.reset
+  //   }
+  //   else
   // }
 
+ 
 
 
 }

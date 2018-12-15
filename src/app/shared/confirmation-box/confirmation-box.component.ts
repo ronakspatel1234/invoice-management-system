@@ -8,8 +8,20 @@ templateUrl:'confirmation-box.html'
 export class ConfirmationBoxComponent implements OnInit {
 
  constructor() { }
-
+  @Output() saveClick=new EventEmitter();
+  @Output() cancelClick=new EventEmitter();
    ngOnInit() {
    }
+
+   save()
+   {
+     this.saveClick.emit();
+   }
+
+   cancel()
+   {
+     this.cancelClick.emit();
+   }
+
 
  }

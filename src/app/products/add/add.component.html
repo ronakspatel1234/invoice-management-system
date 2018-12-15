@@ -1,10 +1,14 @@
-<form [formGroup]="productForm" (ngSubmit)="addProducts(productForm.value)">
+<form [formGroup]="productForm"  (ngSubmit)="addProducts(productForm.value)">
 <div class="page-title">
   <h4 class="mb-3">Create Product</h4>
 </div>
 <div class="card border-0">
   <div class="card-body">
+    <div class="form-group col-md-6">
+      
+      <input type="hidden" formControlName="product_number" class="form-control" id="product_number">
   
+    </div>
       <div class="row border-bottom">
         <div class="form-group col-md-4 col-sm-6">
           <label for="description">Description</label>
@@ -67,6 +71,7 @@
                 </div>
             </div>
 
+           
             <div class="form-group col-md-6">
               <label for="upload-file">Upload File</label>
               <div class="custom-file">
@@ -82,13 +87,20 @@
                 </div>
               </div>
             </div>
+
+            <div class="form-group col-md-6">
+             
+              <input type="hidden" formControlName="date" class="form-control">
+              
+             
+            </div>
           </div>
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-12 text-right">
-          <button (click)="showSuccess()" type="submit" class="btn btn-primary">Save</button>
-          <button  class="btn btn-secondary">Cancel</button>
+          <button  type="submit" (click)="showSuccess()" (saveClick)=save($event) class="btn btn-primary">Save</button>
+          <button type="reset" (cancelClick)=cancel($event) class="btn btn-secondary">Cancel</button>
           
         </div>
       </div>
