@@ -5,6 +5,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/forkJoin';
+
+// ------------------------------//
 import { environment } from '../../environments/environment';
 import { Customers } from '../customers/customers.model';
 import { Quotation } from './quotations.model';
@@ -32,10 +35,14 @@ export class QuotationService {
     const url = this.url + '/customer';
     return this.http.get<Customers[]>(url + '/' + id);
   }
+  public forkJoin(): Observable<any[]> {
+    const res1 = this.http.get<any>(this.url + '/quotation');
+    const res2 = this.http.get<any[]>(this.url + '/customer');
+    return Observable.forkJoin([res1, res2]);
+  }
   /**
    *@description search the record in the databse witch is passed by user
    */
-
   public searchList(search: any): Observable<any> {
     const url = this.url + '/quotation';
     this.queryUrl = '?q=';
