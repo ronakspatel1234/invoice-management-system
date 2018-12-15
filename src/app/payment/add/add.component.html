@@ -1,0 +1,178 @@
+<!-- Start-Add-Payment -->
+<div class="page-title">{{paymentForm.value | json}} {{incrementPaymentNumber | json}}
+  <h4 class="mb-3">Create Payment</h4>
+</div>
+<div class="card border-0 mb-3">
+  <div class="card-body">
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit();" novalidate>
+      <div class="row border-bottom">
+        <div class="form-group col-md-4 col-sm-6">
+          <label for="group" class="d-flex">Invoice</label>
+          <select class="form-control" id="invoice_id" formControlName="invoice_id">
+            <option *ngFor="let invoice of sentInvoice" [ngValue]="invoice.id">{{invoice.id}}</option>
+          </select>
+          <!-- <ng-select [items]="sentInvoice"
+                    bindLabel="id"
+                    placeholder="Select Invoice"
+                    id="invoice_id" formControlName="invoice_id">
+          </ng-select> -->
+        </div>
+        <!-- <div class="form-group col-md-4 col-sm-6">
+            <label for="person">Payment Date</label>
+            <input type="text" class="form-control" id="date" value="{{date | date:'dd-MMM-yyyy'}}" formControlName="date" disabled/> 
+        </div> -->
+      </div>
+      <div class="table-responsive border-bottom mb-3">
+        <table class="table item-table">
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.invalid">Save</button>
+                <button type="reset" class="btn btn-secondary" routerLink="/payment/view">Cancel</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="customer-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row border-bottom">
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="person">Person</label>
+            <input type="text" class="form-control" id="person">
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="company" class="d-flex align-items-center">Company<small class="ml-auto">(optional)</small></label>
+            <input type="text" class="form-control" id="company">
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="group" class="d-flex align-items-center">Group</label>
+            <select class="form-control">
+              <option>Type or click to select</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="email" class="d-flex align-items-center">Email</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="work-phone" class="d-flex align-items-center">Work Phone<small class="ml-auto">(optional)</small></label>
+            <input type="text" class="form-control" id="work-phone">
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="mobile-number" class="d-flex align-items-center">Mobile Number<small class="ml-auto">(optional)</small></label>
+            <input type="text" class="form-control" id="mobile-number">
+          </div>
+        </div>
+        <div class="row border-bottom mt-2">
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="billing-address">Billing Address</label>
+            <textarea rows="4" class="form-control"></textarea>
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="shipping-address">Shipping Address</label>
+            <textarea rows="4" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="note" class="d-flex align-items-center">Note<small class="ml-auto">(optional)</small></label>
+            <textarea rows="4" class="form-control"></textarea>
+          </div>
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="gstin" class="d-flex align-items-center">GSTIN<small class="ml-auto">(optional)</small></label>
+            <input type="text" class="form-control" id="gstin">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="product-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="form-group col-md-4 col-sm-6">
+            <label for="description">Description</label>
+            <textarea rows="5" class="form-control"></textarea>
+          </div>
+          <div class="col-md-8 col-sm-6">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="group" class="d-flex align-items-center">Group</label>
+                <select class="form-control">
+                  <option>Type or click to select</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="unit-price">Unit Price</label>
+                <input type="text" class="form-control" id="unit-price">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="u.m.o" class="d-flex align-items-center">U.O.M</label>
+                <select class="form-control">
+                  <option>Type or click to select</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="tc-modal">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Terms and Conditions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="form-group col-12">
+            <label for="tc-label">Label</label>
+            <input type="text" class="form-control" name="tc-label">
+          </div>
+          <div class="form-group col-12">
+            <label for="description">Description</label>
+            <textarea rows="4" class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End-Add-Payment -->
