@@ -1,8 +1,9 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - Create class for display chart on dahsboard.
  */
 import { Component, OnInit, Input } from '@angular/core';
+// -----------------------------------------------------------------------------//
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -11,7 +12,16 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./stats-graph.component.scss']
 })
 export class StatsGraphComponent implements OnInit {
+  // get data from parent.
   @Input() public invoiceChart;
+  /**
+   * @property paymentChart store payment chart data.
+   * @property customerChart store customer chart data.
+   * @property customerData store customer data.
+   * @property paymentData store payement data.
+   * @property  invoiceData store invoice data.
+   * @property invoiceMerge store invoice ,quotation and payment data.
+   */
   public paymentChart;
   public customerChart;
   public customerData: any;
@@ -28,7 +38,9 @@ export class StatsGraphComponent implements OnInit {
     this.mothWiseData();
     this.getpayment();
   }
-
+  /**
+   * Create for get month wise data from server.
+   */
   public mothWiseData(): void {
     const months = ['-Jan-', '-Feb-', '-Mar-', '-Apr-', '-May-', '-Jun-', '-Jul-', '-Aug-', '-Sep-', '-Oct-', '-Nov-', '-Dec-'];
     months.forEach(month => {
@@ -40,7 +52,9 @@ export class StatsGraphComponent implements OnInit {
       });
     });
   }
-
+  /**
+   * create for status wise data form server.
+   */
   public getpayment(): void {
     const status = 'Paid';
     this.service.getInvoiceByStatus(status).subscribe(invoices => {
@@ -52,7 +66,9 @@ export class StatsGraphComponent implements OnInit {
 
     });
   }
-
+  /**
+   * Create for user click on show more chart.
+   */
   public change() {
     this.isBoolean = !this.isBoolean;
     const payment = this.paymentData;

@@ -2,7 +2,7 @@
  * @author - Ronak Patel.
  * @description - Create for show table in dashboard component
  */
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Customers } from '../../customers/customers.model';
 
 @Component({
@@ -13,9 +13,9 @@ import { Customers } from '../../customers/customers.model';
 export class StatsTableComponent implements OnInit {
   public customers: Customers;
   // Get Invoice details from parent component.
-  @Input() public lastTenInvoice;
+  @Input() public lastTenInvoice: any[];
   // Get Customer details from parent componet.
-  @Input() public lastTenCustomer;
+  @Input() public lastTenCustomer: Customers[];
   public invoiceHeading = {
     name: ['Id', 'Invoice_Number', 'Due_Date', 'Quotation_Id', 'Issue_Date', 'Status'],
     key: ['id', 'invoice_number', 'due_date', 'quotation_id', 'issue_date', 'status']

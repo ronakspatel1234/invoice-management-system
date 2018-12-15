@@ -1,6 +1,6 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - Create class for Dashboard Module.
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

@@ -3,18 +3,13 @@
  * @description - Create class for entry component.
  */
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy } from '@angular/router';
+import { Routes, RouterModule, PreloadingStrategy } from '@angular/router';
 // ------------------------------------------------ //
 import { LoginComponent } from './core/auth/login/login.component';
 import { AuthGuard } from './core/auth/auth.guard';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
   {
     path: 'login',
     component: LoginComponent
