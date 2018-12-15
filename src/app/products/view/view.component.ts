@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Action } from '../../shared/table/table.model';
 import { Router } from '@angular/router';
-import { id } from '@swimlane/ngx-charts/release/utils';
-
-
+import * as jspdf from 'jspdf';
+import * as html2canvas from "html2canvas"
 
 @Component({
   selector: 'ims-view',
@@ -26,6 +25,23 @@ export class ViewComponent implements OnInit {
     this.getProducts();
   }
 
+  public export()
+ {
+  var data = document.getElementById('contentToConvert');
+  html2canvas(data).then(canvas => {
+    // Few necessary setting options
+    var imgWidth = 208;
+    var imgHeight = canvas.height * imgWidth / canvas.width;
+
+    const contentDataURL = canvas.toDataURL('image/png')
+    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+    var position = 0;
+    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+    pdf.save('MYPdf.pdf'); // Generated PDF
+    });
+
+ }
+
   getProducts()
   {
     this.service.getProduct().subscribe(product =>{
@@ -40,7 +56,7 @@ export class ViewComponent implements OnInit {
 
   public actionClick(EDIT,id1):void
   {
-    this.router.navigate(['product/add/:id'])
+    this.router.navigate(['product/edit/'+id1])
   }
 
 }

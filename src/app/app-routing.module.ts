@@ -50,10 +50,10 @@ const routes: Routes = [
     loadChildren: './payment/payment.module#PaymentModule',
     canActivate: [AuthGuard]
   }
-  ,
-  {
-    path: '**', redirectTo: 'login'
-  },
+  // ,
+  // {
+  //   path: '**', redirectTo: 'login'
+  // },
 
 ];
 

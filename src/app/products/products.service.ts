@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Products } from './products.model';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ProductsService {
   /**
    * url to store product database
    */
-  private url = "http://localhost:3000/product";
+  private url = environment.baseUrl+'/product';
 
   constructor(private http: HttpClient) { }
   getProduct(): Observable<Products[]> {
@@ -36,6 +37,11 @@ export class ProductsService {
    */
   public updateProduct(product): Observable<Products> {
     return this.http.put<Products>(this.url, product);
+  }
+
+  public searchData():Observable<Products[]>
+  {
+    return this.http.get<Products[]>(this.url)
   }
 
 
