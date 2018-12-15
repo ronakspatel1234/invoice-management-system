@@ -1,5 +1,5 @@
-export class OrderByKey
-{
-  value:string;
-  name:string
+
+export class OrderByKey {
+  value: string;
+  name: string;
 }

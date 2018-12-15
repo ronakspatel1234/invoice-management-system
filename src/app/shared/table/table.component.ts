@@ -24,7 +24,7 @@ export class TableComponent {
    * if user cannot type pass action then it will not display
    * It is also used for display the action based on user pass the value which is type of enum
    */
-  @Input() public action: Action[];
+  @Input() public action: Action;
 
   Action: typeof Action;
   /**
@@ -45,7 +45,10 @@ export class TableComponent {
  */
   public actionClick(action, id) {
     this.actionClicked.emit({ action, id });
-      }
+  }
 
-
+  public hasAction(action: Action): boolean {
+    // console.log(action['EDIT']);
+    return true;
+  }
 }

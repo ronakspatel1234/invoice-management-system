@@ -83,7 +83,6 @@ export class PaginationComponent implements OnInit {
     this.pageSizeChange.emit(event.target.value);
   }
 
-  // When user click on Next or Previous button emit the value and passed to parent
   public goNextPrev(e) {
     this.pageChange.emit(e.target.value);
   }
