@@ -13,51 +13,51 @@ import { CustomersService } from '../customers.service';
   selector: 'ims-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
-  providers:[DatePipe]
-
+  providers: [DatePipe]
 })
 export class AddComponent implements OnInit {
-   public customerForm: FormGroup;
-   public addCustomers:Customers[];
-   public createdAt:Date = new Date();
-   customer_number:any = 67676;
-  constructor(private fb:FormBuilder,
-              private customerService: CustomersService,
-              private router: Router,
-              private datePipe: DatePipe) {
-                this.addCustomers=[];
-               }
+  public customerForm: FormGroup;
+  public addCustomers: Customers[];
+  public createdAt: any = new Date();
+  customer_number: any = 10001;
+  constructor(
+    private fb: FormBuilder,
+    private customerService: CustomersService,
+    private router: Router,
+    private datePipe: DatePipe
+  ) {
+    this.addCustomers = [];
+  }
+
+
 
   ngOnInit() {
-  // this.createdAt = this.datePipe.transform(this.createdAt, 'dd-MMM-YYYY');
+    // this.created_at = this.datePipe.transform(this.created_at, 'dd-MMM-yyyy');
+    // console.log(this.created_at);
 
-
-    this.customerForm = this.fb.group(
-      {
-        name: ['',[Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-        customer_number: [''],
-        company: [''],
-        group: ['',[Validators.required]],
-        email: ['',[Validators.required,Validators.email]],
-        mobileNumber:['',[Validators.maxLength(10), Validators.minLength(10)]],
-        created_at: [''],
-        address: [''],
-        note:[''],
-        GSTIN: ['']
-      }
-    );
-
+    this.customerForm = this.fb.group({
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+      customer_number: [''],
+      company: [''],
+      group: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      mobile_number: ['', [Validators.maxLength(10), Validators.minLength(10)]],
+      created_at: this.datePipe.transform(this.createdAt, 'dd-MMM-yyyy'),
+      address: [''],
+      note: [''],
+      GSTIN: ['']
+    });
   }
-  addCustomer()
-  {
-    this.customerService.addCustomer(this.customerForm.value).subscribe(customer=>
-      {
-        this.customer_number = `C-${this.customer_number}${1}`
-        console.log(this.customer_number);
+  addCustomer(value) {
+
+    this.customerService
+      .addCustomer(value)
+      .subscribe(customer => {
+        // this.customer_number = `C-${this.customer_number + 1}`;
+        // console.log(this.customer_number);
         this.addCustomers.push(customer);
-       // this.router.navigate(['customer/view']);
+        this.router.navigate(['customer/view']);
         console.log(this.customerForm.value);
       });
   }
-
 }

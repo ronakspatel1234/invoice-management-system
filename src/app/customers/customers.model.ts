@@ -14,11 +14,11 @@
  */
 export class Customers {
   id: number;
-  customer_number: string;
+  customerNumber: string;
   name: string;
   company: string;
   group: string;
-  created_at: Date;
+  createdAt: Date;
   email: string;
   mobileNumber: number;
   address: string;

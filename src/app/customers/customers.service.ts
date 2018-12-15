@@ -8,17 +8,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CustomersService {
-   public customerURL="http://localhost:3000/customer";
+  public customerURL = 'http://localhost:3000/customer';
 
-  constructor(private http:HttpClient) { }
-   public addCustomer(customer:Customers):Observable<any>
-  {
-
-      return this.http.post<any>(this.customerURL,customer);
+  constructor(private http: HttpClient) {}
+  public addCustomer(customer: Customers): Observable<any> {
+    return this.http.post<any>(this.customerURL, customer);
   }
-  getCustomer():Observable<Customers[]>
-  {
-      return this.http.get<Customers[]>(this.customerURL);
+  getCustomer(): Observable<Customers[]> {
+    return this.http.get<Customers[]>(this.customerURL);
   }
-
 }

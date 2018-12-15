@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Customers } from './../customers.model';
 import { CustomersService } from './../customers.service';
 /**
@@ -5,45 +6,79 @@ import { CustomersService } from './../customers.service';
  */
 import { Component, OnInit } from '@angular/core';
 import * as jspdf from 'jspdf';
-import * as html2canvas from "html2canvas"
+import * as html2canvas from 'html2canvas';
+import { Sort } from '../../shared/order-by/sort.model';
+import { forEach } from '@angular/router/src/utils/collection';
 @Component({
   selector: 'ims-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-  key=['id','number','person','company','group','createdAt'];
-  public customers :Customers[];
-  constructor(private customersService :CustomersService) { }
+  key = ['id', 'number', 'person', 'company', 'group', 'created At'];
+  public customers: Customers[];
+  public action = ['EDIT', 'DELETE'];
+  public heading = {
+    name: ['ID', 'Number', 'Person', 'Company', 'Group', 'CreatedAt'],
+    key: ['id', 'customer_number', 'name', 'company', 'group', 'created_at']
+  };
+  public  map;
+  constructor(
+    private customersService: CustomersService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.getCustomers();
   }
- public sort(data)
- {
-   console.log("sorting......");
- }
- public export()
- {
-  var data = document.getElementById('contentToConvert');
-  html2canvas(data).then(canvas => {
-    // Few necessary setting options
-    var imgWidth = 208;
-    var imgHeight = canvas.height * imgWidth / canvas.width;
-
-    const contentDataURL = canvas.toDataURL('image/png')
-    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
-    var position = 0;
-    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('MYPdf.pdf'); // Generated PDF
-    });
-
- }
-  getCustomers()
-  {
-    this.customersService.getCustomer().
-    subscribe(data=>{this.customers = data;});
-    console.log("aaaaa");
+  actionClick(id, id1) {
+    this.router.navigate(['customer/add']);
   }
+  public sort(sort: Sort) {
+    console.log('sorting......');
+  }
+  public export() {
+     const data = document.getElementById('contentToConvert');
+    html2canvas(data).then(canvas => {
+      // Few necessary setting options
+      const imgWidth = 208;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
+      const contentDataURL = canvas.toDataURL('image/png');
+      const pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+      const position = 0;
+      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+      pdf.save('MYPdf.pdf'); // Generated PDF
+    });
+  }
+  getCustomers() {
+    this.customersService.getCustomer().subscribe(data => {
+      // this.customers = this.mapData(data);
+      this.customers = data;
+      console.log(data);
+
+    });
+  }
+  // mapData(data: Customers[]): Customers[] {
+  //   const mappedData: Customers[] = [];
+  //   data.map(each => {
+  //     this.map = [
+  //       {
+  //         id: each.id,
+  //         customerNumber: each.customer_number,
+  //         name: each.name,
+  //         company: each.company,
+  //         group: each.group,
+  //         createdAt: each.created_at,
+  //         email: each.email,
+  //         mobileNumber: each.mobile_number,
+  //         address: each.address
+  //       }
+  //     ];
+  //     console.log(this.map);
+
+  //   });
+  //   mappedData.push(this.map);
+  //   return ;
+  // }
 }
