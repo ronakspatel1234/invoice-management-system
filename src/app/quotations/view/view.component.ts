@@ -37,7 +37,6 @@ export class ViewComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.quotation();
-    // this.Customer();
   }
   /**
    * It is used for get all the list of the qoutation.
