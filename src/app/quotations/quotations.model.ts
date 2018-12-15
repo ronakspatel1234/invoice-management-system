@@ -16,7 +16,7 @@
 
 export class Quotation {
     id: number;
-    customerId: number;
+    customer_id: number;
     expiryDate: string;
     issueDate: string;
     quotationNumber: number;

@@ -12,18 +12,19 @@
         <td *ngIf="key ==='status'">
           <span class="px-2 py-1 badge badge-secondary" [status]="data[key]" imsStatus>{{data[key]}}</span>
         </td>
-        <td *ngIf="key !=='status'" (click)="actionClick(action.VIEW,data.id)">
-          {{data[key]}}
+        <td *ngIf="key !=='status'">
+          <ng-container *ngIf="action" (click)="actionClick(Action.VIEW,data.id)">
+            {{data[key]}}
+          </ng-container>
         </td>
       </ng-container>
       <!-- if user need actionable table then use -->
       <ng-container *ngIf='action'>
-
-        <td *ngIf="action[0]">
-            <a  class="text-secondary mr-2" title="Edit" (click)="actionClick(action.EDIT,data.id)"><span class="fa fa-pencil"></span></a>
-                </td>
-        <td *ngIf="action[1]">
-            <a class="text-danger" title="Delete" (click)="actionClick(action.DELETE,data.id)"><span class="fa fa-times"></span></a>
+        <td *ngIf="hasAction(Action.EDIT)">
+          <a class="text-secondary mr-2" title="Edit" (click)="actionClick(action.EDIT,data.id)"><span class="fa fa-pencil"></span></a>
+        </td>
+        <td *ngIf="hasAction(Action.DELETE)">
+          <a class="text-danger" title="Delete" (click)="actionClick(action.DELETE,data.id)"><span class="fa fa-times"></span></a>
         </td>
       </ng-container>
     </tr>

@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ViewComponent } from './view/view.component';
 import { AddComponent } from './add/add.component';
+
 import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   },
   {
     path:'add',
+    component:AddComponent
+  },
+  {
+    path:'edit/:id',
     component:AddComponent
   },
   {
