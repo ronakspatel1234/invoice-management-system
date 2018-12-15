@@ -40,7 +40,10 @@ export class ViewComponent implements OnInit {
     this.router.navigate(['customer/add']);
   }
   public sort(sort: Sort) {
-    console.log('sorting......');
+
+  }
+  public search(data) {
+   console.log(data);
   }
   /**this method generate pdf file
    * in data variable contenttoConvert contain id of table with we display in pdf
@@ -66,6 +69,7 @@ export class ViewComponent implements OnInit {
 
     });
   }
+
   // mapData(data: Customers[]): Customers[] {
   //   const mappedData: Customers[] = [];
   //   data.map(each => {

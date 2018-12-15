@@ -24,6 +24,12 @@ export class ViewComponent implements OnInit, OnDestroy {
     name: ['ID', 'Number', 'Issue Date', 'Expiry Date', 'Customer', 'Grand Total', 'Status'],
     key: ['id', 'quotation_number', 'issue_date', 'expiry_date', 'customer_id', 'grand_total', 'status']
   };
+  totalItems = 0;
+  pageSize = 10;
+  page = 1;
+  public paymentData: any;
+  public invoiceData: any;
+  result: any[];
   private qoutationSubscription: Subscription;
   constructor(private router: Router, private quotationService: QuotationService) {
     this.customer = [];
@@ -31,7 +37,6 @@ export class ViewComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.quotation();
-    // this.Customer();
   }
   /**
    * It is used for get all the list of the qoutation.
@@ -52,6 +57,12 @@ export class ViewComponent implements OnInit, OnDestroy {
   actionClick(id, id1) {
     this.router.navigate(['/qoutation/add']);
   }
+  goToPage(pageSize: number): void {
+    this.pageSize = pageSize;
+    this.page = 1;
+    this.quotation();
+  }
+
   ngOnDestroy() {
     this.qoutationSubscription.unsubscribe();
   }

@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // ---------------------------------------//
 import { Customers } from './customers.model';
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class CustomersService {
  /**URL for web API */
-  public customerURL = 'http://localhost:3000/customer';
+  public customerURL = environment.baseUrl + '/customer';
 
   constructor(private http: HttpClient) {}
   /**
@@ -28,4 +29,6 @@ export class CustomersService {
   getCustomer(): Observable<Customers[]> {
     return this.http.get<Customers[]>(this.customerURL);
   }
+
+
 }

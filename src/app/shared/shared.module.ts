@@ -4,6 +4,8 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'ng2-toastr';
 
 // ------------------------------------------- //
 import { ItemDescriptionComponent } from './item-description/item-description.component';
@@ -13,14 +15,11 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
 import { StatusDirective } from './table/status.directive';
-import { ReactiveFormsModule } from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
 @NgModule({
     imports: [
         CommonModule,
-       // NgbModule.forRoot(),
       // ReactiveFormsModule
+      ToastModule
 
     ],
     declarations: [

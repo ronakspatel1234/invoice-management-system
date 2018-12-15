@@ -2,16 +2,7 @@
 <div class="card border-0">
   <div class="card-body">
     <div class="d-flex flex-wrap align-items-center">
-      <form>
-        <div class="input-group mb-sm-0">
-          <input type="text" class="form-control" placeholder="Search..." />
-          <div class="input-group-append">
-            <button class="btn btn-primary">
-              <span class="fa fa-search"></span>
-            </button>
-          </div>
-        </div>
-      </form>
+      <ims-search (searchClick)="search($event)" ></ims-search>
       <a routerLink="/customer/add" class="btn btn-primary ml-auto"
         >New Customer</a
       >
@@ -27,29 +18,7 @@
   <div class="card-body">
     <div class="table-responsive border-bottom" id="contentToConvert">
      <ims-table [header]="heading" [data]="customers"[action]="action" (actionClicked)="actionClick($event,$event)" ></ims-table>
-      <!-- <table class="table table-striped table-sm table-link" >
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Number</th>
-            <th>Person</th>
-            <th>Company</th>
-            <th>Group</th>
-            <th>Created at</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody >
-          <tr *ngFor="let customer of customers">
-            <td>{{customer.id}}</td>
-            <td>{{customer.customer_number}}</td>
-            <td>{{customer.name}}</td>
-            <td>{{customer.company}}</td>
-            <td>{{customer.group}}</td>
-            <td>{{customer.created_at}}</td>
-          </tr>
-        </tbody>
-      </table> -->
+
     </div>
     <!-- <div class="d-flex flex-wrap align-items-center mt-3">
       <div class="d-flex align-items-center entry-show mb-sm-0 mb-2">

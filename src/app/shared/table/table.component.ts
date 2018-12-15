@@ -3,7 +3,8 @@
  * @description used to display table based on the user pass header (key,name),data and action.
  */
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Header,  Action, ActionEvent } from '../table/table.model';
+// -----------------------//
+import { Header, Action, ActionEvent } from '../table/table.model';
 
 @Component({
   selector: 'ims-table',
@@ -26,7 +27,7 @@ export class TableComponent {
    */
   @Input() public action: Action[];
 
-  Action: typeof Action;
+  public Action = Action;
   /**
    * store the value of the data
    */
@@ -41,11 +42,14 @@ export class TableComponent {
     return this.dataList;
   }
   /**
- *  * emit an action
+ *  emit an action
  */
-  public actionClick(action, id) {
+  public actionClick(action, id): void {
     this.actionClicked.emit({ action, id });
-      }
+  }
 
-
+  public hasAction(action: Action): boolean {
+    // console.log(action['EDIT']);
+    return true;
+  }
 }

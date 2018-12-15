@@ -1,6 +1,6 @@
 /**
  * @author Sonal Prajapati
- * @description this service is used to communicate with the backend.
+ * @description this service is used to communicate with the component and backend.
  */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,7 +13,9 @@ import { Quotation } from './quotations.model';
 export class QuotationService {
   // URL To webAPI
   readonly url: string;
-
+  /**
+   * @param http -Inject httpClient service for server interaction.
+   */
   constructor(private http: HttpClient) {
     this.url = environment.baseUrl;
 
