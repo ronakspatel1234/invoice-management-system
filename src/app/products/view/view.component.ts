@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../products.service';
+import { CodegenComponentFactoryResolver } from '@angular/core/src/linker/component_factory_resolver';
 
 @Component({
   selector: 'ims-view',
@@ -6,15 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-
-  constructor() { }
+  heading = {
+    name: ["Id","Item Code","Description","U.O.M","Unit Price","Group" ],
+    key: ["id","product_number","description","uom","price","group"]
+  }
+  public products=[];
+  public sction=['EDIT','DELETE','VIEW']
+  constructor(private service: ProductsService) { }
 
   ngOnInit() {
+   
+  //  this.getProducts();
   }
-  search()
-  {
+
+  // getProducts()
+  // {
+  //   this.service.getProduct().subscribe(product =>{
+  //     this.products = product;
+  // });
+  // }
+  // search() {
+
+  //   console.log("dnsv");
     
-    
-  }
+  // }
+
+  // public actionClick(id,id1)
+  // {
+
+  // }
 
 }
