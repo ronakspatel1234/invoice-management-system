@@ -3,7 +3,7 @@
  * @description - This shared module are used for reusable Component, pipe and directives in application.
  */
 import { NgModule } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { ToastModule } from 'ng2-toastr';
 import { FormsModule } from '@angular/forms';
@@ -22,8 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
-ToastModule,
+    ReactiveFormsModule,
+    ToastModule,
     FormsModule,
     NgbModalModule
   ],

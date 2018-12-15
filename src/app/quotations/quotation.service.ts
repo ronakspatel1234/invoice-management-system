@@ -13,22 +13,63 @@ import { Quotation } from './quotations.model';
 export class QuotationService {
   // URL To webAPI
   readonly url: string;
+  private queryUrl: string;
+
   /**
    * @param http -Inject httpClient service for server interaction.
    */
   constructor(private http: HttpClient) {
     this.url = environment.baseUrl;
-
   }
-/**
- * @description use for get th qoutation list
- */
-  public getQoutation(): Observable<Quotation[]> {
+  /**
+   * @description use for get th qoutation list
+   */
+  public getQoutation(): Observable<any[]> {
     const url = this.url + '/quotation';
     return this.http.get<Quotation[]>(url);
   }
-  public getCustomer(): Observable<Customers[]> {
+  public getCustomer(id: number): Observable<any[]> {
     const url = this.url + '/customer';
-    return this.http.get<Customers[]>(url);
+    return this.http.get<Customers[]>(url + '/' + id);
+  }
+  /**
+   *@description search the record in the databse witch is passed by user
+   */
+
+  public searchList(search: any): Observable<any> {
+    const url = this.url + '/quotation';
+    this.queryUrl = '?q=';
+    const urls = url + this.queryUrl + search;
+    return this.http.get<any>(urls);
+  }
+  /**
+   * @description this is used for pagination the data based on the page and page size passed
+   */
+  public getForPage(page: number, pagesize: number) {
+    const start = (page * pagesize) - pagesize;
+    const end = (page * pagesize);
+    const url = this.url + '/quotation' + '?_page=' + start + '&_limit=' + end;
+
+    return this.http.get<Quotation[]>(url);
+  }
+  /**
+   * @description this method is used for assending and desending the record.
+   * @param id unique identifire.
+   * @param order it is used for in which order user want display record for example asc and desc.
+   */
+  public sortQoutation(id: number, order: string): Observable<Quotation[]> {
+    order = 'DESC';
+    const url = this.url + '/quotation' + '?_sort=' + id + '_order=' + order;
+    console.log(url);
+
+    return this.http.get<Quotation[]>(url);
+  }
+  /**
+   * @description it is used for  delete record by perticular id
+   * @param id perticular id to delete record.
+   */
+  public deleteQoutation(id: number): Observable<Quotation[]> {
+    const url = this.url + '/qoutation' + '/' + id;
+    return this.http.delete<Quotation[]>(url);
   }
 }

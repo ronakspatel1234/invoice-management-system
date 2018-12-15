@@ -4,43 +4,23 @@
 <div class="card border-0">
   <div class="card-body">
     <div class="d-flex flex-wrap align-items-center">
-      <form>
-        <div class="input-group mb-sm-0">
-          <input type="text" class="form-control" placeholder="Search...">
-          <div class="input-group-append">
-            <button class="btn btn-primary"><span class="fa fa-search"></span></button>
-          </div>
-        </div>
-      </form>
+     <ims-search (searchClick)="searchClick($event)"></ims-search>
       <a class="btn btn-primary ml-auto" (click)="onNewOqutation()">New Quotation</a>
     </div>
   </div>
 </div>
+<!-- export-start-->
+<ims-order-by [keys]="heading.key" (sortValue)="sort($event)" (exportData)="export($event)"></ims-order-by>
+<!-- export end -->
 <!-- start table -->
-<div class="d-flex flex-wrap align-items-center my-3">
-  <button class="btn btn-secondary mb-sm-0 mb-3"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Export</button>
-  <div class="ml-auto filter-table d-flex align-items-center">
-    <span>Order By</span>
-    <form class="mx-2">
-      <select class="filters-columns form-control form-inline">
-        <option value="id">Id</option>
-        <option value="item-code">Item Code</option>
-        <option value="unit-price">Unit Price</option>
-        <option value="created_at">Created at</option>
-      </select>
-    </form>
-    <span class="fa fa-long-arrow-up d-none text-primary"></span>
-    <span class="fa fa-long-arrow-down text-primary"></span>
-  </div>
-</div>
 <div class="card border-0">
   <div class="card-body">
-    <div class="table-responsive border-bottom">
+    <div class="table-responsive border-bottom" id="contentToConvert">
       <ims-table [header]="heading" [data]="qoutation" [action]="action" (actionClicked)="actionClick($event,$event)"></ims-table>
     </div>
     <!-- End table -->
     <!--Start the shared component of pagination-->
-    <ims-pagination [total]="totalItems" [current]="page" [size]="pageSize" (pageChange)="goToPage($event)"
+    <ims-pagination [total]="totalQutation" [current]="page" [size]="pageSize" (pageChange)="goToPage($event)"
       (pageSizeChange)="goToPage($event)">
     </ims-pagination>
     <!--End the shared component of pagination-->

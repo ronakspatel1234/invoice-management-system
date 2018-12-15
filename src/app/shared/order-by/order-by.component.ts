@@ -37,12 +37,11 @@ export class OrderByComponent implements OnInit {
   /**When user click on export button its give output to the parent */
   clickExport() {
     this.exportData.emit();
-    console.log('clicked');
   }
   /**when user select the field its change with selected field */
   sortData(sort: Sort[]) {
-    this.sortValue.emit(sort);
-    console.log('sort');
+    console.log(sort);
+    this.sortValue.emit();
   }
 
   // public onSubmit(data) {
