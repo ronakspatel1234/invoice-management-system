@@ -1,4 +1,9 @@
+/**
+ * @author - Ronak Patel.
+ * @description - Create for user password change.
+ */
 import { Component, OnInit } from '@angular/core';
+// ----------------------------------------------------------------------------------------------------//
 
 @Component({
   selector: 'ims-password-setting',

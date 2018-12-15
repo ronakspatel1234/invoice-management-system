@@ -1,5 +1,10 @@
+/**
+ * @author - Ronak Patel.
+ * @description - Create for lazy loding module.
+ */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// -----------------------------------------------------------------------------------------------//
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [

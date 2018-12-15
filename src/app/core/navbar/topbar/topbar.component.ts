@@ -1,8 +1,9 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - create class for topbar.
  */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ims-topbar',
@@ -11,11 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+  // user logout purpose.
   public logout(): void {
     localStorage.removeItem('token');
+    alert('successfully logout');
+    if (localStorage == null) {
+      this.router.navigate(['login']);
+    }
   }
 }
