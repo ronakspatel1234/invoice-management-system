@@ -1,8 +1,10 @@
+import { CustomersService } from './customers.service';
 /**
  * @author Vaibhavi Prajapati
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // ------------------------------------------//
 import { ViewComponent } from './view/view.component';
 import { SharedModule } from './../shared/shared.module';
@@ -14,8 +16,12 @@ import { AddComponent } from './add/add.component';
   imports: [
     CommonModule,
     CustomersRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
-  declarations: [ViewComponent, DetailComponent, AddComponent]
+  declarations: [ViewComponent, DetailComponent, AddComponent],
+  providers: [CustomersService]
 })
 export class CustomersModule { }

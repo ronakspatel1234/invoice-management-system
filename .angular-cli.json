@@ -9,7 +9,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
+
         "favicon.ico"
       ],
       "index": "index.html",
@@ -24,8 +24,8 @@
 
       ],
       "scripts": [
-       
-        "assets/js/jquery.min.js", 
+        "assets/js/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "assets/js/popper.min.js",
         "assets/js/custom.js"
       ],

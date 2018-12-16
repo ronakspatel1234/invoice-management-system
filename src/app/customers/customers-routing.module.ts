@@ -9,24 +9,24 @@ import { ViewComponent } from './view/view.component';
 import { DetailComponent } from './detail/detail.component';
 /**
  * Routes for child component and its path
-*/
+ */
 const routes: Routes = [
   {
-    path:'',
-    redirectTo:'view',
-    pathMatch:'full'
+    path: '',
+    redirectTo: 'view',
+    pathMatch: 'full'
   },
   {
-    path:'view',
-    component:ViewComponent
+    path: 'view',
+    component: ViewComponent
   },
   {
-    path:'detail',
-    component:DetailComponent
+    path: 'detail',
+    component: DetailComponent
   },
   {
-    path:'add',
-    component:AddComponent
+    path: 'add',
+    component: AddComponent
   }
 ];
 
@@ -34,4 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CustomersRoutingModule { }
+export class CustomersRoutingModule {}
