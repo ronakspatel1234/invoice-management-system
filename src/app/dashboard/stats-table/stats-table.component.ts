@@ -2,15 +2,17 @@
  * @author - Ronak Patel.
  * @description - Create for show table in dashboard component
  */
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+// ------------------------------------------------------------------------//
 import { Customers } from '../../customers/customers.model';
+import { Action } from '../../shared/table/table.model';
 
 @Component({
   selector: 'ims-stats-table',
   templateUrl: './stats-table.component.html',
   styleUrls: ['./stats-table.component.scss']
 })
-export class StatsTableComponent implements OnInit {
+export class StatsTableComponent implements OnInit , OnChanges{
   public customers: Customers;
   // Get Invoice details from parent component.
   @Input() public lastTenInvoice: any[];
@@ -24,10 +26,13 @@ export class StatsTableComponent implements OnInit {
     name: ['Id', 'Name', 'Customer_Number', 'Email', 'Group', 'Company', 'Created_At'],
     key: ['id', 'name', 'customer_number', 'email', 'group', 'company', 'created_at']
   };
-
+  
   constructor() { }
 
   ngOnInit() {
+  }
+  ngOnChanges(){
+   
   }
 
 }
