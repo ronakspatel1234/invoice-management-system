@@ -15,16 +15,18 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    //
     ToastModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
+    // Use for communicating server
     HttpClientModule,
+    //
     BrowserAnimationsModule
   ],
 
