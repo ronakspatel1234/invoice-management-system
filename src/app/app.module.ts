@@ -1,4 +1,3 @@
-import { SharedModule } from './shared/shared.module';
 /**
  * @author - Ronak Patel.
  * @description - Create class for root module.
@@ -15,8 +14,7 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,

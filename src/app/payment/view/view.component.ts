@@ -20,7 +20,7 @@ import { HttpClient } from '@angular/common/http';
 export class ViewComponent implements OnInit {
 
   public payments: Payment[];
-   // store the value of  action
+  // store the value of  action
   public heading = {
     name: ['ID', 'Payment Number', 'Document', 'Issue Date'],
     key: ['id', 'payment_number', 'invoice_id', 'date']
@@ -32,7 +32,7 @@ export class ViewComponent implements OnInit {
   public paymentData: any;
   public invoiceData: any;
   public searchData: any[];
-  public sortPayment: any[];
+  public orderData: any[];
   public totalRecords: any[];
   constructor(private service: PaymentService, private router: Router, private http: HttpClient) {
     this.payments = [];
@@ -58,7 +58,7 @@ export class ViewComponent implements OnInit {
           // });
           data.push({
             ID: payment.id, PaymentNumber:
-            payment.payment_number,
+              payment.payment_number,
             InvoiceNumber: invoices.invoice_number,
             IssueDate: payment.date,
             // Customer: customers.name,
@@ -93,13 +93,20 @@ export class ViewComponent implements OnInit {
       });
   }
 
-   // serch box for any text search
-   public search(data) {
-     this.page = 1;
+  // serch box for any text search
+  public search(data) {
+    this.page = 1;
     this.service.searchData(data).subscribe((totalItems) => {
       this.searchData = totalItems;
       console.log(this.searchData);
       this.payments = this.searchData;
+    });
+  }
+
+  sort(orderBy) {
+    this.service.orderByData(orderBy).subscribe((totalItems) => {
+      this.orderData = totalItems;
+      this.payments = this.orderData;
     });
   }
 

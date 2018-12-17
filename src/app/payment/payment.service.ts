@@ -53,7 +53,7 @@ export class PaymentService {
   public getPagination(page: number, pageSize: number): Observable<Payment[]> {
     const start = (page * pageSize) - pageSize;
     const end = (page * pageSize);
-    const url = `${this.baseUrl}/${'payment'}?_start=${start}&_end=${end}}`;
+    const url = `${this.baseUrl}/${'payment'}?_start=${start}&_end=${end}`;
     return this.http.get<Payment[]>(url);
   }
 
@@ -104,4 +104,11 @@ export class PaymentService {
     return this.http.get<any>(url);
   }
 
+  /**
+   * orderData method are for the short the data ascending and descending order
+   */
+  public orderByData(orderBy: any): Observable<any> {
+    const url = `${this.baseUrl}/${'payment'}?_sort=${orderBy}`;
+    return this.http.get(url);
+  }
 }
