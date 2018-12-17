@@ -4,6 +4,7 @@ import { Action } from '../../shared/table/table.model';
 import { Router } from '@angular/router';
 import * as jspdf from 'jspdf';
 import * as html2canvas from "html2canvas"
+import { CodegenComponentFactoryResolver } from '@angular/core/src/linker/component_factory_resolver';
 
 @Component({
   selector: 'ims-view',

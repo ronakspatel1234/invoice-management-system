@@ -3,8 +3,8 @@
     <form class="mr-2">
       <select class="form-control" (change)="goToPage($event);">
           <option *ngFor="let option of pageLimitOptions"
-          [value]="option.value"> 
-            {{ option.value }} 
+          [value]="option.value">
+            {{ option.value }}
           </option>
       </select>
     </form>
