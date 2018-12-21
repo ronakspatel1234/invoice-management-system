@@ -9,6 +9,7 @@ import { ViewComponent } from './view/view.component';
 import { AddComponent } from './add/add.component';
 
 import { DetailsComponent } from './details/details.component';
+import { GuardService } from './guard.service';
 
 const routes: Routes = [
   {
@@ -22,14 +23,15 @@ const routes: Routes = [
   },
   {
     path:'add',
-    component:AddComponent
+    component:AddComponent,
+    // canDeactivate:[GuardService]
   },
   {
     path:'edit/:id',
     component:AddComponent
   },
   {
-    path:'details',
+    path:'details/:id',
     component:DetailsComponent
   }
 ];

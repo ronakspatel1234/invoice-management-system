@@ -44,7 +44,8 @@ export class TableComponent {
   /**
  *  emit an action
  */
-  public actionClick(action, id): void {
+  public actionClick(action:Action, id:number): void {
+   
     this.actionClicked.emit({ action, id });
   }
 

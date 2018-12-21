@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import {SharedModule} from '../shared/shared.module'
 import { ProductsRoutingModule } from './products-routing.module';
 import { ViewComponent } from './view/view.component';
@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
 import { ProductsService } from './products.service';
 import {FormsModule} from '@angular/forms';
+import { GuardService } from './guard.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import {FormsModule} from '@angular/forms';
     ProductsRoutingModule,
     
   ],
-  providers:[ProductsService],
+  providers:[ProductsService,GuardService,DatePipe],
   declarations: [ViewComponent, DetailsComponent, AddComponent],
   exports:[AddComponent]
 })
