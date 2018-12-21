@@ -1,9 +1,10 @@
+
 /**
  * @author Vaibhavi Prajapati
  */
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { OrderByKey } from './order-by-keys.model';
-import { Sort, Mode } from './sort.model';
+import {  Mode } from './sort.model';
 import { Key } from 'protractor';
 
 
@@ -48,7 +49,18 @@ export class OrderByComponent implements OnInit {
 
   }
 
+//   sortData(btn: any, row: any): void {
+//     const keyds = <Sort>{};
+//     keyds.action = btn.action;
 
+//     if (row != null) {
+//         keyds.values = [];
+//         btn.keys.forEach((key: any) => {
+//             keyds.values.push({ key: key, value: row[key] });
+//         });
+//     }
+//     this.sortValue.emit(keyds);
+// }
   /** method for toggle up and down arrow
    * Its value can be true or false
    */

@@ -17,14 +17,14 @@
 export class Quotation {
     id: number;
     customer_id: number;
-    expiryDate: string;
-    issueDate: string;
-    quotationNumber: number;
+    expiry_date: string;
+    issue_date: string;
+    quotation_number: number;
     itemDescription: string;
     uom: number;
     unitPrice: number;
     qty: number;
-    grandTotal: number;
+    grand_total: number;
     discount: number;
     cgst: number;
     sgst: number;

@@ -14,13 +14,13 @@
       *ngIf="toggle"
       (click)="changeArrow()"
       class="fa fa-long-arrow-down u-none text-primary"
-      (click)="sortData(Mode.DESC)"
+      (click)="sortData(this.keys,Mode.DESC)"
     ></span>
     <span
       *ngIf="!toggle"
       (click)="changeArrow()"
       class="fa fa-long-arrow-up text-primary"
-      (click)="sortData(Mode.ASC)"
+      (click)="sortData(this.keys,Mode.ASC)"
     ></span>
   </div>
 </div>

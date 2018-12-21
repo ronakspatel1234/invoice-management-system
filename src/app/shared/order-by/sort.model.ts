@@ -1,6 +1,6 @@
 export class Sort {
   value: string;
-  mode: string;
+  mode: Mode;
 }
 export enum Mode {
   ASC = 'asc',

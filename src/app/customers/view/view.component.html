@@ -11,13 +11,13 @@
 </div>
 
 
- <ims-order-by [keys]="key" (sortValue)="sort($event)" (exportData)="export($event)"></ims-order-by>
+ <ims-order-by [keys]="heading.key" (sortValue)="sort($event)" (exportData)="export($event)"></ims-order-by>
 
 
 <div class="card border-0">
   <div class="card-body">
     <div class="table-responsive border-bottom" id="contentToConvert">
-     <ims-table [header]="heading" [data]="customers"[action]="action" (actionClicked)="actionClick($event,$event)" ></ims-table>
+     <ims-table [header]="heading" [data]="customers" [action]="action" (actionClicked)="actionClick($event)" ></ims-table>
 
     </div>
     <!-- <div class="d-flex flex-wrap align-items-center mt-3">
@@ -42,12 +42,13 @@
         </button>
       </div>
     </div> -->
-    <!-- <ims-pagination
+    <ims-pagination
     [total]="totalItems"
     [current]="page"
     [size]="pageSize"
     (pageChange)="goNextPrev($event)"
     (pageSizeChange)="goToPage($event)">
-    </ims-pagination> -->
+    </ims-pagination>
   </div>
 </div>
+

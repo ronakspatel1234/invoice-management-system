@@ -21,11 +21,15 @@ const routes: Routes = [
     component: ViewComponent
   },
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: DetailComponent
   },
   {
     path: 'add',
+    component: AddComponent
+  },
+  {
+    path: 'edit/:id',
     component: AddComponent
   }
 ];

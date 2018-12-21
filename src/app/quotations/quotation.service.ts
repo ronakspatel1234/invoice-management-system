@@ -55,7 +55,7 @@ export class QuotationService {
   public getForPage(page: number, pagesize: number) {
     const start = (page * pagesize) - pagesize;
     const end = (page * pagesize);
-    const url = this.url + '/quotation' + '?_page=' + start + '&_limit=' + end;
+    const url = this.url + '/quotation' + '?_start=' + start + '&_end=' + end;
 
     return this.http.get<Quotation[]>(url);
   }
