@@ -3,6 +3,7 @@
  * @description -
  */
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'ims-topbar',
@@ -10,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent implements OnInit {
+
+  isLoggedIn$: Observable<boolean>;
 
   constructor() { }
 

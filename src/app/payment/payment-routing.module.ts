@@ -23,7 +23,7 @@ const paymentRoutes: Routes = [
     component: ViewComponent,
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent
   },
   {

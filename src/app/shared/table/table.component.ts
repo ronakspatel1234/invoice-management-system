@@ -26,7 +26,7 @@ export class TableComponent {
    */
   @Input() public action: Action;
 
-  Action: typeof Action;
+  public Action = Action;
   /**
    * store the value of the data
    */

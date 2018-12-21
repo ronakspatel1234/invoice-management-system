@@ -5,6 +5,7 @@
  * @prop password - type string.
  */
 export class Auth {
+    id: number;
     email: string;
     password: string;
 }

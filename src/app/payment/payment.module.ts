@@ -4,7 +4,8 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 // import { NgSelectModule } from '@ng-select/ng-select';
 // ------------------------------------------------- //
 import { PaymentRoutingModule } from './payment-routing.module';
@@ -19,7 +20,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     PaymentRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    SelectDropDownModule
     // NgSelectModule
   ],
   declarations: [

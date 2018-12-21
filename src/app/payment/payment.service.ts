@@ -8,6 +8,9 @@ import { Observable } from 'rxjs/Observable';
 // --------------------------------- //
 import { environment } from '../../environments/environment';
 import { Payment } from './payment.model';
+import { Invoice } from '../invoices/invoices.model';
+import { Quotation } from '../quotations/quotations.model';
+import { Customers } from '../customers/customers.model';
 
 @Injectable()
 export class PaymentService {
@@ -23,8 +26,11 @@ export class PaymentService {
   /**
    * getAllPayment Method are get all payment data from user
    */
-  public getAllPayments(): Observable<Payment[]> {
-    const url = `${this.baseUrl}/${'payment'}`;
+  public getAllPayments(data: any): Observable<Payment[]> {
+    let url = `${this.baseUrl}/${'payment'}`;
+    if (data && data !== '') {
+      url = url.concat(`?q=${data}`);
+    }
     return this.http.get<Payment[]>(url);
   }
 
@@ -32,28 +38,35 @@ export class PaymentService {
    *  getPaidInvoice data are get the only paid data from server
    * @param id - set the paid invoice id
    */
-  public getPaidInvoice(id: number): Observable<any[]> {
+  public getPaidInvoice(id: number): Observable<Invoice> {
     const url = `${this.baseUrl}/${'invoice'}/${id}`;
-    return this.http.get<any[]>(url);
+    return this.http.get<Invoice>(url);
   }
 
   /**
    * getQuotation are Sent Invoice data from server
    */
-  public getQuotation(id: number): Observable<any[]> {
+  public getQuotation(id: number): Observable<Quotation> {
     const url = `${this.baseUrl}/${'quotation'}/${id}`;
-    return this.http.get<any[]>(url);
+    return this.http.get<Quotation>(url);
   }
 
+  public getCustomer(id: number): Observable<Customers> {
+    const url = `${this.baseUrl}/${'customer'}/${id}`;
+    return this.http.get<Customers>(url);
+  }
   /**
    * getPagination method are pagination start and end limit
    * @param page - Set the staring page
    * @param pageSize - set the page size change from user
    */
-  public getPagination(page: number, pageSize: number): Observable<Payment[]> {
+  public getPagination(page: number, pageSize: number, data: any): Observable<Payment[]> {
     const start = (page * pageSize) - pageSize;
     const end = (page * pageSize);
-    const url = `${this.baseUrl}/${'payment'}?_start=${start}&_end=${end}`;
+    let url = `${this.baseUrl}/${'payment'}?_start=${start}&_end=${end}`;
+    if (data && data !== '') {
+      url = url.concat(`&q=${data}`);
+    }
     return this.http.get<Payment[]>(url);
   }
 
@@ -105,10 +118,21 @@ export class PaymentService {
   }
 
   /**
-   * orderData method are for the short the data ascending and descending order
+   * sortData method are create for sorting record
    */
-  public orderByData(orderBy: any): Observable<any> {
-    const url = `${this.baseUrl}/${'payment'}?_sort=${orderBy}`;
-    return this.http.get(url);
+  public sortData(id: number, order: string): Observable<Payment[]> {
+    order = 'DESC';
+    const url = `${this.baseUrl}/${'payment'}?_sort=${id}&_order=${order}`;
+    return this.http.get<Payment[]>(url);
+  }
+
+  public getDetailById(id: number): Observable<Payment> {
+    const url = `${this.baseUrl}/${'payment'}/${id}`;
+    return this.http.get<Payment>(url);
+  }
+
+  public deleteDetails(id: any): Observable<any> {
+    const url = `${this.baseUrl}/${'payment'}/${id}`;
+    return this.http.delete<any>(url);
   }
 }

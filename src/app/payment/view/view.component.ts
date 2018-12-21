@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as jspdf from 'jspdf';
 import * as html2canvas from 'html2canvas';
+import * as CryptoJS from 'crypto-js';
 // -------------------------------------- //
 import { Payment } from '../payment.model';
 import { PaymentService } from '../payment.service';
-import { HttpClient } from '@angular/common/http';
+import { Action, ActionEvent } from '../../shared/table/table.model';
 
 @Component({
   selector: 'ims-view',
@@ -20,62 +21,30 @@ import { HttpClient } from '@angular/common/http';
 export class ViewComponent implements OnInit {
 
   public payments: Payment[];
+  public data: any[];
+  public action = [Action.VIEW, Action.DELETE];
   // store the value of  action
   public heading = {
-    name: ['ID', 'Payment Number', 'Document', 'Issue Date'],
-    key: ['id', 'payment_number', 'invoice_id', 'date']
+    name: ['ID', 'Payment Number', 'Invoice Number', 'Issue Date', 'Customer', 'Amount'],
+    key: ['id', 'PaymentNumber', 'InvoiceNumber', 'IssueDate', 'Customer', 'quotation']
   };
   public totalItems = 0;
   public pageSize = 10;
   public page = 1;
-
-  public paymentData: any;
-  public invoiceData: any;
-  public searchData: any[];
-  public orderData: any[];
-  public totalRecords: any[];
-  constructor(private service: PaymentService, private router: Router, private http: HttpClient) {
+  public searchData: string;
+  constructor(private service: PaymentService, private router: Router) {
     this.payments = [];
   }
 
   ngOnInit() {
-    this.getPaymentWithInvoice();
     this.getAllPayment();
-  }
-
-  // New data table
-  public getPaymentWithInvoice(): void {
-    const data: any = [];
-    this.service.getAllPayments().subscribe(payments => {
-      payments.forEach(payment => {
-        // console.log(payment);
-        this.service.getPaidInvoice(payment.invoice_id).subscribe((invoices: any) => {
-          // console.log(invoices);
-          // invoices.forEach(invoice => {
-          //   this.service.getQuotation(invoice.quotation_id).subscribe((quotations: any) => {
-          //     console.log(quotations);
-          //   });
-          // });
-          data.push({
-            ID: payment.id, PaymentNumber:
-              payment.payment_number,
-            InvoiceNumber: invoices.invoice_number,
-            IssueDate: payment.date,
-            // Customer: customers.name,
-            // quotation: quotation.grand_total,
-          });
-
-        });
-      });
-      console.log(data);
-    });
   }
 
   /**
    * Get the All payment data
    */
   public getAllPayment() {
-    this.service.getAllPayments().subscribe(obj => {
+    this.service.getAllPayments(this.searchData).subscribe(obj => {
       this.totalItems = obj.length;
       if (this.totalItems > 0) {
         this.getPayment();
@@ -87,28 +56,63 @@ export class ViewComponent implements OnInit {
    * Get the Pagination configuration of start page and Page size.
    */
   public getPayment(): void {
-    this.service.getPagination(this.page, this.pageSize).subscribe(
-      (payment) => {
-        this.payments = payment;
+    this.service.getPagination(this.page, this.pageSize, this.searchData).subscribe(
+      (payments) => {
+        this.getNSetNestedPaymentData(payments);
       });
   }
 
-  // serch box for any text search
-  public search(data) {
-    this.page = 1;
-    this.service.searchData(data).subscribe((totalItems) => {
-      this.searchData = totalItems;
-      console.log(this.searchData);
-      this.payments = this.searchData;
+  getNSetNestedPaymentData(payments:Payment[])
+  {
+    this.data = [];
+    payments.forEach(payment => {
+      this.service.getPaidInvoice(payment.invoice_id).subscribe(invoice => {
+        this.service.getQuotation(invoice.quotation_id).subscribe(quotation => {
+          this.service.getCustomer(quotation.customer_id).subscribe(customer => {
+            const obj = {
+              id: payment.id,
+              PaymentNumber: payment.payment_number,
+              InvoiceNumber: invoice.invoice_number,
+              IssueDate: payment.date,
+              Customer: customer.name,
+              quotation: quotation.grand_total
+            };
+            this.data.push(obj);
+            // this.totalItems = this.totalItems + 1;
+          });
+        });
+      });
     });
   }
 
-  sort(orderBy) {
-    this.service.orderByData(orderBy).subscribe((totalItems) => {
-      this.orderData = totalItems;
-      this.payments = this.orderData;
+   // serch box for any text search
+   public search(e) {
+     this.searchData = e;
+     this.getAllPayment();
+  }
+
+  // Sort data acceding order and descending order
+  public sort(e): void {
+    this.data = this.data.sort((a: any, b: any) => {
+      let val1;
+      let val2;
+      if (e['value'] === 'IssueDate') {
+        val1 = new Date(a[e['value']]);
+        val2 = new Date(b[e['value']]);
+      } else {
+        val1 = a[e['value']];
+        val2 = b[e['value']];
+      }
+      if (val1 < val2) {
+        return e['mode'] === 'ASC' ? -1 : 1;
+      }
+      if (val1 > val2) {
+        return e['mode'] === 'ASC' ? 1 : -1;
+      }
+      return 0;
     });
   }
+
 
   /**
    * Page size change as per user select
@@ -134,43 +138,44 @@ export class ViewComponent implements OnInit {
   }
 
   /**
-   * Action Click method are as per user action delete the user
-   * @param id - get ID from user
-   */
-  public actionClick(id): void {
-    alert('Are you sure you want to delete?');
-    this.service.deletePayment(id)
-      .subscribe(() => this.getAllPayment());
-  }
-
-  /**
    * Export the PDF Report on click Export Button
    */
   public export(): void {
-    let id: any;
-    let imgWidth: number;
-    let pageHeight: number;
-    let imgHeight: number;
-    let heightLeft: number;
-    let pdf: any;
-    let position: number;
     // Get HTML Tag Id
-    id = document.getElementById('contentToConvert');
+    const id = document.getElementById('contentToConvert');
     html2canvas(id).then(canvas => {
       // Setting For necessary opation
-      imgWidth = 208;
-      pageHeight = 295;
-      imgHeight = canvas.height * imgWidth / canvas.width;
-      heightLeft = imgHeight;
+      const imgWidth = 208;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       const contentDataURL = canvas.toDataURL('image/png');
       // Setting For Landscape or Portrait, mm and A4 size page of PDF
-      pdf = new jspdf('p', 'mm', 'a4');
-      position = 0;
+      const pdf = new jspdf('p', 'mm', 'a4');
+      const position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
       // Create a Payment Data PDF
       pdf.save('payment.pdf');
     });
   }
 
+  public actionClick(actionEvent: ActionEvent): void {
+    console.log(actionEvent.id);
+    if (actionEvent.action === Action.DELETE) {
+      this.deletePayment(actionEvent);
+    } else if (actionEvent.action === Action.VIEW) {
+      this.goToDetails(actionEvent);
+    }
+  }
+
+  public deletePayment(actionEvent: ActionEvent): void {
+    alert('Are you sure you want to delete?');
+    console.log(actionEvent.id);
+    this.service.deletePayment(actionEvent)
+     .subscribe(() => this.getAllPayment());
+  }
+
+  public goToDetails(actionEvent: ActionEvent): void {
+    const encryptedId = CryptoJS.AES.encrypt(actionEvent.id.toString().trim(), 'hskag').toString();
+    this.router.navigate(['/payment/details/', encryptedId]);
+  }
 }

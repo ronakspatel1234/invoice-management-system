@@ -22,6 +22,7 @@ export class AddComponent implements OnInit {
   public incrementPaymentNumber: any;
   date: Date;
   lasts: Payment[];
+  // public searchData: string;
 
   constructor(private service: PaymentService,
     private fb: FormBuilder,
@@ -38,42 +39,51 @@ export class AddComponent implements OnInit {
     this.addPayment();
   }
 
-  // Get only sent Invoice
   getInvoice(): void {
     this.service.getSentInvoice()
       .subscribe((sent) => {
         this.sentInvoice = sent;
-    });
-  }
-
-  // Get the payment records
-  getPayments(): void {
-    this.service.getAllPayments()
-      .subscribe((lastPayment) => {
-        this.payment = lastPayment;
-
-        // Get Last record from database and Payment Number incriment
-        const slicePaymentNumber = this.payment.slice(-1)[0].payment_number;
-        const splitPaymentNumber = slicePaymentNumber.split('-');
-        const pays = splitPaymentNumber[0];
-        const stringToNumber = +splitPaymentNumber[1];
-        const numberIncriment = stringToNumber + 1;
-        const payNumber = pays + '-' + numberIncriment;
-        this.incrementPaymentNumber = payNumber;
-
       });
   }
 
-  // Add payment reactive form
+  getPayments(): void {
+    this.service.getAllPayments(null)
+      .subscribe((lastPayment) => {
+        this.payment = lastPayment;
+        // console.log(this.payment.length - 1);
+
+        // Get Last record from database
+        const slicePaymentNumber = this.payment.slice(-1)[0].payment_number;
+        console.log(slicePaymentNumber);
+
+        // Split the Payment number
+        const splitPaymentNumber = slicePaymentNumber.split('-');
+        const pays = splitPaymentNumber[0];
+        console.log(splitPaymentNumber);
+        console.log(splitPaymentNumber[1]);
+
+        const stringToNumber = +splitPaymentNumber[1];
+        console.log(stringToNumber);
+
+        const numberIncriment = stringToNumber + 1;
+        console.log(numberIncriment);
+
+        const payNumber = pays + '-' + numberIncriment;
+        console.log(payNumber);
+
+        this.incrementPaymentNumber = payNumber;
+        this.addPayment();
+      });
+  }
+
   public addPayment() {
     this.paymentForm = this.fb.group({
-      invoice_id: [Validators.required],
+      invoice_id: ['', [Validators.required]],
       payment_number: [this.incrementPaymentNumber],
       date: [this.date],
     });
   }
 
-  // Submit the form
   onSubmit(): void {
     const pay = Object.assign({}, this.paymentForm.value);
     this.service.addPayment(pay).subscribe(() => {
@@ -82,8 +92,7 @@ export class AddComponent implements OnInit {
     });
   }
 
-  // Update the invoice status sent to Paid
-  private updateStatus(pay) {
+  private updateStatus(pay: any) {
     pay.status = 'Paid';
     this.service.updateInvoiceStatus(pay).subscribe( () => {
       this.router.navigate(['/payment/view']);

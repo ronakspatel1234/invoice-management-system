@@ -15,12 +15,14 @@ import { Key } from 'protractor';
 export class OrderByComponent implements OnInit {
   name: OrderByKey;
   public toggle = true;
+  sortBy:string = 'ID';
+  mode:string = "ASC";
 
   /**output for export button */
   @Output() exportData = new EventEmitter<string>();
 
   /**output for sorting value */
-  @Output() sortValue = new EventEmitter<Mode[]>();
+  @Output() sortValue = new EventEmitter<Sort>();
 
   public Mode = Mode;
   /**key set as input to the orderby element with get and set property*/
@@ -43,9 +45,9 @@ export class OrderByComponent implements OnInit {
 
   }
   /**when user select the field its change with selected field */
-  sortData(mode: Mode[]) {
-    this.sortValue.emit(mode);
-
+  sortData(mode: string) {
+    this.mode = mode;
+    this.sortValue.emit({value:this.sortBy,mode:mode});
   }
 
 
@@ -54,6 +56,12 @@ export class OrderByComponent implements OnInit {
    */
   changeArrow() {
     this.toggle = !this.toggle;
+  }
+
+  orderBy(e)
+  {
+    this.sortBy = e.target.value;
+    this.sortData(this.mode);
   }
 
 }
