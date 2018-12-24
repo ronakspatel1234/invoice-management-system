@@ -7,7 +7,7 @@
       <h5>{{products.product_number}}</h5>
     </div>
     <div class="ml-auto d-flex align-items-center">
-      <a routerLink="/product/view" class="btn btn-secondary mr-1"><span class="fa fa-arrow-left"></span></a>
+      <a routerLink="/product/view/" class="btn btn-secondary mr-1"><span class="fa fa-arrow-left"></span></a>
       <a routerLink="/product/edit/{{products.id}}" class="btn btn-secondary mr-1"><span class="fa fa-pencil"></span></a>
       <a (click)="deleteProducts(products.id)" class="btn btn-danger mr-1"><span class="fa fa-trash"></span></a>
     </div>

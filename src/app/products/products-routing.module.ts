@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path:'add',
     component:AddComponent,
-    // canDeactivate:[GuardService]
+    canDeactivate:[GuardService]
   },
   {
     path:'edit/:id',

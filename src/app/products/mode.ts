@@ -1,7 +1,7 @@
 export enum Mode
 {
-    EDIT='edit',
-    ADD='add'
+    EDIT=0,
+    ADD=1
 }
 export class ModeEvent {
     id: number;

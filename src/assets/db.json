@@ -1114,13 +1114,13 @@
   "product": [
     {
       "id": 1,
-      "product_number": "P-10001",
+      "product_number": "",
       "description": "this is white audi car",
       "uom": "kg",
       "price": 445,
-      "image": "assets/product-images/audi.jpg",
-      "date": "26-Sep-2018",
-      "group": "Service"
+      "group": "Service",
+      "date": "",
+      "image": "/assets/product-images/black-dress.jpg"
     },
     {
       "id": 2,
@@ -1134,13 +1134,13 @@
     },
     {
       "id": 3,
-      "product_number": "P-10003",
+      "product_number": "",
       "description": "this is red ferrari car",
       "uom": "kg",
       "price": 459,
-      "image": "assets/product-images/ferrari.jpg",
-      "date": "12-Feb-2018",
-      "group": "Service"
+      "group": "Service",
+      "date": "",
+      "image": "C:\\fakepath\\black-shoes.jpg"
     },
     {
       "id": 4,
@@ -2113,12 +2113,124 @@
       "group": "Office Supplies"
     },
     {
+      "id": 101,
+      "product_number": "",
       "description": "gdsfg",
       "uom": "in",
       "price": "45",
-      "image": "C:\\fakepath\\black-shoes.jpg",
       "group": "Office Supplies",
-      "id": 101
+      "date": "",
+      "image": "/assets/product-images/black-shoes.jpg"
+    },
+    {
+      "id": 102,
+      "product_number": "",
+      "description": "sczxcxz",
+      "uom": "kg",
+      "price": "33",
+      "group": "Network",
+      "date": "",
+      "image": "/assets/product-images/black-tshirt.jpg"
+    },
+    {
+      "id": 103,
+      "product_number": "",
+      "description": "xs",
+      "uom": "kg",
+      "price": "45",
+      "group": "Office Supplies",
+      "date": "22-Dec-2018",
+      "image": "/assets/product-images/black-tshirt.jpg"
+    },
+    {
+      "product_number": "",
+      "description": "fdsf",
+      "uom": "kg",
+      "price": "32",
+      "group": "Network",
+      "date": "22-Dec-2018",
+      "image": "/assets/product-images/cold.jpg",
+      "id": 104
+    },
+    {
+      "product_number": "",
+      "description": "",
+      "uom": "",
+      "price": "",
+      "group": "",
+      "date": "22-Dec-2018",
+      "image": "/assets/product-images/",
+      "id": 105
+    },
+    {
+      "id": 106,
+      "product_number": "",
+      "description": "dz",
+      "uom": "in",
+      "price": "45",
+      "group": "Office Supplies",
+      "date": "22-Dec-2018",
+      "image": "/assets/product-images/coat.jpg"
+    },
+    {
+      "id": 107,
+      "product_number": "",
+      "description": "zdsfaa",
+      "uom": "kg",
+      "price": "78",
+      "group": "Office Supplies",
+      "date": "22-Dec-2018",
+      "image": "/assets/product-images/black-tshirt.jpg"
+    },
+    {
+      "id": 108,
+      "product_number": "-NaN",
+      "description": "",
+      "uom": "",
+      "price": "",
+      "group": "",
+      "date": "23-Dec-2018",
+      "image": "/assets/product-images/"
+    },
+    {
+      "id": 109,
+      "product_number": null,
+      "description": null,
+      "uom": null,
+      "price": null,
+      "group": null,
+      "date": null,
+      "image": "/assets/product-images/"
+    },
+    {
+      "id": 110,
+      "product_number": null,
+      "description": "",
+      "uom": "",
+      "price": "",
+      "group": "",
+      "date": "23-Dec-2018",
+      "image": "/assets/product-images/"
+    },
+    {
+      "id": 111,
+      "product_number": null,
+      "description": "",
+      "uom": "",
+      "price": "",
+      "group": "",
+      "date": "23-Dec-2018",
+      "image": "/assets/product-images/"
+    },
+    {
+      "id": 112,
+      "product_number": null,
+      "description": "",
+      "uom": "",
+      "price": "",
+      "group": "",
+      "date": "23-Dec-2018",
+      "image": "/assets/product-images/"
     }
   ],
   "quotation": [
@@ -3000,7 +3112,7 @@
       "issue_date": "09-Jun-2017",
       "expiry_date": "27-Jul-2017",
       "customer_id": 49,
-      "grand_total":434,
+      "grand_total": 434,
       "discount": 0,
       "sgst": 0,
       "cgst": 0,
@@ -3576,7 +3688,7 @@
       "issue_date": "31-Dec-2015",
       "expiry_date": "10-Jan-2016",
       "customer_id": 81,
-      "grand_total":153,
+      "grand_total": 153,
       "discount": 0,
       "sgst": 0,
       "cgst": 0,

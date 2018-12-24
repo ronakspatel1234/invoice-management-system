@@ -22,9 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    ToastModule,
     FormsModule,
+    ToastModule,
+    
     NgbModalModule
   ],
   declarations: [

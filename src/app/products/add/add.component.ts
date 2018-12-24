@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewContainerRef, OnChanges, ChangeDetectorRef } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastsManager } from 'ng2-toastr';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../products.service';
@@ -8,7 +8,7 @@ import {DatePipe} from '@angular/common'
 import { Mode, ModeEvent } from '../mode';
 import { HttpClient } from '@angular/common/http';
 import * as CryptoJS from 'crypto-js';
-import { log } from 'util';
+
 
 
 
@@ -33,29 +33,13 @@ export class AddComponent implements OnInit {
   public numberRegEx: string;
   public path: string;
   public fileName: string;
-  public product;
-  public key;
+  public product=[];
+  public clicked;
   public dd:any=new Date();
-  imageSrc;
   conversionOutput:any;
-  public mode=[Mode.EDIT,Mode.ADD]
-  // set productList(value:any)
-  // {
-  //   this.product=value;
-  //   if (value) {
-  //     value.forEach(element => {
-  //       this.key=Object.keys(element);
-  //     console.log(this.key);
-      
-  //     });
-      
-  //   }
-    
-  // }
-  // get productList()
-  // {
-  //   return this.product;
-  // }
+  public incrementProductNumber:any;
+  public action=[Mode.EDIT,Mode.ADD]
+ 
   /**
    * 
    * @param toastr to pass toast on save click
@@ -72,7 +56,7 @@ export class AddComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private datePipe:DatePipe,
-    private http:HttpClient,
+    
     private cd:ChangeDetectorRef
    
   ) {
@@ -80,17 +64,55 @@ export class AddComponent implements OnInit {
     this.numberRegEx = '^[0-9]*$';
     this.path = '/assets/product-images/';
     this.fileName = '';
-  
+    // this.clicked=false;
   }
 
 
   ngOnInit() {
     
-    this.loadForm();
-   this.editProducts();
-  // this.submit(this.mode)
+  this.loadForm();
+  // this.getProducts();
+    //this.editProducts();
+    // let id=this.productForm.value.id
+    // if(id!=null)
+    // {
+    //   this.editProducts();
+    // }
+    // else{
+    //   this.addProducts(this.product);
+    // }
+  
   }
 
+//   public getProducts()
+// {
+//   this.productService.getProduct().subscribe(
+//     (products)=>{this.product=products;
+    
+//       const sliceProductNumber = this.product.slice(-1)[0].product_number;
+//       console.log(sliceProductNumber);
+
+//       // Split the Payment number
+//       const splitProductNumber = sliceProductNumber.split('-');
+//       const num = splitProductNumber[0];
+//       console.log(splitProductNumber);
+//       console.log(splitProductNumber[1]);
+
+//       const stringToNumber = +splitProductNumber[1];
+//       console.log(stringToNumber);
+
+//       const numberIncriment = stringToNumber + 1;
+//       console.log(numberIncriment);
+
+//       const productNumber = num + '-' + numberIncriment;
+//       console.log(productNumber);
+
+//       this.incrementProductNumber = productNumber;
+//       this.loadForm();
+    
+//     }
+//   )
+// }
 
 
  
@@ -103,31 +125,30 @@ export class AddComponent implements OnInit {
     this.productForm = this.fb.group(
       {
         id:[""],
-        product_number:["",Validators.required],
+        product_number:[this.incrementProductNumber],
         description: ["", Validators.required],
         uom: ["", Validators.required],
         price: ["", [Validators.required, Validators.pattern(this.numberRegEx)]],
         group: ["", Validators.required],
-        // date:this.datePipe.transform(this.dd,'dd-MMM-yyyy'),
-        date:["",Validators.required],
-        image: [null,Validators.required]
+        date:this.datePipe.transform(this.dd,'dd-MMM-yyyy'),
+        image: [null]
        
       }
       
     )
-   // this.onFileChange(event)
+   
   }
 
 // submit(modeEvent:ModeEvent)
 // {
  
-//   if(Mode.EDIT==='edit')
+//   if(modeEvent.action==Mode.EDIT)
 //   {
-//    // console.log(modeEvent.id);
+//    console.log(modeEvent.id);
 //     this.updateProducts(this.product);
    
 //   }
-//   else if(Mode.ADD==='add')
+//   else if(modeEvent.action==Mode.ADD)
 //   {
 //     console.log("ddd");
 //     this.addProducts(this.product)
@@ -135,6 +156,7 @@ export class AddComponent implements OnInit {
 //   }
   
 // } 
+
 
  
 
@@ -144,11 +166,13 @@ export class AddComponent implements OnInit {
    * to add products
    */
   public addProducts(product): void {
+
     
- 
+    // product = Object.assign({}, this.productForm.value);
+
+
    product.image = this.path + this.fileName;
-//this.onFileChange(event)
-   // console.log( product.image );
+
     
     this.productService.addProduct(product).subscribe(
       () => {
@@ -160,6 +184,7 @@ export class AddComponent implements OnInit {
 
   }
 
+
  
   /**
    * take the snapshot of id and get data of perticular product
@@ -167,7 +192,7 @@ export class AddComponent implements OnInit {
    */
 
   public editProducts(): void {
-     //product.image = this.path + this.fileName;
+    
     const id = this.route.snapshot.paramMap.get('id');
   
     this.conversionOutput = CryptoJS.AES.decrypt(id, "hskag").toString(CryptoJS.enc.Utf8);
@@ -203,6 +228,7 @@ public dataLoad(data:Products){
   
     this.onFileChange(event);
     
+    
   }
 
 
@@ -211,16 +237,11 @@ public dataLoad(data:Products){
    * @param product stores product data 
    * @description to update the data on srvice
    */
-  // public updateProducts(product: Products): void {
-
-  //   this.productService.updateProduct(product).subscribe(
-  //     () => { this.productForm.value, console.log(this.productForm.value) }
-  //   )
-  // }
+ 
 
   public updateProducts(product): void {
    //  this.onFileChange(event);
-  // product.image = this.onFileChange(event);
+   product.image = this.path + this.fileName;
   
     
     console.log(product.image);
@@ -243,72 +264,13 @@ public dataLoad(data:Products){
   
   // }
 
-  // onFileChange($event)
-  // {
-  //   if ($event.srcElement.files.length > 0)
-  //   {
-  //       let file: File = null;
-  //       file = $event.srcElement.files[0];
-  //       this.productForm.controls.image.setValue(file);
-  //       this.product.content = $event.srcElement.files[0];
-  //   }
-  // }
 
-  // getImage(id)
-  // {
-  //   this.productService.getImage(id).subscribe(
-  //     (img)=>{this.product=img}
-  //   )
-  // }
-
-
-   
-  // set Image(value:any)
-  // {
-  //   this.imagePath=value;
-  //   if (value) {
-  //     value.forEach(element => {
-  //       this.key=Object.keys(element);
-  //     console.log(this.key);
-      
-  //     });
-      
-  //   }
-    
-  // }
-  // get Image()
-  // {
-  //   return this.Image;
-  // }
-  
-    
-  
-
-//   onFileChange(event: any): void {
-    
-//   // this.fileName = event.target.files.name;
-//     let reader=new FileReader();
-//     if (event.target.files && event.target.files.length) {
-//         const [file] = event.target.files;
-
-//        reader.readAsDataURL(file);
-        
-//        reader.onload=()=>{
-//          this.productForm.patchValue(
-//            {
-//              image:reader.result
-//            }
-//          );
-//             this.cd.markForCheck();
-//        };
-//     }
-// }
 
 onFileChange(event) {
   const reader = new FileReader();
   
-  if(event.target.files && event.target.files.length) {
-    const [file] = event.target.files;
+  if(event.target.files && event.target.files[0]) {
+    let [file] = event.target.files;
     reader.readAsDataURL(file);
     
     console.log(file);
@@ -323,37 +285,18 @@ onFileChange(event) {
     
       // need to run CD since file load runs outside of zone
       this.cd.markForCheck();
+      file = event.target.files[0].name;
+      this.fileName=file
     };
-  // this.fileName = event.target.files;
+   
   }
 }
 
 
 
-}
 
-// onFileChange(event)
-// {
-//   debugger;
-//   const f=new File([],"abc");
-//   if(event.target.files)
-//   {
-//     console.log(f);
-    
-//     return f;
-//   }
-// }
-// file:any;
-// onFileChange(event)
-// {
-//  // debugger;
-//    this.file = event.target.files
-//   const f=new File([],this.file);
-// // const f=new FileReader()
-// // f.readAsDataURL(this.file[0])
-//  console.log(f);
-  
-// }
+
+
 
 
 
@@ -361,35 +304,36 @@ onFileChange(event) {
   /**
    * toaster method calls when click on save button of the form
    */
-  // showSuccess() {
+  showSuccess() {
 
-  //   this.toastr.success('Success!');
+    this.toastr.success('Success!');
 
-  // }
+  }
 
  
 
-    // canDeactivate()
-    // {
-    //   if(this.productForm==undefined)
-    //   {
-    //     // console.log(this.productForm);
-    //     // this.router.navigate(['/product/view'])
-    //     return true;
+    canDeactivate()
+    {
+      if(this.productForm==undefined)
+      {
+        // console.log(this.productForm);
+         this.router.navigate(['/product/view'])
+        // return true;
        
         
-    //   }
-    //   else
-    //   {
-    //     if(confirm('Are you sure you want to leave??'))
-    //     {
-    //       return true;
-    //     }
-    //     else 
-    //     {
-    //       return false;
-    //     }
-    //   }
-    // }
+      }
+      else
+      {
+        if(confirm('Are you sure you want to leave??'))
+        {
+          return true;
+        }
+        else 
+        {
+          return false;
+        }
+      }
+    }
 
 
+  }
