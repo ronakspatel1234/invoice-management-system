@@ -1,112 +1,109 @@
-<div _ngcontent-c4="" class="card-body">
-  <form _ngcontent-c4="">
-   
-    <div _ngcontent-c4="" class="table-responsive border-bottom mb-3">
-      <table _ngcontent-c4="" class="table item-table">
-        <thead _ngcontent-c4="">
-          <tr _ngcontent-c4="">
-            <th _ngcontent-c4="">
-              <div _ngcontent-c4="" class="d-flex align-items-center" > 
-                Item Description<a _ngcontent-c4="" class="ml-auto" data-toggle="modal" href="#product-modal" > </a>
-              </div>
-            </th>
-            <th _ngcontent-c4="">U.O.M</th>
-            <th _ngcontent-c4="">Unit Price</th>
-            <th _ngcontent-c4="">Qty</th>
-            <th _ngcontent-c4="">Total</th>
-          </tr>
-        </thead>
-        <tbody _ngcontent-c4="" >
-          <tr _ngcontent-c4="" *ngFor = "let list of itemList">
-                        <td _ngcontent-c4="">    
-              <ng-container >
-              <select _ngcontent-c4="" class="form-control"  >
-                <ng-container  *ngFor = "let keys of key">                  
-                <option _ngcontent-c4="" >{{list.description}}</option>
-              </ng-container>
-              </select>
-            </ng-container>
-            </td>
-            <td _ngcontent-c4="">
-              <select _ngcontent-c4="" class="form-control" name="u-m-o" type="text">
-          
-           <option _ngcontent-c4="">{{list.uom}}</option>
-            <!-- <option _ngcontent-c4="">cm</option> -->
+<div class="table-responsive border-bottom mb-3" [formGroup]="itemForm">
+  <table class="table item-table">
+    <thead>
+      <tr>
+        <th>
+          <div class="d-flex align-items-center">
+            Item Description<a class="ml-auto" data-toggle="modal" href="#product-modal"> </a>
+          </div>
+        </th>
+        <th>U.O.M</th>
+        <th>Unit Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <ng-container formArrayName="addNewLine">
+      <tbody>
+        <tr *ngFor="let field of addNewLine.controls; let i=index" [formGroupName]="i">
+          <td>
+            <select formControlName="description" class="form-control" (change)="onChange(field.get('description').value,i)">
+              <option [value]="record.id" *ngFor="let record of itemList">
+                {{record.description}}
+              </option>
             </select>
-            </td>
-            <td _ngcontent-c4="" >{{list.unitPrice}}
-              <input _ngcontent-c4="" class="form-control" name="unit-price" type="text" ngModel>
-            </td>
-            <td _ngcontent-c4="">
-              <input _ngcontent-c4="" class="form-control" name="qty" type="text">{{list.qty}}
-            </td>
-            <td _ngcontent-c4="">
-              <div _ngcontent-c4="" class="d-flex">
-                <input _ngcontent-c4="" class="form-control" name="total" type="text">{{list.unitPrice*list.qty}}
-                <button _ngcontent-c4="" class="btn bg-transparent border-0"><span _ngcontent-c4="" class="fa fa-times text-danger"></span></button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot _ngcontent-c4="">
-          <tr _ngcontent-c4="">
-            <td _ngcontent-c4="" colspan="2">
-              <button _ngcontent-c4="" class="btn btn-secondary">
-                <span _ngcontent-c4="" class="fa fa-plus"></span> Add new line
+          </td>
+          <td>
+            <input class="form-control" readonly type="text" formControlName="uom">
+          </td>
+          <td>
+            <input class="form-control" readonly type="text" formControlName="unitPrice">
+          </td>
+          <td>
+            <input class="form-control" type="text" formControlName="qty" (keyup)="onKeyUp($event.target.value,i)">
+          </td>
+          <td>
+            <div class="d-flex">
+              <input class="form-control" name="total" readonly type="text" formControlName="total">
+              <button class="btn bg-transparent border-0" (click)="deleteRow(i)">
+                <span class="fa fa-times text-danger"></span>
               </button>
-            </td>
-            <td _ngcontent-c4="" class="text-right" colspan="2">
-              Sub Total:
-            </td>
-            <td _ngcontent-c4="" class="text-right pr-5">
-            </td>
-          </tr>
-          <tr _ngcontent-c4="">
-            <td _ngcontent-c4="" colspan="2"></td>
-            <td _ngcontent-c4="" class="text-right" colspan="2">
-              <div _ngcontent-c4="" class="d-flex align-items-center justify-content-end">
-                Discount&nbsp;<input _ngcontent-c4="" class="form-control col-3" type="text">
-              </div>
-            </td>
-            <td _ngcontent-c4="" class="text-right pr-5">
-              -0.00
-            </td>
-          </tr>
-          <tr _ngcontent-c4="">
-            <td _ngcontent-c4="" colspan="2"></td>
-            <td _ngcontent-c4="" class="text-right" colspan="2">
-              <div _ngcontent-c4="" class="d-flex align-items-center justify-content-end">
-                CGST&nbsp;<input _ngcontent-c4="" class="form-control col-2" type="text">&nbsp;% :
-              </div>
-            </td>
-            <td _ngcontent-c4="" class="text-right pr-5">
-              0.00
-            </td>
-          </tr>
-          <tr _ngcontent-c4="">
-            <td _ngcontent-c4="" colspan="2"></td>
-            <td _ngcontent-c4="" class="text-right" colspan="2">
-              <div _ngcontent-c4="" class="d-flex align-items-center justify-content-end">
-                SGST&nbsp;<input _ngcontent-c4="" class="form-control col-2" type="text">&nbsp;% :
-              </div>
-            </td>
-            <td _ngcontent-c4="" class="text-right pr-5">
-              0.00
-            </td>
-          </tr>
-          <tr _ngcontent-c4="">
-            <td _ngcontent-c4="" colspan="2"></td>
-            <td _ngcontent-c4="" class="text-right" colspan="2">
-              <strong _ngcontent-c4="">Grand Total:</strong>
-            </td>
-            <td _ngcontent-c4="" class="text-right pr-5">
-              <strong _ngcontent-c4="">USD 0.00</strong>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-   
-   
-  </form>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </ng-container>
+    <tfoot>
+      <tr>
+        <td colspan="2">
+          <div>
+            <button (click)='addForm()' class="btn btn-secondary">
+              <span class="fa fa-plus"></span> Add new line
+            </button>
+          </div>
+        </td>
+        <td class="text-right" colspan="2">
+          Sub Total:
+        </td>
+        <td class="text-right pr-5">
+          {{subTotal}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td class="text-right" colspan="2">
+          <div class="d-flex align-items-center justify-content-end">
+            Discount&nbsp;<input class="form-control col-3" (keyup)="calculateDiscount($event.target.value)" type="text">
+          </div>
+        </td>
+        <td class="text-right pr-5">
+          -{{discountValue}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td class="text-right" colspan="2">
+          <div class="d-flex align-items-center justify-content-end">
+            CGST&nbsp;<input class="form-control col-2" (keyup)="calculateCGST($event.target.value)" type="text">&nbsp;%
+            :
+          </div>
+        </td>
+        <td class="text-right pr-5">
+          +{{cgstValue}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td class="text-right" colspan="2">
+          <div class="d-flex align-items-center justify-content-end">
+            SGST&nbsp;<input class="form-control col-2" (keyup)="calculateSGST($event.target.value)" type="text">&nbsp;%
+            :
+          </div>
+        </td>
+        <td class="text-right pr-5">
+          +{{sgstValue}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td class="text-right" colspan="2">
+          <strong>Grand Total:</strong>
+        </td>
+        <td class="text-right pr-5">
+          <strong>USD {{finalTotal}}</strong>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
+{{itemForm.value|json}}
