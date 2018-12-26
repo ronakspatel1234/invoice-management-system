@@ -5,7 +5,8 @@
       <a routerLink="/customer/view" class="btn btn-secondary mr-1"
         ><span class="fa fa-arrow-left"></span
       ></a>
-      <a routerLink="/customer/add" class="btn btn-secondary mr-1"
+      <a
+      (click)="editCustomer(customers.id)" class="btn btn-secondary mr-1"
         ><span class="fa fa-pencil"></span
       ></a>
       <a routerLink="/quotation/add" class="btn btn-secondary mr-1" href="#"
@@ -96,8 +97,8 @@
             <td >{{quotation.issue_date}}</td>
             <td >{{quotation.expiry_date}}</td>
             <td >{{quotation.customer_id}}</td>
-            <td >{{quotation.grand_total}}</td>
-            <td ></td>
+            <td >{{quotation.grand_total | CustomeCurrency}}</td>
+            <td >{{quotation.status}}</td>
           </tr>
         </tbody>
       </table>

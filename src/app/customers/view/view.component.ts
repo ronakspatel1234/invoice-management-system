@@ -132,11 +132,12 @@ export class ViewComponent implements OnInit {
     this.getcustomerByPagination();
   }
   /** this method use for sort data in asending or descending order */
-  sort(keys: any, orders: string): void {
+  sort(id: number, order: string): void {
 
-    this.customersService.orderByData(keys, orders).subscribe((data) => {
+    this.customersService.orderByData(id, order).subscribe((data) => {
       this.sortResult = data;
       console.log(this.sortResult);
+      this.customers = this.sortResult;
     });
   }
 

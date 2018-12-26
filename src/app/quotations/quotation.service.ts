@@ -31,6 +31,10 @@ export class QuotationService {
     const url = this.url + '/quotation';
     return this.http.get<Quotation[]>(url);
   }
+  public getQoutationByCustomerId(customer_id: number): Observable<any[]> {
+    const url = this.url + '/quotation';
+    return this.http.get<Quotation[]>(url + '/' + customer_id);
+  }
   public getCustomer(id: number): Observable<any[]> {
     const url = this.url + '/customer';
     return this.http.get<Customers[]>(url + '/' + id);

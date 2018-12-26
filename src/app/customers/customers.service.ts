@@ -9,11 +9,13 @@ import { map } from 'rxjs/operators';
 // ---------------------------------------//
 import { Customers } from './customers.model';
 import { environment } from './../../environments/environment';
+import { Quotation } from '../quotations/quotations.model';
 
 @Injectable()
 export class CustomersService {
   /**URL for web API */
   public customerURL = environment.baseUrl + '/customer';
+  public baseURL = environment.baseUrl;
   public paginationURL: any;
   constructor(private http: HttpClient) {}
   /**
@@ -40,6 +42,11 @@ export class CustomersService {
     return this.http.delete<Customers[]>(url);
   }
   }
+  public getQuotation(id: number): Observable<Quotation> {
+    const url = `${this.baseURL}/${'quotation'}/${id}`;
+    return this.http.get<Quotation>(url);
+  }
+
   /** @param id define id of the perticular record for fatching data*/
   getByCustomer(id: number): Observable<Customers> {
 
@@ -76,17 +83,12 @@ export class CustomersService {
   /**@param key which define the value of key which we have to sort
    * @param orders which define how to sort element by which order
    */
-  orderByData(keys: any , orders: string): Observable<Customers[]> {
-    const order = 'desc';
-    const url = `${this.customerURL}?_sort=${keys}&_order=${order}`;
+  orderByData(id: number , order: any): Observable<Customers[]> {
+     order = ['DESC', 'ASC'];
+    const url = `${this.customerURL}?_sort=${id}&_order=${order}`;
    return this.http.get<Customers[]>(url);
 
-  //  .map(res => {
-  //    const ret = <Customers[]>res.json();
-  //    ret.sort((a, b) => a.name < b.name ? -1 : 1);
-  //    return ret;
-  //  });
-  //  return returnVar;
+
   }
 
 

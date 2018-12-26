@@ -20,7 +20,7 @@ import { AddComponent } from './add/add.component';
     CustomersRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    FormsModule
+
 
   ],
   declarations: [ViewComponent, DetailComponent, AddComponent],

@@ -1,15 +1,16 @@
-import { Payment } from './../../payment/payment.model';
-import { Quotation } from './../../quotations/quotations.model';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { CustomersService } from './../customers.service';
-import { Customers } from './../customers.model';
-import * as CryptoJs from 'crypto-js';
 /**
  * @author Vaibhavi Prajapati
  */
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+// -------------------------------------------//
 import { QuotationService } from '../../quotations/quotation.service';
 import { PaymentService } from '../../payment/payment.service';
+import { Payment } from './../../payment/payment.model';
+import { Quotation } from './../../quotations/quotations.model';
+import { CustomersService } from './../customers.service';
+import { Customers } from './../customers.model';
+import * as CryptoJs from 'crypto-js';
 
 @Component({
   selector: 'ims-detail',
@@ -18,6 +19,7 @@ import { PaymentService } from '../../payment/payment.service';
 })
 export class DetailComponent implements OnInit {
   public customers: Customers;
+  public customerData: Customers[];
   public getCustomer: Customers[];
   public quotations: Quotation[];
   public payments: Payment[];
@@ -40,39 +42,66 @@ export class DetailComponent implements OnInit {
     this.getQuotations();
     this.getPayment();
   }
-  getCustomerById(): void {
+  /** get customer detail for perticular id
+   * when click on id first of all decrypt id and get data
+   */
+  public getCustomerById(): void {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.conversionOutput = CryptoJs.AES.decrypt(id, 'aaa').toString(CryptoJs.enc.Utf8);
-    console.log(this.conversionOutput);
-    console.log(id);
 
     this.customerService.getByCustomer(this.conversionOutput).subscribe((customer) => {
       this.customers = customer;
-       console.log(this.customers);
+
     });
   }
   /** this methos get all data from the server using service */
-  getCustomers() {
+  public getCustomers(): void {
     this.customerService.getCustomer().subscribe(customer => {
       this.getCustomer = customer;
     });
   }
  /** @param id define which record will be deleted
    * delete the record from the server */
-  deleteCustomer(id: number) {
+  public deleteCustomer(id: number): void {
     this.customerService.deleteCustomer(id).subscribe(data => this.getCustomers());
     this.router.navigate(['customer/view']);
   }
-  getQuotations(): void {
-     this.quotationService.getQoutation()
-     .subscribe((quotation) => {this.totalItems = quotation.length;
-      if (this.totalItems > 0) {
-         this.getQuotationByPagination();
-      }
+  /** get quotation detail with customer name */
+  public getQuotations(): void {
+    //  this.quotationService.getQoutation()
+    //  .subscribe((quotation) => {this.totalItems = quotation.length;
+    //   if (this.totalItems > 0) {
+    //      this.getQuotationByPagination();
+    //   }
+    // });
+
+    this.quotationService.getQoutation().subscribe((qoutations) => {
+      this.quotations = qoutations;
+     // this.getQuotationByPagination();
+      this.quotations.forEach(qoutation => {
+        if (qoutation.customer_id) {
+          this.quotationService.getCustomer(qoutation.customer_id).subscribe((customer: any) => {
+            if (qoutation.customer_id === customer.id) {
+              qoutation.customer_id = customer.name;
+              // console.log(qoutation.customer_id = customer.name);
+            }
+          });
+        }
+      });
     });
 
+
   }
+  /** when click on edit icon it take id
+   * encrypt id and navigate it on edit page
+   */
+  public editCustomer(id): void {
+    const encryptedId = CryptoJs.AES.encrypt(id.toString().trim(), 'aaaa').toString();
+    this.router.navigate(['/customer/edit/', encryptedId]);
+  }
+
+
   public getQuotationByPagination(): void {
     this.quotationService.getForPage(this.page, this.pageSize).subscribe(
       (quotation) => {

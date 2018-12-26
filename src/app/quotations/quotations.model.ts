@@ -28,4 +28,5 @@ export class Quotation {
     discount: number;
     cgst: number;
     sgst: number;
+    status: string;
 }
