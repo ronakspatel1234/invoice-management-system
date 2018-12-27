@@ -1,6 +1,9 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+/**
+ * @author Yamini Gala
+ */
+import { Component, OnInit } from "@angular/core";
+//----------------------------------------------------------------
 import { Mode } from "../../shared/item-description/item-description-data.model";
-import { ItemDescriptionComponent } from "../../shared/item-description/item-description.component";
 
 @Component({
   selector: "ims-item-des-test",
@@ -8,44 +11,104 @@ import { ItemDescriptionComponent } from "../../shared/item-description/item-des
   styleUrls: ["./item-des-test.component.scss"]
 })
 export class ItemDesTestComponent implements OnInit {
-  items: any[];
-  // mode =  [Mode.Edit,Mode.Add,Mode.View];
+  /**
+   * @property items: any model type
+   */
+ public items: any[];
+ /**
+  * @property mode: give particular mode of enum which you want to apply
+  */
   // mode = Mode.Add;
   mode = Mode.Edit;
   // mode = Mode.View;
-  // @ViewChild(ItemDescriptionComponent) child;
   constructor() {
+    /**
+     * @description array of fake data which you want to display
+     */
     this.items = [
       {
         id: 1,
-        description: "sdhjgfujsyhfhjsd",
+        description: "Mobile",
         uom: "cm",
-        unitPrice: 120,
+        unitPrice: 12000,
         qty: 2,
-        total: 240,
+        total: 24000,
 
       },
       {
         id: 2,
-        description: "efewsf",
+        description: "T-shirt",
         uom: "meter",
-        unitPrice: 320,
+        unitPrice: 620,
         qty: 1,
-        total: 320
+        total: 620
       },
       {
         id: 3,
-        description: "desgwsf",
+        description: "Ear-Phones",
         uom: "meter",
-        unitPrice: 100,
+        unitPrice: 500,
         qty: 3,
-        total: 300
+        total: 1500
+      },
+      {
+        id: 4,
+        description: "speaker",
+        uom: "meter",
+        unitPrice: 400,
+        qty: 3,
+        total: 1200
+      },
+      {
+        id: 5,
+        description: "saree",
+        uom: "meter",
+        unitPrice: 1000,
+        qty: 3,
+        total: 3000
+      },
+      {
+        id: 6,
+        description: "flower-pot",
+        uom: "meter",
+        unitPrice: 300,
+        qty: 3,
+        total: 900
+      },
+      {
+        id: 7,
+        description: "micro-wave",
+        uom: "meter",
+        unitPrice: 5000,
+        qty: 3,
+        total: 15000
+      },
+      {
+        id: 8,
+        description: "jacket",
+        uom: "meter",
+        unitPrice: 600,
+        qty: 3,
+        total: 1800
+      },
+      {
+        id: 9,
+        description: "bag",
+        uom: "meter",
+        unitPrice: 700,
+        qty: 2,
+        total: 1400
+      },
+      {
+        id: 10,
+        description: "shoes",
+        uom: "meter",
+        unitPrice: 800,
+        qty: 2,
+        total: 1600
       }
     ];
   }
 
   ngOnInit() { }
-  // ngAfterViewInit() {
-  //   this.items = this.child.message
-  // }
 }

@@ -1,9 +1,11 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, group, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, AbstractControl, FormArrayName, FormGroupName, FormControl } from '@angular/forms';
+/**
+ * @author Yamini Gala
+ */
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 //-----------------------------------------------------------------------
 import { Mode } from './item-description-data.model';
 import { ItemList } from './item-list.model';
-import { Product, ItemDescriptionData, ItemCalculation } from './item-description-data.model';
 import ItemDescriptionUtil from '../item-description/utility';
 
 @Component({
@@ -13,84 +15,76 @@ import ItemDescriptionUtil from '../item-description/utility';
 })
 
 export class ItemDescriptionComponent implements OnInit {
-  public itemCalculation: ItemCalculation[];
+  /**
+   * @property itemForm: Declare as FormGroup type for accessing its property
+   * @property itemList: Declare as Array of ItemList model type
+   * @property subTotal: Declare as number type
+   * @property discountValue: Declare as number type
+   * @property sgstValue: Declare as number type
+   * @property cgstValue: Declare as number type
+   * @property finalTotal: Declare as number type
+   */
   public itemForm: FormGroup;
   public itemList: ItemList[];
-  public product: Product[];
-  public total: ItemCalculation;
   public subTotal: number;
   public discountValue: number;
   public sgstValue: number;
   public cgstValue: number;
   public finalTotal: number;
-  public itemDescriptionData: ItemDescriptionData[];
+  /**
+   * @property mode: Declare enums as Mode 
+   * pass input to parent with different modes
+   */
   @Input() mode: Mode;
+  /**
+   * @property data:Declare ItemList Array Model type
+   * set data use for asyncronous data
+   */
   @Input() set data(data: ItemList[]) {
     this.itemList = data;
   }
+  /**
+   * get data from itemList 
+   */
   get data() {
     return this.itemList;
   }
+  /**
+   * 
+   * @param fb : inject formBuilder for using its property
+   */
   constructor(private fb: FormBuilder) {
+    //define subTotal as 0 at initial level
     this.subTotal = 0;
   }
   ngOnInit() {
+    /**
+     * different conditions for appling mode and creating form
+     */
     if (this.mode === Mode.Add) {
       this.createForm();
-      // this.addForm();
-      // this.form($event, formGroupIndex);
     }
+    /**
+     * applied mode and getting data
+     */
     else if (this.mode === Mode.Edit) {
       this.createForm();
-
-      // this.form(event, formGroupIndex);
-      let formArray = this.itemForm.get('addNewLine') as FormArray;
-      formArray.controls.forEach((value) => {
-        this.itemList.values = this.itemForm.controls['addNewLine'].value.push(value);
-        debugger;
-        console.log(this.itemList);
-        value.controls.patchValue({
-          description: this.itemList[0].description
-        })
-        // this.itemForm.controls.itemList.value.patchValue({
-        //   description: this.itemForm.value.ItemList.value.description,
-        //   uom: this.itemForm.value.itemList.value.uom
-        // })
-        console.log(this.itemForm.value.itemList.value.description);
-        // this.itemForm.patchValue({
-        //   description: this.itemForm.value.description,
-        //   uom: this.itemForm.value.uom,
-        //   unitPrice: this.itemForm.value.unitPrice,
-        // })
-        // console.log(this.itemList[0]); 
-      });
-      // formArray.controls.forEach((value) => {
-      //   value.controls.patchValue({
-      //     // id:this.addNewLine.value.itemDescriptionData.product.id
-      //     description: value.controls.description
-      //   })
-      // })
-      // this.addForm();
-      // let controlArray = <FormArray>this.itemForm.controls['addNewLine'];           
-      // this.itemList.forEach(app => {
-      //             const fb = this.buildGroup();
-      //             fb.patchValue(app);
-      //             controlArray.push(fb);
-      // this.itemForm.controls['addNewLine'] = this.fb.addNewLine(formArray.map(i => this.fb.group(i)));
-      // this.myForm.controls['array'] = this.formBuilder.array(newArray.map(i => this.formBuilder.group(i)));
-      //  this.itemForm.controls['addNewLine'].push(new FormControl('formArray'));
-      // });
     }
+    /**
+     * applied mode and getting data
+     */
     else (this.mode === Mode.View)
     {
       this.createForm();
     }
   }
-
-  public createForm() {
+  /**
+   * createForm method for creating form when page loads
+   */
+  public createForm(): void {
     this.itemForm = this.fb.group({
       id: [''],
-      addNewLine: this.fb.array([this.fb.group({
+      addNewField: this.fb.array([this.fb.group({
         description: [''],
         uom: [''],
         unitPrice: [''],
@@ -100,12 +94,17 @@ export class ItemDescriptionComponent implements OnInit {
       ])
     });
   }
-  get addNewLine(): FormArray {
-    return this.itemForm.get('addNewLine') as FormArray;
+  /**
+   * Declare addNewField as FormArray and get it from itemForm
+   */
+  get addNewField(): FormArray {
+    return this.itemForm.get('addNewField') as FormArray;
   }
-
-  addForm() {
-    this.addNewLine.push(this.fb.group({
+  /**
+   * addForm method use for pushing whole group in addNewField array at button click
+   */
+  public addForm(): void {
+    this.addNewField.push(this.fb.group({
       description: [''],
       uom: [''],
       unitPrice: [''],
@@ -113,71 +112,123 @@ export class ItemDescriptionComponent implements OnInit {
       total: [''],
     }));
   }
-  onChange($event, formGroupIndex: number) {
-    console.log(formGroupIndex);
-    this.form($event, formGroupIndex);
+  /**
+   * 
+   * @param event pass parameter in form method
+   * @param formGroupIndex pass parameter in form method
+   */
+  public onSelectDescription(event, formGroupIndex: number): void {
+    this.form(event, formGroupIndex);
   }
-  form(event, formGroupIndex) {
-    let FormArrayName = this.itemForm.controls['addNewLine'] as FormArray;
+  /**
+   * 
+   * @param event  passing whole event to form method and matching it with item's id
+   * @param formGroupIndex passing index with number type and giving control with the help of index
+   */
+  public form(event, formGroupIndex): void {
+    let FormArrayName = this.itemForm.controls['addNewField'] as FormArray;
     this.itemList.forEach(
       (item) => {
         if (item.id == event) {
-          console.log(item.id);
           FormArrayName.controls[formGroupIndex].patchValue({
+            /**
+             * patching group's data by giving control to its array
+             */
             description: item.id,
             uom: item.uom,
             unitPrice: item.unitPrice,
             qty: '1',
-            total: '',
+            total: ''
           })
         }
       }
     )
   }
-  onKeyUp(event, i) {
+  /**
+   * 
+   * @param event pass event for patching total
+   * @param i passing index for patching on particular field's total
+   */
+  public onKeyUp(event, i): void {
     this.calculation(i);
   }
-
-  calculation(i) {
-    let formArray = this.itemForm.get('addNewLine') as FormArray;
+  /**
+   * 
+   * @param i index of each field
+   */
+  public calculation(i): void {
+    /**
+     * declare addNewField as formArray and getting it from itemForm
+     */
+    let formArray = this.itemForm.get('addNewField') as FormArray;
+    /**
+     * giving control in formarray using index total and appling calculation of value in total 
+     */
     formArray.controls[i].patchValue({
       total: formArray.controls[i].value.qty * formArray.controls[i].value.unitPrice,
     })
+    /**
+     * call calculateSubtotal method whenever total gets its data
+     */
     this.calculateSubTotal();
   }
-
-  calculateSubTotal() {
-    let formArray = this.itemForm.get('addNewLine') as FormArray;
+  /**
+   * calculate subtotal on base of every fields total as per index
+   */
+  public calculateSubTotal(): void {
+    let formArray = this.itemForm.get('addNewField') as FormArray;
     this.subTotal = 0;
     formArray.controls.forEach(value => {
       this.subTotal += value.value.total;
     })
   }
-
-  deleteRow(i) {
-    let control = <FormArray>this.itemForm.controls.addNewLine;
+  /**
+   * 
+   * @param i index of each row
+   * giving control to formarray and removing it from itemform using removeAt method
+   */
+  public deleteRow(i): void {
+    let control = <FormArray>this.itemForm.controls.addNewField;
     control.removeAt(i);
+    /**
+     * after removing field call subTotal method for changing its value 
+     */
     this.calculateSubTotal();
+    /**
+     * on base of changing subTotal call grandtotal method for changing its value in form
+     */
     this.calculateGrandTotal();
   }
-
-  calculateDiscount(discunt) {
-    this.discountValue = ItemDescriptionUtil.subtraction(discunt, this.subTotal);
+  /**
+   * 
+   * @param discount pass parameter which is used in util method
+   * call util method directly for calculating discount
+   */
+  public calculateDiscount(discount): void {
+    this.discountValue = ItemDescriptionUtil.subtraction(discount, this.subTotal);
   }
-
-  calculateCGST(cgst) {
+  /**
+   * 
+   * @param cgst pass parameter which is used in util method
+   * call util method directly for calculating cgst
+   */
+  public calculateCGST(cgst): void {
     this.cgstValue = ItemDescriptionUtil.addition(cgst, this.subTotal);
   }
-
-  calculateSGST(sgst) {
+  /**
+   * 
+   * @param sgst pass parameter which is used in util method
+   * call util method directly for calculating sgst
+   */
+  public calculateSGST(sgst): void {
     this.sgstValue = ItemDescriptionUtil.add(sgst, this.subTotal);
     this.calculateGrandTotal();
   }
-
-  calculateGrandTotal() {
+  /**
+   * calculate grandtotal with the help of discount, sgstValue, cgstValue
+   */
+  public calculateGrandTotal(): void {
     this.finalTotal = this.subTotal - this.discountValue + this.sgstValue + this.cgstValue
   }
-
-
 }
 

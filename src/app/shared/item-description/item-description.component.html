@@ -13,11 +13,11 @@
         <th>Total</th>
       </tr>
     </thead>
-    <ng-container formArrayName="addNewLine">
+    <ng-container formArrayName="addNewField">
       <tbody>
-        <tr *ngFor="let field of addNewLine.controls; let i=index" [formGroupName]="i">
+        <tr *ngFor="let field of addNewField.controls; let i=index" [formGroupName]="i">
           <td>
-            <select formControlName="description" class="form-control" (change)="onChange(field.get('description').value,i)">
+            <select formControlName="description" class="form-control" (change)="onSelectDescription(field.get('description').value,i)">
               <option [value]="record.id" *ngFor="let record of itemList">
                 {{record.description}}
               </option>
