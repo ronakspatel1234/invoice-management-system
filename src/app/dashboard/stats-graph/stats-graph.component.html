@@ -1,3 +1,57 @@
-<p>
-  stats-graph works!
-</p>
+<div>
+  
+  <ngx-charts-pie-chart 
+  [view]="[1170, 650]" 
+  [results]="invoiceChart" 
+  [labels]="true" 
+  [legend]="false" 
+  [legendTitle]="InvoiceStatus"
+  [explodeSlices]="true" 
+  [doughnut]="true" 
+  [arcWidth]="0.40" 
+  [gradient]="true" 
+  [tooltipDisabled]="false"></ngx-charts-pie-chart>
+  <h5>Invoice Status</h5>
+</div>
+<div *ngIf="isBoolean">
+  <ngx-charts-bar-vertical
+  [view]="[1170, 650]"
+  [results]="paymentChart"
+  [xAxis]="true"
+  [yAxis]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxisLabel]="name"
+  [yAxisLabel]="month"
+  [yScaleMax]="20"
+  [yScaleMin]="0"
+  ></ngx-charts-bar-vertical>
+  <h5>Revenue </h5>
+  
+  <ngx-charts-line-chart 
+  [view]="[1170, 650]" 
+  [results]="customerChart"
+  [rangeFillOpacity]="0.15"
+  [legend]="false"
+  [legendTitle]="Customers"
+  
+  [xAxis]="true"
+  [yAxis]="true"
+  [roundDomains]="true"
+  [showXAxisLabel]="false"
+  [showYAxisLabel]="true"
+  [xAxisLabel]="name"
+  [yAxisLabel]="value"
+  [xAxisTicks]=""
+  [yAxisTicks]=""
+  [timeline]="true"
+  [autoScale]="true"
+  [gradient]="true"
+  [showRefLines]="true"
+  [xScaleMin]=""
+  [xScaleMax]=""
+  [yScaleMin]="0"
+  [yScaleMax]="20"></ngx-charts-line-chart>
+  <h5>Customers Visit</h5>
+</div>
+<button (click)="change()">Show More Charts</button>

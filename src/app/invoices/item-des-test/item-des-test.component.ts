@@ -30,7 +30,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 1,
         description: "Mobile",
         uom: "cm",
-        unitPrice: 12000,
+        price: 12000,
         qty: 2,
         total: 24000,
 
@@ -39,7 +39,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 2,
         description: "T-shirt",
         uom: "meter",
-        unitPrice: 620,
+        price: 620,
         qty: 1,
         total: 620
       },
@@ -47,7 +47,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 3,
         description: "Ear-Phones",
         uom: "meter",
-        unitPrice: 500,
+        price: 500,
         qty: 3,
         total: 1500
       },
@@ -55,7 +55,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 4,
         description: "speaker",
         uom: "meter",
-        unitPrice: 400,
+        price: 400,
         qty: 3,
         total: 1200
       },
@@ -63,7 +63,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 5,
         description: "saree",
         uom: "meter",
-        unitPrice: 1000,
+        price: 1000,
         qty: 3,
         total: 3000
       },
@@ -71,7 +71,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 6,
         description: "flower-pot",
         uom: "meter",
-        unitPrice: 300,
+        price: 300,
         qty: 3,
         total: 900
       },
@@ -79,7 +79,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 7,
         description: "micro-wave",
         uom: "meter",
-        unitPrice: 5000,
+        price: 5000,
         qty: 3,
         total: 15000
       },
@@ -87,7 +87,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 8,
         description: "jacket",
         uom: "meter",
-        unitPrice: 600,
+        price: 600,
         qty: 3,
         total: 1800
       },
@@ -95,7 +95,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 9,
         description: "bag",
         uom: "meter",
-        unitPrice: 700,
+        price: 700,
         qty: 2,
         total: 1400
       },
@@ -103,7 +103,7 @@ export class ItemDesTestComponent implements OnInit {
         id: 10,
         description: "shoes",
         uom: "meter",
-        unitPrice: 800,
+        price: 800,
         qty: 2,
         total: 1600
       }

@@ -1,8 +1,9 @@
 /**
  * @author - Ronak Patel.
- * @description -
+ * @description - create class for crad component.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Card } from './card.model';
 
 @Component({
   selector: 'ims-card',
@@ -11,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() public card: Card;
   constructor() { }
 
   ngOnInit() {

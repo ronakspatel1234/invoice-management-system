@@ -1,3 +1,7 @@
+<!-- partial:partials/_sidebar.html -->
+
+<!-- partial -->
+
 <div class="page-title">
   <h4 class="mb-3">Create Invoice</h4>
 </div>
@@ -24,107 +28,108 @@
             </div>
           </div>
         </div>
+
       </div>
-      <!-- <div class="table-responsive border-bottom mb-3">
-                <table class="table item-table">
-                  <thead>
-                    <tr>
-                      <th>
-                        <div class="d-flex align-items-center">
-                          Item Description<a href="#product-modal" data-toggle="modal" class="ml-auto"></a>
-                        </div>
-                      </th>
-                      <th>U.O.M</th>
-                      <th>Unit Price</th>
-                      <th>Qty</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <select class="form-control">
-                          <option>Type or click to select</option>
-                        </select>
-                      </td>
-                      <td>
-                        <input type="text" class="form-control" name="u-m-o" />
-                      </td>
-                      <td>
-                        <input type="text" class="form-control" name="unit-price" />
-                      </td>
-                      <td>
-                        <input type="text" class="form-control" name="qty" />
-                      </td>
-                      <td>
-                        <div class="d-flex">
-                          <input type="text" class="form-control" name="total" />
-                          <button class="btn bg-transparent border-0"><span class="fa fa-times text-danger"></span></button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="2">
-                        <button class="btn btn-secondary">
-                          <span class="fa fa-plus"></span> Add new line
-                        </button>
-                      </td>
-                      <td colspan="2" class="text-right">
-                        Sub Total:
-                      </td>
-                      <td class="text-right pr-5">
-                        0.00
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"></td>
-                      <td colspan="2" class="text-right">
-                        <div class="d-flex align-items-center justify-content-end">
-                          Discount&nbsp;<input type="text" class="form-control col-3" />
-                        </div>
-                      </td>
-                      <td class="text-right pr-5">
-                        -0.00
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"></td>
-                      <td colspan="2" class="text-right">
-                        <div class="d-flex align-items-center justify-content-end">
-                          CGST&nbsp;<input type="text" class="form-control col-2" />&nbsp;% :
-                        </div>
-                      </td>
-                      <td class="text-right pr-5">
-                        0.00
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"></td>
-                      <td colspan="2" class="text-right">
-                        <div class="d-flex align-items-center justify-content-end">
-                          SGST&nbsp;<input type="text" class="form-control col-2" />&nbsp;% :
-                        </div>
-                      </td>
-                      <td class="text-right pr-5">
-                        0.00
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"></td>
-                      <td colspan="2" class="text-right">
-                        <strong>Grand Total:</strong>
-                      </td>
-                      <td class="text-right pr-5">
-                        <strong>USD 0.00</strong>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div> -->
-<!-- <ims-item-description [data] = "items" [mode] = "mode" ></ims-item-description> -->
-<ims-item-description></ims-item-description>
+      <div class="table-responsive border-bottom mb-3">
+        <table class="table item-table">
+          <thead>
+            <tr>
+              <th>
+                <div class="d-flex align-items-center">
+                  Item Description<a href="#product-modal" data-toggle="modal" class="ml-auto"></a>
+                </div>
+              </th>
+              <th>U.O.M</th>
+              <th>Unit Price</th>
+              <th>Qty</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <select class="form-control">
+                  <option>Type or click to select</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" class="form-control" name="u-m-o" />
+              </td>
+              <td>
+                <input type="text" class="form-control" name="unit-price" />
+              </td>
+              <td>
+                <input type="text" class="form-control" name="qty" />
+              </td>
+              <td>
+                <div class="d-flex">
+                  <input type="text" class="form-control" name="total" />
+                  <button class="btn bg-transparent border-0"><span class="fa fa-times text-danger"></span></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">
+                <button class="btn btn-secondary">
+                  <span class="fa fa-plus"></span> Add new line
+                </button>
+              </td>
+              <td colspan="2" class="text-right">
+                Sub Total:
+              </td>
+              <td class="text-right pr-5">
+                0.00
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td colspan="2" class="text-right">
+                <div class="d-flex align-items-center justify-content-end">
+                  Discount&nbsp;<input type="text" class="form-control col-3" />
+                </div>
+              </td>
+              <td class="text-right pr-5">
+                -0.00
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td colspan="2" class="text-right">
+                <div class="d-flex align-items-center justify-content-end">
+                  CGST&nbsp;<input type="text" class="form-control col-2" />&nbsp;% :
+                </div>
+              </td>
+              <td class="text-right pr-5">
+                0.00
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td colspan="2" class="text-right">
+                <div class="d-flex align-items-center justify-content-end">
+                  SGST&nbsp;<input type="text" class="form-control col-2" />&nbsp;% :
+                </div>
+              </td>
+              <td class="text-right pr-5">
+                0.00
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td colspan="2" class="text-right">
+                <strong>Grand Total:</strong>
+              </td>
+              <td class="text-right pr-5">
+                <strong>USD 0.00</strong>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div> 
+      <!-- <ims-item-description [data] = "items" [mode] = "mode" ></ims-item-description> -->
+      <!-- <ims-item-description></ims-item-description> -->
       <div class="row mt-3">
         <div class="col-12 text-right">
           <button routerLink='/invoice/view' class="btn btn-primary">Save</button>
@@ -270,7 +275,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- content-wrapper ends -->
+
+
+    <!-- content-wrapper ends -->

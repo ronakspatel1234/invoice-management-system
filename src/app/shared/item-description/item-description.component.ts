@@ -87,7 +87,7 @@ export class ItemDescriptionComponent implements OnInit {
       addNewField: this.fb.array([this.fb.group({
         description: [''],
         uom: [''],
-        unitPrice: [''],
+        price: [''],
         qty: [''],
         total: [''],
       })
@@ -107,7 +107,7 @@ export class ItemDescriptionComponent implements OnInit {
     this.addNewField.push(this.fb.group({
       description: [''],
       uom: [''],
-      unitPrice: [''],
+      price: [''],
       qty: [''],
       total: [''],
     }));
@@ -136,7 +136,7 @@ export class ItemDescriptionComponent implements OnInit {
              */
             description: item.id,
             uom: item.uom,
-            unitPrice: item.unitPrice,
+            price: item.price,
             qty: '1',
             total: ''
           })
@@ -165,7 +165,7 @@ export class ItemDescriptionComponent implements OnInit {
      * giving control in formarray using index total and appling calculation of value in total 
      */
     formArray.controls[i].patchValue({
-      total: formArray.controls[i].value.qty * formArray.controls[i].value.unitPrice,
+      total: formArray.controls[i].value.qty * formArray.controls[i].value.price,
     })
     /**
      * call calculateSubtotal method whenever total gets its data

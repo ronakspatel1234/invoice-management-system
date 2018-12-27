@@ -20,7 +20,7 @@ const paymentRoutes: Routes = [
   },
   {
     path: 'view',
-    component: ViewComponent
+    component: ViewComponent,
   },
   {
     path: 'details',
