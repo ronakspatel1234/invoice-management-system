@@ -127,6 +127,15 @@ export class EditComponent implements OnInit {
      })
    }
 
+   /**
+ * 
+ *  
+ * @description This method uses the FileReader
+ *  to read the contents of the file and take the result
+ *  and patch the form with value. 
+ * need to run CD since file load runs outside of zone
+ */
+
   
    onFileChange(event) {
     console.log(event);
@@ -152,10 +161,5 @@ export class EditComponent implements OnInit {
     
     }
   }
-
-
-
-
-
 
 }
