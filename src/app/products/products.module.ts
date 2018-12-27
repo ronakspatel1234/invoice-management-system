@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { GuardService } from './guard.service';
+
+//-------------------------------------------------------------------//
+
 import {SharedModule} from '../shared/shared.module'
 import { ProductsRoutingModule } from './products-routing.module';
 import { ViewComponent } from './view/view.component';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
-import {ReactiveFormsModule} from '@angular/forms'
-import {HttpClientModule} from '@angular/common/http'
 import { ProductsService } from './products.service';
-import {FormsModule} from '@angular/forms';
-import { GuardService } from './guard.service';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -23,7 +27,8 @@ import { GuardService } from './guard.service';
     
   ],
   providers:[ProductsService,GuardService,DatePipe],
-  declarations: [ViewComponent, DetailsComponent, AddComponent],
-  exports:[AddComponent]
+  declarations: [ViewComponent, DetailsComponent, AddComponent, EditComponent]
+  
+ 
 })
 export class ProductsModule { }

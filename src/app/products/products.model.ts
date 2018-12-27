@@ -9,7 +9,7 @@
  * @property date is for when cutomer purchase product
  * @property group is for which catagory of product
  */
-export class Products
+export class Product
 {
     id:number;
     product_number:string;

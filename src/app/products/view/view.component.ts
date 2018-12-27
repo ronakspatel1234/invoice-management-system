@@ -1,11 +1,17 @@
+/**
+ * @author Akshita Kapadia
+ * this component contains all methods which are use 
+ * for view page 
+ */
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Action, ActionEvent } from '../../shared/table/table.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import * as jspdf from 'jspdf';
 import * as html2canvas from "html2canvas"
-import { Products } from '../products.model';
+import { Product } from '../products.model';
 import * as CryptoJS from 'crypto-js';
+
 
 @Component({
   selector: 'ims-view',
@@ -17,31 +23,53 @@ export class ViewComponent implements OnInit {
     name: ["Id","Item Code","Description","U.O.M","Unit Price","Group" ],
     key: ["id","product_number","description","uom","price","group"]
   }
-  public products:Products[];
+
+  /**
+   * @property products contains data of all the products
+   * @property totalItems contains number of products
+   * @property pageSize stores number of pages 
+   * @property page contains starting number of page
+   * @searchResult stores searched data
+   * @orderResult stores result of order
+   * @action contains array of which actions perform 
+   * 
+   */
+  public products:Product[];
   public totalItems = 0;
   public pageSize = 10;
   public page = 1;
-  public searchData:string;
-  public searchResult:Products[];
-  public orderResult:Products[];
-  conversionOutput: any;
+ 
+  public searchResult:Product[];
+  public orderResult:Product[];
+  
   public action=[Action.EDIT,Action.DELETE,Action.VIEW];
 
 
-
+/**
+ * 
+ * @param service inject service which have methods to interact with server
+ * @param router to navigate on other page
+ * 
+ */
   constructor(private service: ProductsService,
-    private router:Router,
-    private route:ActivatedRoute) {
+    private router:Router) 
+    {
       this.searchResult = [];
       this.orderResult=[];
       this.products=[];
      }
 
+     /**
+      * when page initializes , this method calls 
+      */
   ngOnInit() {
    
     this.getProducts();
   }
 
+  /**
+   * to generate pdf of view screen
+   */
   public export()
  {
   var data = document.getElementById('contentToConvert');
@@ -59,14 +87,19 @@ export class ViewComponent implements OnInit {
 
  }
  
- sort(orderBy) {
-  this.service.orderByProduct(orderBy).subscribe((totalItems) => {
-    this.orderResult = totalItems
-      
-    });
-  }
+//  sort(e) {
+//   this.service.orderByProduct(this.page,this.pageSize,orderBy).subscribe((totalItems) => {
+//     this.orderResult = totalItems
 
+//       console.log(this.orderResult);
+//     this.orderBy=e.target.value;
+//     this.getProducts();
+//     });
+//   }
 
+/**
+ * get products from service using subscribing it 
+ */
   getProducts()
   {
 
@@ -78,17 +111,23 @@ export class ViewComponent implements OnInit {
   });
   }
 
+  /**
+   * method to perform pagination by subscribing service method
+   * and pass serachResult also to perform search with pagination
+   */
   public getPage(): void {
- this.service.getPagination(this.page,this.pageSize,this.searchData).subscribe(
+ this.service.getPagination(this.page,this.pageSize,this.searchResult).subscribe(
    (obj)=>{this.products=obj}
  )
   }
 
 
-
+/**
+ * 
+ * @param pageSize to select page size 
+ */
   goToPage(pageSize: number): void {
-   // debugger;
-    //this.searchResult;
+  
    
     this.page = 1;
     this.pageSize = pageSize;
@@ -97,6 +136,11 @@ export class ViewComponent implements OnInit {
   
   }
 
+  /**
+   * 
+   * @param page to get page action
+   * @description to go to next and previous page
+   */
   goNextPrev(page: any): void {
     if (page === 'next') {
       this.page++;
@@ -106,23 +150,29 @@ export class ViewComponent implements OnInit {
     this.getPage();
   }
 
+  /**
+   * 
+   * @param search to serach products and get those products data
+   */
   search(search) {
-    // this.service.searchData(search).subscribe((data) => {
-    //   this.searchResult = data;
-    
-    //   console.log(this.searchResult);
-    //   this.products = this.searchResult;
-      this.searchData=search;
+   
+      this.searchResult=search;
      this.getProducts();
     }
   
-
+/**
+ * 
+ * @param actionEvent takes two params, id and action 
+ * @description performs encryption on id and perform navigation on perticular
+ * action click
+ */
   public actionClick(actionEvent:ActionEvent):any
   { 
     
 
     if(actionEvent.action===Action.EDIT)
     {
+      
     let encryptedId = CryptoJS.AES.encrypt( actionEvent.id.toString().trim(),"hskag").toString();
     this.router.navigate(['/product/edit/',encryptedId]);
     }
@@ -132,12 +182,25 @@ export class ViewComponent implements OnInit {
     this.router.navigate(["/product/details/",encryptedId])
    }
   else if(actionEvent.action===Action.DELETE){
-     this.deleteProducts(actionEvent.id);
+     
+     if(confirm("sure you want to delete?"))
+     {
+       return this.deleteProducts(actionEvent.id);
+     }
+     else
+     {
+       return false;
+     }
     }
 
   }
 
+  /**
+   * 
+   * @param id delete product of perticular id using subscribe method
+   */
   public deleteProducts(id:number):void{
+    
     this.service.deleteProduct(id).subscribe(()=>this.getProducts() );
     
    }

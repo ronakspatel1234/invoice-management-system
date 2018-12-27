@@ -75,9 +75,10 @@
             <div class="form-group col-md-6">
               <label for="upload-file">Upload File</label>
               <div class="custom-file">
-                <input type="file"  formControlName="image" class="custom-file-input" id="file-upload"  (change) = "onFileChange($event)">
-         
-                <label class="custom-file-label" for="file-upload">Choose file...</label>
+                <input type="file" formControlName="image" (change)="onFileChange($event)"/>
+                <!-- <input type="file" #file (change)="onChange(file.files)" multiple /> -->
+                <!-- <img id="blah" src="#" alt="{{product.image}}" /> -->
+                <!-- <label class="custom-file-label" for="file-upload">Choose file...</label> -->
                 <div *ngIf="(productForm.get('image').touched || productForm.get('image').dirty) && productForm.get('image').errors" class="alert alert-danger">
      
                   <div *ngIf="productForm.get('image').errors.required">
@@ -99,8 +100,8 @@
       </div>
       <div class="row mt-3">
         <div class="col-12 text-right">
-          <button   type="submit" (click)="showSuccess()" class="btn btn-primary">Save</button>
-          <button type="reset" (click)="canDeactivate()"  class="btn btn-secondary">Cancel</button>
+          <button  type="submit" [disabled]="productForm.invalid || productForm.prestine" (click)="showSuccess()" class="btn btn-primary">Save</button>
+          <button  type="reset" (click)="showError()" class="btn btn-secondary">Cancel</button>
           
         </div>
       </div>

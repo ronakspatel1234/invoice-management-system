@@ -1,10 +1,10 @@
-export enum Mode
+export enum Action
 {
     EDIT=0,
     ADD=1
 }
-export class ModeEvent {
+export class ActionEvent {
     id: number;
-    action: Mode;
+    action: Action;
 }
 
