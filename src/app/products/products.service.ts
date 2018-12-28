@@ -19,7 +19,7 @@ export class ProductsService {
    * orderUrl for order api call
    */
   private productUrl = environment.baseUrl + '/product';
-  private searchUrl;
+
 
 
   /**
@@ -65,15 +65,7 @@ export class ProductsService {
     return this.http.put<Product>(this.productUrl + '/' + product.id, product);
   }
 
-  /**
-   *
-   *to search and get specific  data from server
-   */
-  public searchData(search: Product): Observable<Product[]> {
-    this.searchUrl = '?q=';
-    const url = this.productUrl + this.searchUrl + search;
-    return this.http.get<Product[]>(url);
-  }
+
 
   /**
    *
