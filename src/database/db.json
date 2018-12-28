@@ -1208,9 +1208,9 @@
       "description": "this is maruti suzuki's swift car",
       "uom": "kg",
       "price": 293,
-      "image": "assets/product-images/swift.jpg",
-      "date": "29-Jun-2018",
-      "group": "Service"
+      "group": "Service",
+      "date": "28-Dec-2018",
+      "image": "/assets/product-images/audi.jpg"
     },
     {
       "id": 11,

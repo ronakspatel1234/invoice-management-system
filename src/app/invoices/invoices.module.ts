@@ -15,6 +15,5 @@ import { InvoicesRoutingModule } from './invoices-routing.module';
     InvoicesRoutingModule
   ],
   declarations: [AddComponent, ViewComponent, DetailsComponent]
-
 })
 export class InvoicesModule { }

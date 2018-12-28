@@ -16,6 +16,7 @@ export class OrderByComponent implements OnInit {
   name: OrderByKey;
   public toggle = true;
   sortBy: string;
+  // tslint:disable-next-line:no-inferrable-types
   mode: string = 'DESC';
 
   /**output for export button */

@@ -1,4 +1,4 @@
-<form [formGroup]="productForm"  (ngSubmit)="addProducts(productForm.value)">
+<form [formGroup]="productForm"  (ngSubmit)="addProducts(this.productForm.value)" >
 <div class="page-title">
   <h4 class="mb-3">Create Product</h4>
 </div>
@@ -13,7 +13,7 @@
         <div class="form-group col-md-4 col-sm-6">
           <label for="description">Description</label>
           <textarea formControlName="description" rows="6" class="form-control"></textarea>
-          <div *ngIf="(productForm.get('description').touched || productForm.get('description').dirty) && productForm.get('description').errors" >
+          <div *ngIf="(productForm.get('description').touched || productForm.get('description').dirty) && productForm.get('description').errors" class="alert alert-danger">
      
             <div *ngIf="productForm.get('description').errors.required">
              Required description cannot be left blank.
@@ -33,7 +33,7 @@
                 <option>Printers</option>
                
               </select>
-              <div *ngIf="(productForm.get('group').touched || productForm.get('group').dirty) && productForm.get('group').errors" >
+              <div *ngIf="(productForm.get('group').touched || productForm.get('group').dirty) && productForm.get('group').errors" class="alert alert-danger">
      
                   <div *ngIf="productForm.get('group').errors.required">
                    Required group cannot be left blank.
@@ -44,7 +44,7 @@
             <div class="form-group col-md-6">
               <label for="unit-price">Unit Price</label>
               <input type="text" formControlName="price" class="form-control" id="unit-price">
-              <div *ngIf="(productForm.get('price').touched || productForm.get('price').dirty) && productForm.get('price').errors" >
+              <div *ngIf="(productForm.get('price').touched || productForm.get('price').dirty) && productForm.get('price').errors" class="alert alert-danger">
      
                   <div *ngIf="productForm.get('price').errors.required">
                    Required price cannot be left blank.
@@ -56,13 +56,13 @@
                 </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="u.m.o">U.O.M</label>
+              <label for="u.o.m">U.O.M</label>
               <select formControlName="uom" class="form-control">
                 <option>cm</option>
                 <option>in</option>
                 <option>kg</option>
               </select>
-              <div *ngIf="(productForm.get('uom').touched || productForm.get('uom').dirty) && productForm.get('uom').errors" >
+              <div *ngIf="(productForm.get('uom').touched || productForm.get('uom').dirty) && productForm.get('uom').errors" class="alert alert-danger">
      
                   <div *ngIf="productForm.get('uom').errors.required">
                    Required uom cannot be left blank.
@@ -75,10 +75,12 @@
             <div class="form-group col-md-6">
               <label for="upload-file">Upload File</label>
               <div class="custom-file">
-                <input  type="file"  formControlName="image" class="custom-file-input" id="file-upload"  (change) = "imagePath($event)">
-          
-                <label class="custom-file-label" for="file-upload">Choose file...</label>
-                <div *ngIf="(productForm.get('image').touched || productForm.get('image').dirty) && productForm.get('image').errors" >
+                <input type="file" formControlName="image" (change)="onFileChange($event)"/>
+                <!-- <input type="file" #file (change)="onChange(file.files)" multiple /> -->
+                <!-- <img id="blah" src="#" alt="{{product.image}}" /> -->
+                <!-- <label class="custom-file-label" for="file-upload">Choose file...</label> -->
+              
+                <div *ngIf="(productForm.get('image').touched || productForm.get('image').dirty) && productForm.get('image').errors" class="alert alert-danger">
      
                   <div *ngIf="productForm.get('image').errors.required">
                    Required image cannot be left blank.
@@ -99,8 +101,8 @@
       </div>
       <div class="row mt-3">
         <div class="col-12 text-right">
-          <button  type="submit" (click)="showSuccess()" (saveClick)=save($event) class="btn btn-primary">Save</button>
-          <button type="reset" (cancelClick)=cancel($event) class="btn btn-secondary">Cancel</button>
+          <button  type="submit" [disabled]="productForm.invalid || productForm.prestine" (click)="showSuccess()" class="btn btn-primary">Save</button>
+          <button  type="reset" (click)="showError()" class="btn btn-secondary">Cancel</button>
           
         </div>
       </div>

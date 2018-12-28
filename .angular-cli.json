@@ -21,7 +21,6 @@
       "prefix": "ims",
       "styles": [
         "styles.scss"
-
       ],
       "scripts": [
         "assets/js/jquery.min.js",

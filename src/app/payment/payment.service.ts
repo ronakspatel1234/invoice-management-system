@@ -149,4 +149,8 @@ export class PaymentService {
     return this.http.delete<any>(url);
   }
 
+  // public getPayments(payment: Payment[]): Observable<Payment[]> {
+
+  //   return this.http.get<Payment[]>(this.dbUrl);
+  // }
 }
