@@ -1,11 +1,12 @@
 /**
- * @author - Ronak Patel.
+ * @author - Shahbaz Shaikh
  * @description - Create class for root component.
  */
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
+// ------------------------------------------------- //
 
 @Component({
   selector: 'ims-root',

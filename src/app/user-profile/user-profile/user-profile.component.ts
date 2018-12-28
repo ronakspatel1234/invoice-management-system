@@ -1,5 +1,6 @@
 /**
  * @author- Shahbaz Shaikh
+ * @description - user profile are the update the logged in user profile
  */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
@@ -16,15 +17,22 @@ import { UserProfile } from '../user-profile.model';
 })
 export class UserProfileComponent implements OnInit {
 
+  /**
+   * Declare variable
+   */
   public userProfiles: UserProfile;
   public userProfileForm: FormGroup;
   public id: number;
-
-  // Declare variable for regular expression
+  /**
+   * Declare variable for regular expression
+   */
   public nameRegEx: string;
   public emailRegEx: string;
   public numberRegEx: string;
 
+  /**
+   * Inject the service
+   */
   constructor(private service: UserProfileService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -44,6 +52,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * update deatils for user profile form using reactive forms
+   */
   public updateDetails() {
     this.userProfileForm = this.fb.group({
       id: [''],
@@ -60,6 +71,9 @@ export class UserProfileComponent implements OnInit {
       });
   }
 
+  /**
+   * update setting in patch the existing logged in user value
+   */
   public updateSettings(): void {
     const loginUser = localStorage.getItem('token');
     this.service.getUserByEmail(loginUser)
@@ -76,6 +90,9 @@ export class UserProfileComponent implements OnInit {
       });
   }
 
+  /**
+   * onsubmit method are update the records on server
+   */
   public onSubmit(): void {
     const userProfile: UserProfile = new UserProfile();
     userProfile.id = this.userProfileForm.get('id').value;
@@ -83,14 +100,20 @@ export class UserProfileComponent implements OnInit {
     userProfile.mobile_number = this.userProfileForm.get('mobile_number').value;
     userProfile.name = this.userProfileForm.get('name').value;
     userProfile.password = this.userProfileForm.get('new_password').value;
-
-    this.service.updateUserProfile(userProfile).subscribe(obj => {
-      localStorage.setItem('token', userProfile.email);
-    });
-    alert('Update Record Suceefully.');
-    this.router.navigate(['/dashboard']);
+    if (window.confirm('Are sure you want to Payment ?')) {
+      this.service.updateUserProfile(userProfile).subscribe(obj => {
+        localStorage.setItem('token', userProfile.email);
+      });
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
+  /**
+   * validationPassword are used to check the old password
+   * if old password match so enable the new password and retype password filed
+   */
   private validatePassword(val) {
     if (this.userProfiles[0].password === val) {
       this.userProfileForm.get('new_password').enable();
@@ -102,6 +125,9 @@ export class UserProfileComponent implements OnInit {
   }
 
 
+  /**
+   * MatchPassword field are to check the new password and retype password field
+   */
   // tslint:disable-next-line:member-ordering
   static MatchPassword(ac: AbstractControl) {
     const newPassword = ac.get('new_password').value;

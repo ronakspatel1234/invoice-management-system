@@ -1,10 +1,18 @@
-import { Component, OnInit, ViewContainerRef, OnChanges } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+/**
+ * @author Akshita Kapadia
+ * @description this file to add the products to form
+ * and to generate date and product number with prefix
+ */
+
+import { Component, OnInit, ViewContainerRef, ChangeDetectorRef } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr';
+import { DatePipe } from '@angular/common';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+// --------------------------------------------------------------------//
+
 import { ProductsService } from '../products.service';
-import { Products } from '../products.model';
-// import { NgbModal} from '@ng-bootstrap/ng-bootstrap'
+import { Product } from '../products.model';
 
 
 @Component({
@@ -15,7 +23,7 @@ import { Products } from '../products.model';
 })
 
 
-export class AddComponent implements OnInit ,OnChanges{
+export class AddComponent implements OnInit {
   /**
    * @property productForm to add the product
    * @property numberRegEx to apply validation of number to price field
@@ -26,149 +34,153 @@ export class AddComponent implements OnInit ,OnChanges{
   public numberRegEx: string;
   public path: string;
   public fileName: string;
-  product;
+  public product: Product[];
+  public dd: any = new Date();
+  conversionOutput: any;
+  public productNumber;
+
   /**
-   * 
+   *
    * @param toastr to pass toast on save click
    * @param vcr container for toaster
    * @param productService inject service to use service's methods
    * @param fb to build form controls
    * @param route to activate the route
    * @param router to nevigate to other page
+   * @param datePipe to store date
+   *
    */
   constructor(public toastr: ToastsManager,
     vcr: ViewContainerRef,
     private productService: ProductsService,
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    // public modal: NgbActiveModal
+    private datePipe: DatePipe,
+    // private guard:GuardService,
+    private cd: ChangeDetectorRef
+
   ) {
     this.toastr.setRootViewContainerRef(vcr);
     this.numberRegEx = '^[0-9]*$';
     this.path = '/assets/product-images/';
     this.fileName = '';
+
   }
-  // MODALS = {
-  //   focusFirst:AddComponent ,
-  //   // autofocus: NgbdModalConfirmAutofocus
-  // };
+
 
   ngOnInit() {
-    if(this.productForm==undefined)
+
     this.loadForm();
+    this.getProducts();
+
   }
 
-  ngOnChanges()
-  {
-    if(this.productForm!=undefined)
-    {
-      this.loadData(this.product);
-    }
+  public getProducts() {
+
+
+    this.productService.getProduct().subscribe(
+      (prod) => {
+        this.product = prod;
+
+        const sliceProductNumber = this.product.slice(-1)[0].product_number;
+
+
+        // Split the Product number
+        const splitProductNumber = sliceProductNumber.split('-');
+        const num = splitProductNumber[0];
+
+
+        const stringToNumber = +splitProductNumber[1];
+
+
+        const numberIncriment = stringToNumber + 1;
+
+
+        this.productNumber = num + '-' + numberIncriment;
+
+      }
+    );
+
+
   }
+
 
   /**
    * form validations
    */
   public loadForm(): void {
+
     this.productForm = this.fb.group(
       {
-        product_number:["",Validators.required],
-        description: ["", Validators.required],
-        uom: ["", Validators.required],
-        price: ["", [Validators.required, Validators.pattern(this.numberRegEx)]],
-        date:["",Validators.required],
-        image: ["", Validators.required],
-        group: ["", Validators.required]
+
+        id: [''],
+        product_number: ['', this.productNumber],
+        description: ['', Validators.required],
+        uom: ['', Validators.required],
+        price: ['', [Validators.required, Validators.pattern(this.numberRegEx)]],
+        group: ['', Validators.required],
+        date: this.datePipe.transform(this.dd, 'dd-MMM-yyyy'),
+        image: ['', Validators.required]
+
       }
-    )
+
+    );
+    this.onFileChange(event);
+
   }
 
+
   /**
-   * 
-   * takes input from the form and subscribe the method from the service 
+   *
+   * takes input from the form and subscribe the method from the service
    * to add products
    */
-
-
   public addProducts(product): void {
-   
+
     product.image = this.path + this.fileName;
+
+
     this.productService.addProduct(product).subscribe(
       () => {
-       
-        this.productForm.value, console.log(this.productForm.value)
+
         this.router.navigate(['product/view']);
-      }
-    )
+
   }
+    );
 
- 
-  /**
-   * take the snapshot of id and get data of perticular product
-   * and give it to service
-   */
-
-  public editProducts(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.editProduct(id).subscribe(
-      (product) => { this.loadData(product) }
-    )
-  }
-  /**
-   * 
-   * @param product to store products
-   *@description using patchvalue we can get the data of perticular id ,
-   when form is loaded  
-   */
-  public loadData(product:Products): void {
-    this.productForm = this.fb.group(
-      {
-        id:[],
-        product_number:["",Validators.required],
-        description: ["", Validators.required],
-        uom: ["", Validators.required],
-        price: ["", [Validators.required, Validators.pattern(this.numberRegEx)]],
-        date:["",Validators.required],
-        image: ["", Validators.required],
-        group: ["", Validators.required]
-      }
-    )
-
-    this.productForm.patchValue(
-      {
-        id: this.product.id,
-        description: this.product.description,
-        uom: this.product.uom,
-        price: this.product.price,
-        image:this. product.image,
-        group: this.product.group
-      }
-    )
   }
 
   /**
-   * 
-   * @param product stores product data 
-   * @description to update the data on srvice
+   *
+   *
+   * @description This method uses the FileReader
+   *  to read the contents of the file and take the result
+   *  and patch the form with value.
+   * need to run CD since file load runs outside of zone
    */
-  public updateProducts(product: Products): void {
 
-    this.productService.updateProduct(product).subscribe(
-      () => { this.productForm.value, console.log(this.productForm.value) }
-    )
+
+  onFileChange(event) {
+
+
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      let [file] = event.target.files;
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+        this.productForm.patchValue({
+          file: reader.result
+        });
+
+
+        this.cd.markForCheck();
+        file = event.target.files[0].name;
+        this.fileName = file;
+      };
+    }
   }
-
-  /**
-   * 
-   * stores file name
-   */
-  imagePath(event) {
-    this.fileName = event.srcElement.files[0].name;
-  }
-
-
-
 
 
   /**
@@ -176,20 +188,22 @@ export class AddComponent implements OnInit ,OnChanges{
    */
   showSuccess() {
 
-    this.toastr.success('Success!');
+
+    this.toastr.success('success!!');
 
   }
 
-  // cancel()
-  // {
-  //   if(this.productForm.value)
-  //   {
-  //     this.productForm.reset
-  //   }
-  //   else
-  // }
+  /**
+   * toaster method calls when i click on cancel
+   */
+  showError() {
 
- 
+    if (this.productForm.untouched) {
+      this.router.navigate(['product/view']);
 
+    } else {
+      this.toastr.error('please complete the form!!');
+    }
+  }
 
 }

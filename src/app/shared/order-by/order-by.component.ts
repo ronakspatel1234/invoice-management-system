@@ -15,8 +15,9 @@ import { Key } from 'protractor';
 export class OrderByComponent implements OnInit {
   name: OrderByKey;
   public toggle = true;
-  sortBy:string;
-  mode:string = 'DESC';
+  sortBy: string;
+  // tslint:disable-next-line:no-inferrable-types
+  mode: string = 'DESC';
 
   /**output for export button */
   @Output() exportData = new EventEmitter<string>();
@@ -35,7 +36,7 @@ export class OrderByComponent implements OnInit {
     return this.name;
   }
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
 
@@ -48,7 +49,7 @@ export class OrderByComponent implements OnInit {
   /**when user select the field its change with selected field */
   sortData(mode: string) {
     this.mode = mode;
-    this.sortValue.emit({value:this.sortBy,mode:mode});
+    this.sortValue.emit({ value: this.sortBy, mode: mode });
   }
 
 
@@ -59,8 +60,7 @@ export class OrderByComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
-  orderBy(e)
-  {
+  orderBy(e) {
     this.sortBy = e.target.value;
     this.sortData(this.mode);
   }

@@ -134,7 +134,7 @@ export class AddComponent implements OnInit {
   }
 
   /**
-   * Show the toastr message for eroor message
+   * Show the toastr message for Success message
    */
   public showSuccess() {
     this.toastr.success('Success!');

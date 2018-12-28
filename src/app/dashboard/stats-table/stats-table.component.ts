@@ -26,7 +26,6 @@ export class StatsTableComponent implements OnInit, OnChanges {
     name: ['Id', 'Name', 'Customer_Number', 'Email', 'Group', 'Company', 'Created_At'],
     key: ['id', 'name', 'customer_number', 'email', 'group', 'company', 'created_at']
   };
-
   constructor() { }
 
   ngOnInit() {

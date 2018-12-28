@@ -30,7 +30,6 @@ export class PaymentService {
    * getAllPayment Method are get all payment details from server
    */
   public getAllPayments(): Observable<Payment[]> {
-    // let url = `${this.baseUrl}/${'payment'}?1=1`;
     const url = this.baseUrl + '/payment';
     return this.http.get<Payment[]>(url);
   }
@@ -40,7 +39,6 @@ export class PaymentService {
    * @param id - set the paid invoice id
    */
   public getInvoice(id: number): Observable<Invoice> {
-    // const url = `${this.baseUrl}/${'invoice'}/${id}`;
     const url = this.baseUrl + '/invoice/' + id;
     return this.http.get<Invoice>(url);
   }
@@ -50,7 +48,6 @@ export class PaymentService {
    * @param id - Get the quotation as per quotation id
    */
   public getQuotation(id: number): Observable<Quotation> {
-    // const url = `${this.baseUrl}/${'quotation'}/${id}`;
     const url = this.baseUrl + '/quotation/' + id;
     return this.http.get<Quotation>(url);
   }
@@ -60,7 +57,6 @@ export class PaymentService {
    * @param id - get customer deatils as per customer id
    */
   public getCustomer(id: number): Observable<Customers> {
-    // const url = `${this.baseUrl}/${'customer'}/${id}`;
     const url = this.baseUrl + '/customer/' + id;
     return this.http.get<Customers>(url);
   }
@@ -70,13 +66,12 @@ export class PaymentService {
    * @param page - Set the staring page
    * @param pageSize - set the page size change from user
    */
-  public getPayment(page: number, pageSize: number, data: any, sortColumn: string, orderBy: string): Observable<any> {
+  public getPayment(page: number, pageSize: number, searchRecord: any, sortColumn: string, orderBy: string): Observable<any> {
     const start = (page * pageSize) - pageSize;
     const end = (page * pageSize);
-    // let url = `${this.baseUrl}/${'payment'}?_start=${start}&_end=${end}`;
     let url = this.baseUrl + '/payment/' + '?_start=' + start + '&_end=' + end;
-    if (data && data !== '') {
-      url = url.concat('&q=' + data);
+    if (searchRecord && searchRecord !== '') {
+      url = url.concat('&q=' + searchRecord);
     }
     if (sortColumn && sortColumn !== '') {
       url = url.concat('&_sort=' + sortColumn);
@@ -91,7 +86,6 @@ export class PaymentService {
    * getSentInvoice method are get the only sent invoice data from server
    */
   public getSentInvoice(): Observable<any[]> {
-    // const url = `${this.baseUrl}/${'invoice'}?status=${'Sent'}`;
     const url = this.baseUrl + '/invoice';
     return this.http.get<any[]>(url, {params: {status : 'Sent'}});
   }
@@ -101,7 +95,6 @@ export class PaymentService {
    * @param payment - get the payment data
    */
   public addPayment(payment: Payment): Observable<Payment> {
-    // const url = `${this.baseUrl}/${'payment'}`;
     const url = this.baseUrl + '/payment';
     return this.http.post<Payment>(url, payment);
   }
@@ -124,7 +117,6 @@ export class PaymentService {
    * @param id - delete the record as per payment ID
    */
   public deletePayment(id: any): Observable<Payment[]> {
-    // const url = `${this.baseUrl}/${'payment'}/${id.id}`;
     const url = this.baseUrl + '/payment/' + id.id;
     return this.http.delete<Payment[]>(url);
   }
@@ -134,7 +126,6 @@ export class PaymentService {
    * @param id - Get payment by payment id
    */
   public getDetailById(id: number): Observable<Payment> {
-    // const url = `${this.baseUrl}/${'payment'}/${id}`;
     const url = this.baseUrl + '/payment/' + id;
     return this.http.get<Payment>(url);
   }
@@ -144,58 +135,8 @@ export class PaymentService {
    * @param id - Get payment id from detials page
    */
   public deleteDetails(id: any): Observable<any> {
-    // const url = `${this.baseUrl}/${'payment'}/${id}`;
     const url = this.baseUrl + '/payment/' + id;
     return this.http.delete<any>(url);
   }
-
-  /**
-   * searchData method are serach data on server
-   */
-  // public searchData(data: any): Observable<any> {
-  //   const url = `${this.baseUrl}/${'payment'}?q=${data}`;
-  //   return this.http.get<any>(url);
-  // }
-
-  /**
-   * sortData method are create for sorting record
-   */
-  // public sortData(id: number, order: string): Observable<Payment[]> {
-  //   order = 'DESC';
-  //   const url = `${this.baseUrl}/${'payment'}?_sort=${id}&_order=${order}`;
-  //   return this.http.get<Payment[]>(url);
-  // }
-
-  // public searchPayment(data): Observable<Payment[]> {
-  //   let url = `${this.baseUrl}/${'payment'}`;
-  //   if (data && data !== '') {
-  //     url = url.concat(`?q=${data}`);
-  //   }
-  //   return this.http.get<Payment[]>(url);
-  // }
-
-  // public searchCustomer(data): Observable<Customers> {
-  //   let url = `${this.baseUrl}/${'customer'}`;
-  //   if (data && data !== '') {
-  //     url = url.concat(`?q=${data}`);
-  //   }
-  //   return this.http.get<Customers>(url);
-  // }
-
-  // public searchQuatation(data) {
-  //   let url = `${this.baseUrl}/${'quotation'}`;
-  //   if (data && data !== '') {
-  //     url = url.concat(`&q=${data}`);
-  //   }
-  //   return this.http.get<Invoice>(url);
-  // }
-
-  // public searchPaidInvoice(data) {
-  //   let url = `${this.baseUrl}/${'invoice'}`;
-  //   if (data && data !== '') {
-  //     url = url.concat(`&q=${data}`);
-  //   }
-  //   return this.http.get<Invoice>(url);
-  // }
 
 }

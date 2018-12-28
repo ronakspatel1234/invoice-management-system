@@ -1,5 +1,5 @@
 /**
- * @author - Ronak Pate.
+ * @author - Shahbaz Shaikh
  * @description - Create class  for user profile module.
  */
 import { NgModule } from '@angular/core';

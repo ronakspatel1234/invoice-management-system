@@ -30,7 +30,7 @@ export class ViewComponent implements OnInit, OnDestroy {
    * Declear the variable
    */
   public payments: Payment[];
-  public data: any[];
+  public records: any[];
   public action = [Action.VIEW, Action.DELETE];
   public totalItems: number;
   public pageSize: number;
@@ -97,7 +97,7 @@ export class ViewComponent implements OnInit, OnDestroy {
    * @param payments - Get the payment deatils from server
    */
   public getPaymentWithInvoice(payments: Payment[]) {
-    this.data = [];
+    this.records = [];
     payments.forEach((payment: Payment) => {
       this.service.getInvoice(payment.invoice_id).subscribe((invoice: Invoice) => {
         this.service.getQuotation(invoice.quotation_id).subscribe((quotation: Quotation) => {
@@ -110,7 +110,7 @@ export class ViewComponent implements OnInit, OnDestroy {
               Customer: customer.name,
               quotation: this.customCurrency.transform(quotation.grand_total)
             };
-            this.data.push(obj);
+            this.records.push(obj);
           });
         });
       });
@@ -130,25 +130,6 @@ export class ViewComponent implements OnInit, OnDestroy {
     this.sortColumn = e['value'];
     this.orderBy = e['mode'];
     this.getPayment();
-    // console.log(e);
-    // this.data = this.data.sort((a: any, b: any) => {
-    //   let val1;
-    //   let val2;
-    //   if (e['value'] === 'IssueDate') {
-    //     val1 = new Date(a[e['value']]);
-    //     val2 = new Date(b[e['value']]);
-    //   } else {
-    //     val1 = a[e['value']];
-    //     val2 = b[e['value']];
-    //   }
-    //   if (val1 < val2) {
-    //     return e['mode'] === 'ASC' ? -1 : 1;
-    //   }
-    //   if (val1 > val2) {
-    //     return e['mode'] === 'ASC' ? 1 : -1;
-    //   }
-    //   return 0;
-    // });
   }
 
 

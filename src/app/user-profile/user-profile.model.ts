@@ -1,5 +1,5 @@
 /**
- * @author - Ronak Patel.
+ * @author - Shahbaz Shaikh
  * @description - Create  model class for user.
  * @property id unique identity for user type number.
  * @property name define for user type string.

@@ -11,13 +11,15 @@ import { AddComponent } from './add/add.component';
 import { DetailsComponent } from './details/details.component';
 import { SharedModule } from '../shared/shared.module';
 import { QuotationService } from './quotation.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     QuotationRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [ViewComponent, AddComponent, DetailsComponent],
   providers: [QuotationService]

@@ -1,5 +1,5 @@
 /**
- * @author Sonal Prajapati
+ * @author Yamini Gala
  * @description this service is used to communicate with the component and backend.
  */
 import { Injectable } from '@angular/core';
@@ -76,7 +76,22 @@ export class QuotationService {
    * @param id perticular id to delete record.
    */
   public deleteQoutation(id: number): Observable<Quotation[]> {
-    const url = this.url + '/qoutation' + '/' + id;
+    const url = this.url + '/quotation' + '/' + id;
     return this.http.delete<Quotation[]>(url);
+  }
+
+  public getCustomers(): Observable<any[]> {
+    const url = this.url + '/customer';
+    return this.http.get<Customers[]>(url);
+  }
+
+  public getProduct(): Observable<any[]> {
+    const url = this.url + '/product';
+    return this.http.get<any[]>(url);
+  }
+
+  public addQuotation(quotation: Quotation): Observable<Quotation> {
+    const url = this.url + '/quotation';
+    return this.http.post<Quotation>(url, quotation);
   }
 }

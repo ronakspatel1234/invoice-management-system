@@ -1,5 +1,5 @@
 /**
- * @author - Ronak Patel.
+ * @author - Shahbaz Shaikh
  * @description - Create for lazy loding module.
  */
 import { NgModule } from '@angular/core';

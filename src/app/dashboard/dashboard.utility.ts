@@ -96,7 +96,6 @@ export default class DashboardUtility {
         for (let index = customers.length - 10; index < customers.length; index++) {
             lastTenRecord.push(customers[index]);
         }
-
         return lastTenRecord;
     }
 }
