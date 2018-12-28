@@ -20,6 +20,7 @@ export class StatusDirective {
       this.statusColor(status);
     }
   }
+  // set background color based on status
   public statusColor(status) {
     if (status === 'Draft') {
       this.el.nativeElement.style.backgroundColor = 'grey';

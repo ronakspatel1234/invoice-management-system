@@ -20,37 +20,39 @@ import { Action } from '../../shared/table/table.model';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit, OnDestroy {
-  /**
-   * Declare variable
-   */
+  // Declare variable
   // store the list of qoutation
   public qoutation: Quotation[];
   // store the list of customers
   public customer: Customers[];
   // store the value of  action
-  public action = [Action.EDIT, Action.DELETE];
+  public action: Action[];
   // it store the key and name for a header and display in the table
-  public heading = {
-    name: ['ID', 'Number', 'Issue Date', 'Expiry Date', 'Customer', 'Grand Total', 'Status'],
-    key: ['id', 'quotation_number', 'issue_date', 'expiry_date', 'customer_id', 'grand_total', 'status']
-  };
+  public heading: object;
   // pagination
-  public totalQutation = 150;
-  public pageSize = 10;
-  public page = 1;
+  public totalQutation: number;
+  public pageSize: number;
+  public page: number;
   public searchResult: Quotation[];
   public sortQoutation: Quotation[];
 
   // it  is used for the store the value which is subscribe
   private qoutationSubscription: Subscription;
   constructor(private router: Router, private quotationService: QuotationService) {
+    this.action = [Action.EDIT, Action.DELETE];
+    this.heading = {
+      name: ['ID', 'Number', 'Issue Date', 'Expiry Date', 'Customer', 'Grand Total', 'Status'],
+      key: ['id', 'quotation_number', 'issue_date', 'expiry_date', 'customer_id', 'grand_total', 'status']
+    };
     this.customer = [];
     this.searchResult = [];
+    this.totalQutation = 150;
+    this.pageSize = 10;
+    this.page = 1;
   }
   // initialize the page
   ngOnInit() {
     this.quotation();
-
   }
 
   /**
@@ -83,7 +85,7 @@ export class ViewComponent implements OnInit, OnDestroy {
   /**
    *@description based on the action it will navigate to the page
    */
-  public actionClick(action: string, id: number) {
+  public actionClick(action: Action, id: number) {
     console.log(action, id);
 
     // this.quotationService.deleteQoutation(id1).subscribe((data) => {
