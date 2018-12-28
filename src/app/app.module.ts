@@ -1,9 +1,16 @@
+/**
+ * @author - Ronak Patel.
+ * @description - Create class for root module.
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-// ------------------------------- //
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+// ---------------------------------------------------------------------------------------//
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -12,9 +19,14 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    CoreModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
   ],
+
   bootstrap: [
     AppComponent
   ]

@@ -14,11 +14,16 @@ import { AddComponent } from './add/add.component';
  */
 const paymentRoutes: Routes = [
   {
-    path: 'view',
-    component: ViewComponent
+    path: '',
+    redirectTo: 'view',
+    pathMatch: 'full'
   },
   {
-    path: 'details',
+    path: 'view',
+    component: ViewComponent,
+  },
+  {
+    path: 'details/:id',
     component: DetailsComponent
   },
   {

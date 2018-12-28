@@ -3,12 +3,13 @@
   "project": {
     "name": "invoice-management-system"
   },
+
   "apps": [
     {
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
+
         "favicon.ico"
       ],
       "index": "index.html",
@@ -19,14 +20,20 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ims",
       "styles": [
-        "styles.scss",
-        "../node_modules/font-awesome/css/font-awesome.css"
+        "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/js/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "assets/js/popper.min.js",
+        "assets/js/custom.js"
+      ],
+
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "uat": "environments/environment.uat.ts"
       }
     }
   ],
