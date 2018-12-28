@@ -38,16 +38,7 @@ export class ProductsService {
 
   }
 
-  /**
-   *
-   * @param id for specific id's product data
-   *
-   * @description to get products of specific id from server
-   *
-   */
-  getById(id: number): Observable<Product> {
-    return this.http.get<Product>(this.productUrl + '/' + id);
-  }
+
   /**
    *
    * add products to server using observable

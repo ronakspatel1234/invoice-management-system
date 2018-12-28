@@ -79,7 +79,6 @@ export class EditComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
 
     this.conversionOutput = CryptoJS.AES.decrypt(id, 'hskag').toString(CryptoJS.enc.Utf8);
-    console.log(this.conversionOutput);
 
     this.productService.editProduct(this.conversionOutput).subscribe(
       (data) => { this.dataLoad(data); }
@@ -139,7 +138,7 @@ export class EditComponent implements OnInit {
 
 
   onFileChange(event) {
-    console.log(event);
+
     const reader = new FileReader();
 
 

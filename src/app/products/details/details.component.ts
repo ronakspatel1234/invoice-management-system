@@ -58,8 +58,8 @@ public product;
   getByProductId() {
     const id = this.route.snapshot.paramMap.get('id');
     this.conversionOutput = CryptoJS.AES.decrypt(id, 'hskag').toString(CryptoJS.enc.Utf8);
-    console.log(this.conversionOutput);
-    this.service.getById(this.conversionOutput).subscribe(
+
+    this.service.editProduct(this.conversionOutput).subscribe(
       (prod) => {this.product = prod; }
     );
 

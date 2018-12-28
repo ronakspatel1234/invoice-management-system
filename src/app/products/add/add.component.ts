@@ -82,9 +82,6 @@ export class AddComponent implements OnInit {
       (prod) => {
         this.product = prod;
 
-        console.log(this.product);
-
-
         const sliceProductNumber = this.product.slice(-1)[0].product_number;
 
 
