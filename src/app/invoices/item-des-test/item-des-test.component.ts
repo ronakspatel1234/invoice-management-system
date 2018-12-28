@@ -18,8 +18,8 @@ export class ItemDesTestComponent implements OnInit {
   /**
    * @property mode: give particular mode of enum which you want to apply
    */
-  // mode = Mode.Add;
-  mode = Mode.Edit;
+  mode = Mode.Add;
+  // mode = Mode.Edit;
   // mode = Mode.View;
   constructor() {
     /**

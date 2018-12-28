@@ -52,7 +52,7 @@ export class AddComponent implements OnInit {
       qty: ['', [Validators.required]],
     });
   }
-  submitQuotation(): void {
+  public submitQuotation(): void {
     const quotation = Object.assign({}, this.quotationForm.value);
     this.service.addQuotation(quotation).subscribe(() => {
       // Reset the quotation form
@@ -66,7 +66,7 @@ export class AddComponent implements OnInit {
     confirm('Are You Sure?');
     this.router.navigate(['/quotation/view']);
   }
-  getCustomer(): void {
+ public getCustomer(): void {
     this.service.getCustomers().subscribe(customer => {
       this.customerDetails = customer;
     });

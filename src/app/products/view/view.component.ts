@@ -90,7 +90,7 @@ export class ViewComponent implements OnInit {
   /**
    * get products from service using subscribing it
    */
-  getProducts() {
+  public getProducts() {
 
     this.service.getProduct().subscribe(product => {
       this.totalItems = product.length;
@@ -105,7 +105,7 @@ export class ViewComponent implements OnInit {
    * and pass serachResult also to perform search with pagination
    */
   public getPage(): void {
-    this.service.getPagination(this.page, this.pageSize, this.searchResult ).subscribe(
+    this.service.getPagination(this.page, this.pageSize, this.searchResult).subscribe(
       (page) => {
         this.products = page;
       }
@@ -119,7 +119,7 @@ export class ViewComponent implements OnInit {
    *
    * @param pageSize to select page size
    */
-  goToPage(pageSize: number): void {
+  public goToPage(pageSize: number): void {
 
 
     this.page = 1;
@@ -134,7 +134,7 @@ export class ViewComponent implements OnInit {
    * @param page to get page action
    * @description to go to next and previous page
    */
-  goNextPrev(page: any): void {
+  public goNextPrev(page: any): void {
     if (page === 'next') {
       this.page++;
     } else if (page === 'prev') {
@@ -147,7 +147,7 @@ export class ViewComponent implements OnInit {
    *
    * @param search to serach products and get those products data
    */
-  search(search) {
+  public search(search) {
 
     this.searchResult = search;
     this.getProducts();
@@ -166,9 +166,11 @@ export class ViewComponent implements OnInit {
 
       const encryptedId = CryptoJS.AES.encrypt(actionEvent.id.toString().trim(), 'hskag').toString();
       this.router.navigate(['/product/edit/', encryptedId]);
+
     } else if (actionEvent.action === Action.VIEW) {
       const encryptedId = CryptoJS.AES.encrypt(actionEvent.id.toString().trim(), 'hskag').toString();
       this.router.navigate(['/product/details/', encryptedId]);
+
     } else if (actionEvent.action === Action.DELETE) {
 
       if (confirm('sure you want to delete?')) {

@@ -139,16 +139,18 @@ export class AddComponent implements OnInit {
 
     product.image = this.path + this.fileName;
 
+    if (window.confirm('Are sure you want to save product ?')) {
+      this.productService.addProduct(product).subscribe(
+        () => this.productForm.value);
+    } else {
 
-    this.productService.addProduct(product).subscribe(
-      () => {
+      this.router.navigate(['product/view']);
 
-        this.router.navigate(['product/view']);
+    }
 
   }
-    );
 
-  }
+
 
   /**
    *
@@ -160,7 +162,7 @@ export class AddComponent implements OnInit {
    */
 
 
-  onFileChange(event) {
+  public onFileChange(event) {
 
 
     const reader = new FileReader();
@@ -186,7 +188,7 @@ export class AddComponent implements OnInit {
   /**
    * toaster method calls when click on save button of the form
    */
-  showSuccess() {
+  public showSuccess() {
 
 
     this.toastr.success('success!!');
@@ -196,7 +198,7 @@ export class AddComponent implements OnInit {
   /**
    * toaster method calls when i click on cancel
    */
-  showError() {
+  public showError() {
 
     if (this.productForm.untouched) {
       this.router.navigate(['product/view']);

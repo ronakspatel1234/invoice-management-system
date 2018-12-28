@@ -31,7 +31,7 @@ export class ProductsService {
   /**
    * to get all product's data from server
    */
-  getProduct(): Observable<Product[]> {
+  public getProduct(): Observable<Product[]> {
 
 
     return this.http.get<Product[]>(this.productUrl);

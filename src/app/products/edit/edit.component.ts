@@ -101,9 +101,6 @@ export class EditComponent implements OnInit {
       }
     );
 
-
-    //  this.productForm.patchValue({image:this.onFileChange(event)})
-    // this.updateProducts(this.product);
     this.onFileChange(event);
   }
 
@@ -137,7 +134,7 @@ export class EditComponent implements OnInit {
 */
 
 
-  onFileChange(event) {
+ public onFileChange(event) {
 
     const reader = new FileReader();
 
