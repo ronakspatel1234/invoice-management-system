@@ -36,10 +36,11 @@ export class LoginComponent implements OnInit {
         if (this.userEmail === data[0].email && this.userPassword === data[0].password) {
           this.service.user = user;
           localStorage.setItem('token', user.email);
+          localStorage.setItem('tokenName', data[0].name);
           this.router.navigate(['dashboard']);
         }
       } else {
-        alert('UserEmail and Password not match');
+        alert('Incorrect Email address or Password.');
       }
     }
     );

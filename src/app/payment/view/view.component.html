@@ -16,7 +16,7 @@
 </div>
 
 <!--Start Order By reusable Component-->
-<ims-order-by [keys]="heading.key" (sortValue)="sort($event)" (exportData)="export($event)"></ims-order-by>
+<ims-order-by [keys]="sorting.key" (sortValue)="sort($event)" (exportData)="export($event);"></ims-order-by>
 <!--End Order By reusable Component-->
 
 <div class="card border-0">
@@ -24,7 +24,7 @@
 
     <div class="table-responsive border-bottom" id="contentToConvert">
       <!--Start Table Reusable Component-->
-      <ims-table [header]="heading" [data]="payments" [action]="action" (actionClicked)="actionClick($event,$event)">
+      <ims-table [header]="heading" [data]="data" [action]="action" (actionClicked)="actionClick($event);" CustomeCurrency>
       </ims-table>
       <!--ENd Table Reusable Component-->
     </div>

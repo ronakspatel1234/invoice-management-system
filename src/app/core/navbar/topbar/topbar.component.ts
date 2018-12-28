@@ -12,10 +12,18 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent implements OnInit {
 
+  public name: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.getUserName();
   }
+
+  public getUserName(): void {
+    this.name = localStorage.getItem('tokenName');
+  }
+
   // user logout purpose.
   public logout(): void {
     localStorage.removeItem('token');

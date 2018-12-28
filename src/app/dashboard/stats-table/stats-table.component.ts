@@ -12,7 +12,7 @@ import { Action } from '../../shared/table/table.model';
   templateUrl: './stats-table.component.html',
   styleUrls: ['./stats-table.component.scss']
 })
-export class StatsTableComponent implements OnInit , OnChanges{
+export class StatsTableComponent implements OnInit, OnChanges {
   public customers: Customers;
   // Get Invoice details from parent component.
   @Input() public lastTenInvoice: any[];
@@ -26,13 +26,12 @@ export class StatsTableComponent implements OnInit , OnChanges{
     name: ['Id', 'Name', 'Customer_Number', 'Email', 'Group', 'Company', 'Created_At'],
     key: ['id', 'name', 'customer_number', 'email', 'group', 'company', 'created_at']
   };
-  
   constructor() { }
 
   ngOnInit() {
   }
-  ngOnChanges(){
-   
+  ngOnChanges() {
+
   }
 
 }

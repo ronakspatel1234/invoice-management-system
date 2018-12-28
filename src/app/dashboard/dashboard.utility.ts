@@ -88,7 +88,6 @@ export default class DashboardUtility {
         for (let index = invoices.length - 10; index < invoices.length; index++) {
             lastTenRecord.push(invoices[index]);
         }
-        
         return lastTenRecord;
     }
     // create for last 10 customer display.
@@ -97,7 +96,6 @@ export default class DashboardUtility {
         for (let index = customers.length - 10; index < customers.length; index++) {
             lastTenRecord.push(customers[index]);
         }
-        
         return lastTenRecord;
     }
 }

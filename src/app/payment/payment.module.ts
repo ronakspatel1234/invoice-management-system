@@ -4,8 +4,8 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-// import { NgSelectModule } from '@ng-select/ng-select';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 // ------------------------------------------------- //
 import { PaymentRoutingModule } from './payment-routing.module';
 import { ViewComponent } from './view/view.component';
@@ -19,8 +19,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     PaymentRoutingModule,
     SharedModule,
-    ReactiveFormsModule
-    // NgSelectModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectModule
   ],
   declarations: [
     ViewComponent,

@@ -12,13 +12,14 @@ import { AuthGuard } from './core/auth/auth.guard';
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: { showSidebar: false }
   },
   {
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule',
     data: { preloadingStrategy: PreloadingStrategy },
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'user-profile',

@@ -32,7 +32,7 @@ export class StatsGraphComponent implements OnInit {
   constructor(private service: DashboardService) {
     this.customerData = [];
     this.paymentData = [];
-    this.isBoolean = false;
+    this.isBoolean = true;
   }
   ngOnInit() {
     this.mothWiseData();
@@ -48,6 +48,7 @@ export class StatsGraphComponent implements OnInit {
         this.customerData.push({ 'name': month, 'value': customer.length, 'customer': customer });
         this.service.getPaymentByMonth(month).subscribe(payment => {
           this.paymentData.push({ 'name': month, 'value': payment });
+          this.change();
         });
       });
     });
@@ -61,6 +62,7 @@ export class StatsGraphComponent implements OnInit {
       invoices.forEach(invoice => {
         this.service.getQuotationsByID(invoice.quotation_id).subscribe((quotation: any) => {
           this.invoiceMerge.push({ invoice: invoice.id, quotation: quotation.grand_total });
+          this.change();
         });
       });
 

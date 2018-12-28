@@ -25,6 +25,6 @@ export class SearchComponent implements OnInit {
    */
   public search(data) {
     this.searchClick.emit(data);
+    // console.log(data);
   }
-
 }

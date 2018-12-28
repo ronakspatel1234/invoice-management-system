@@ -2,15 +2,13 @@
  * @author sonal prajapati
  * @description used to display table based on the user pass header (key,name),data and action.
  */
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-// -----------------------//
-import { Header, Action, ActionEvent } from '../table/table.model';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Header,  Action, ActionEvent } from '../table/table.model';
 
 @Component({
   selector: 'ims-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
   /**
@@ -43,9 +41,9 @@ export class TableComponent {
     return this.dataList;
   }
   /**
- *  emit an action
+ *  * emit an action
  */
-  public actionClick(action, id): void {
+  public actionClick(action, id) {
     this.actionClicked.emit({ action, id });
   }
 

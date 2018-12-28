@@ -18,7 +18,6 @@ export class QuotationService {
   readonly url: string;
   private queryUrl: string;
 
-
   /**
    * @param http -Inject httpClient service for server interaction.
    */

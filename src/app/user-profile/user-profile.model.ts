@@ -13,6 +13,6 @@ export class UserProfile {
     name: string;
     title: string;
     email: string;
-    mobileNumber: number;
+    mobile_number: number;
     password: string;
 }
