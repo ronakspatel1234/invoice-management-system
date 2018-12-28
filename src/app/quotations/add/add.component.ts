@@ -1,5 +1,5 @@
 /**
- * @author Sonal Prajapati
+ * @author Yamini Gala
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,37 +16,29 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class AddComponent implements OnInit {
-  /**
-   * @property items: any model type
-   */
-  public items: any[];
   public quotation: Quotation;
   public customerDetails: Quotation[];
-  public productDesc: any[];
+  public productDescription: Quotation[];
   public quotationForm: FormGroup;
   private issuedate: Date;
   private expirydate: Date;
   /**
    * @property mode: give particular mode of enum which you want to apply
    */
-  mode = Mode.Add;
-  // mode = Mode.Edit;
-  // mode = Mode.View;
-
+  public mode = Mode.Add;
   constructor(private router: Router, private service: QuotationService, private fb: FormBuilder, private datePipe: DatePipe) {
     this.issuedate = new Date();
     this.expirydate = new Date();
+    this.expirydate.setDate(this.expirydate.getDate() + 30);
   }
-
   ngOnInit() {
     this.getCustomer(),
-    this.getProduct(),
-    this.addQuotation(this.quotation);
+      this.getProduct(),
+      this.addQuotation(this.quotation);
   }
   /**
    * navigate to the view page
    */
-
   public addQuotation(quotation: Quotation) {
     this.quotationForm = this.fb.group({
       customer_id: ['', [Validators.required]],
@@ -59,20 +51,10 @@ export class AddComponent implements OnInit {
       cgst: ['', [Validators.required]],
       qty: ['', [Validators.required]],
     });
-
-    // this.quotationForm.patchValue({
-    //   grand_total: quotation.grand_total,
-    //   discount: quotation.discount,
-    //   cgst: quotation.cgst,
-    //   sgst: quotation.sgst,
-    //   qty: quotation.qty
-    // })
   }
-  
-  
-  onSubmit(): void {
-    const qoutation = Object.assign({}, this.quotationForm.value);
-    this.service.addQuotation(qoutation).subscribe(() => {
+  submitQuotation(): void {
+    const quotation = Object.assign({}, this.quotationForm.value);
+    this.service.addQuotation(quotation).subscribe(() => {
       // Reset the quotation form
       this.router.navigate(['/quotation/view']);
     });
@@ -84,16 +66,14 @@ export class AddComponent implements OnInit {
     confirm('Are You Sure?');
     this.router.navigate(['/quotation/view']);
   }
-
   getCustomer(): void {
     this.service.getCustomers().subscribe(customer => {
-      this.customerDetails = customer
+      this.customerDetails = customer;
     });
   }
-
   public getProduct(): void {
     this.service.getProduct().subscribe(product => {
-      this.productDesc = product;
+      this.productDescription = product;
     });
   }
 }

@@ -4894,6 +4894,54 @@
       "cgst": "",
       "qty": "",
       "id": 160
+    },
+    {
+      "customer_id": 3,
+      "issue_date": "28-Dec-2018",
+      "expiry_date": "28-Dec-2018",
+      "status": "draft",
+      "grand_total": "",
+      "discount": "",
+      "sgst": "",
+      "cgst": "",
+      "qty": "",
+      "id": 161
+    },
+    {
+      "customer_id": 6,
+      "issue_date": "28-Dec-2018",
+      "expiry_date": "27-Jan-2019",
+      "status": "draft",
+      "grand_total": "",
+      "discount": "",
+      "sgst": "",
+      "cgst": "",
+      "qty": "",
+      "id": 162
+    },
+    {
+      "customer_id": 13,
+      "issue_date": "28-Dec-2018",
+      "expiry_date": "27-Jan-2019",
+      "status": "draft",
+      "grand_total": "",
+      "discount": "",
+      "sgst": "",
+      "cgst": "",
+      "qty": "",
+      "id": 163
+    },
+    {
+      "customer_id": 9,
+      "issue_date": "28-Dec-2018",
+      "expiry_date": "27-Jan-2019",
+      "status": "draft",
+      "grand_total": "",
+      "discount": "",
+      "sgst": "",
+      "cgst": "",
+      "qty": "",
+      "id": 164
     }
   ],
   "invoice": [

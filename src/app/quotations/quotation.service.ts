@@ -1,5 +1,5 @@
 /**
- * @author Sonal Prajapati
+ * @author Yamini Gala
  * @description this service is used to communicate with the component and backend.
  */
 import { Injectable } from '@angular/core';
@@ -17,7 +17,7 @@ export class QuotationService {
   // URL To webAPI
   readonly url: string;
   private queryUrl: string;
- 
+
 
   /**
    * @param http -Inject httpClient service for server interaction.

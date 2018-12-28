@@ -3,7 +3,7 @@
  */
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-//-----------------------------------------------------------------------
+// -----------------------------------------------------------
 import { Mode } from './item-description-data.model';
 import { ItemList } from './item-list.model';
 import ItemDescriptionUtil from '../item-description/utility';
@@ -32,7 +32,7 @@ export class ItemDescriptionComponent implements OnInit {
   public cgstValue: number;
   public finalTotal: number;
   /**
-   * @property mode: Declare enums as Mode 
+   * @property mode: Declare enums as Mode
    * pass input to parent with different modes
    */
   @Input() mode: Mode;
@@ -44,37 +44,29 @@ export class ItemDescriptionComponent implements OnInit {
     this.itemList = data;
   }
   /**
-   * get data from itemList 
+   * get data from itemList
    */
   get data() {
     return this.itemList;
   }
   /**
-   * 
+   *
    * @param fb : inject formBuilder for using its property
    */
   constructor(private fb: FormBuilder) {
-    //define subTotal as 0 at initial level
+    // define subTotal as 0 at initial level
     this.subTotal = 0;
   }
   ngOnInit() {
     /**
      * different conditions for appling mode and creating form
+     * applied mode and getting data
      */
     if (this.mode === Mode.Add) {
       this.createForm();
-    }
-    /**
-     * applied mode and getting data
-     */
-    else if (this.mode === Mode.Edit) {
+    } else if (this.mode === Mode.Edit) {
       this.createForm();
-    }
-    /**
-     * applied mode and getting data
-     */
-    else (this.mode === Mode.View)
-    {
+    } else if (this.mode === Mode.View) {
       this.createForm();
     }
   }
@@ -113,7 +105,7 @@ export class ItemDescriptionComponent implements OnInit {
     }));
   }
   /**
-   * 
+   *
    * @param event pass parameter in form method
    * @param formGroupIndex pass parameter in form method
    */
@@ -121,14 +113,15 @@ export class ItemDescriptionComponent implements OnInit {
     this.form(event, formGroupIndex);
   }
   /**
-   * 
+   *
    * @param event  passing whole event to form method and matching it with item's id
    * @param formGroupIndex passing index with number type and giving control with the help of index
    */
   public form(event, formGroupIndex): void {
-    let FormArrayName = this.itemForm.controls['addNewField'] as FormArray;
+    const FormArrayName = this.itemForm.controls['addNewField'] as FormArray;
     this.itemList.forEach(
       (item) => {
+        // tslint:disable-next-line:triple-equals
         if (item.id == event) {
           FormArrayName.controls[formGroupIndex].patchValue({
             /**
@@ -139,13 +132,13 @@ export class ItemDescriptionComponent implements OnInit {
             price: item.price,
             qty: '1',
             total: ''
-          })
+          });
         }
       }
-    )
+    );
   }
   /**
-   * 
+   *
    * @param event pass event for patching total
    * @param i passing index for patching on particular field's total
    */
@@ -153,20 +146,20 @@ export class ItemDescriptionComponent implements OnInit {
     this.calculation(i);
   }
   /**
-   * 
+   *
    * @param i index of each field
    */
   public calculation(i): void {
     /**
      * declare addNewField as formArray and getting it from itemForm
      */
-    let formArray = this.itemForm.get('addNewField') as FormArray;
+    const formArray = this.itemForm.get('addNewField') as FormArray;
     /**
-     * giving control in formarray using index total and appling calculation of value in total 
+     * giving control in formarray using index total and appling calculation of value in total
      */
     formArray.controls[i].patchValue({
       total: formArray.controls[i].value.qty * formArray.controls[i].value.price,
-    })
+    });
     /**
      * call calculateSubtotal method whenever total gets its data
      */
@@ -176,22 +169,22 @@ export class ItemDescriptionComponent implements OnInit {
    * calculate subtotal on base of every fields total as per index
    */
   public calculateSubTotal(): void {
-    let formArray = this.itemForm.get('addNewField') as FormArray;
+    const formArray = this.itemForm.get('addNewField') as FormArray;
     this.subTotal = 0;
     formArray.controls.forEach(value => {
       this.subTotal += value.value.total;
-    })
+    });
   }
   /**
-   * 
+   *
    * @param i index of each row
    * giving control to formarray and removing it from itemform using removeAt method
    */
   public deleteRow(i): void {
-    let control = <FormArray>this.itemForm.controls.addNewField;
+    const control = <FormArray>this.itemForm.controls.addNewField;
     control.removeAt(i);
     /**
-     * after removing field call subTotal method for changing its value 
+     * after removing field call subTotal method for changing its value
      */
     this.calculateSubTotal();
     /**
@@ -200,7 +193,7 @@ export class ItemDescriptionComponent implements OnInit {
     this.calculateGrandTotal();
   }
   /**
-   * 
+   *
    * @param discount pass parameter which is used in util method
    * call util method directly for calculating discount
    */
@@ -208,7 +201,7 @@ export class ItemDescriptionComponent implements OnInit {
     this.discountValue = ItemDescriptionUtil.subtraction(discount, this.subTotal);
   }
   /**
-   * 
+   *
    * @param cgst pass parameter which is used in util method
    * call util method directly for calculating cgst
    */
@@ -216,7 +209,7 @@ export class ItemDescriptionComponent implements OnInit {
     this.cgstValue = ItemDescriptionUtil.addition(cgst, this.subTotal);
   }
   /**
-   * 
+   *
    * @param sgst pass parameter which is used in util method
    * call util method directly for calculating sgst
    */
@@ -228,7 +221,7 @@ export class ItemDescriptionComponent implements OnInit {
    * calculate grandtotal with the help of discount, sgstValue, cgstValue
    */
   public calculateGrandTotal(): void {
-    this.finalTotal = this.subTotal - this.discountValue + this.sgstValue + this.cgstValue
+    this.finalTotal = this.subTotal - this.discountValue + this.sgstValue + this.cgstValue;
   }
 }
 
