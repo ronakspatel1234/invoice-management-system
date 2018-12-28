@@ -50,7 +50,7 @@ export class ViewComponent implements OnInit {
    * If click on edit it redirect to edit page
    * or click on dlete it delete the record */
   actionClick(actionEvent: ActionEvent) {
-    console.log(actionEvent);
+    // console.log(actionEvent);
 
     if (actionEvent.action === Action.EDIT) {
       const encryptedId = CryptoJs.AES.encrypt(actionEvent.id.toString().trim(), 'aaaa').toString();

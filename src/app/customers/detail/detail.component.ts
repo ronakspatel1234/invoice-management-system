@@ -47,7 +47,7 @@ export class DetailComponent implements OnInit {
    */
   public getCustomerById(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
+    // console.log(id);
     this.conversionOutput = CryptoJs.AES.decrypt(id, 'aaa').toString(CryptoJs.enc.Utf8);
 
     this.customerService.getByCustomer(this.conversionOutput).subscribe((customer) => {
