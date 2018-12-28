@@ -30,7 +30,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     HttpClientModule,
     BrowserAnimationsModule
-    
+
   ],
 
   bootstrap: [

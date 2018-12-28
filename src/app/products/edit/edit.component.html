@@ -79,6 +79,7 @@
                   <!-- <input type="file" #file (change)="onChange(file.files)" multiple /> -->
                   <!-- <img id="blah" src="#" alt="{{product.image}}" /> -->
                   <!-- <label class="custom-file-label" for="file-upload">Choose file...</label> -->
+                  
                   <div *ngIf="(productForm.get('image').touched || productForm.get('image').dirty) && productForm.get('image').errors" class="alert alert-danger">
        
                     <div *ngIf="productForm.get('image').errors.required">

@@ -10,7 +10,7 @@
     </div>
   </div>
 </div>
-<ims-order-by [keys]="heading.key" (sortValue)="sort($event)" (exportData)="export($event)"></ims-order-by>
+<ims-order-by [keys]="heading.key" (sortValue)="onOrder($event)" (exportData)="export($event)"></ims-order-by>
 <div  class="table-responsive border-bottom" id='contentToConvert'>
 
 <ims-table [header]="heading" [action]="action" [data]="products" (actionClicked)="actionClick($event)"></ims-table>

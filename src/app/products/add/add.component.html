@@ -1,4 +1,4 @@
-<form [formGroup]="productForm"  (ngSubmit)="addProducts(productForm.value)">
+<form [formGroup]="productForm"  (ngSubmit)="addProducts(this.productForm.value)" >
 <div class="page-title">
   <h4 class="mb-3">Create Product</h4>
 </div>
@@ -79,6 +79,7 @@
                 <!-- <input type="file" #file (change)="onChange(file.files)" multiple /> -->
                 <!-- <img id="blah" src="#" alt="{{product.image}}" /> -->
                 <!-- <label class="custom-file-label" for="file-upload">Choose file...</label> -->
+              
                 <div *ngIf="(productForm.get('image').touched || productForm.get('image').dirty) && productForm.get('image').errors" class="alert alert-danger">
      
                   <div *ngIf="productForm.get('image').errors.required">

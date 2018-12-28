@@ -5,7 +5,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
 import { ActivatedRoute, Router } from '@angular/router';
-//----------------------------------------------------------//
+// ----------------------------------------------------------//
 import { Product } from '../products.model';
 import { ProductsService } from '../products.service';
 
@@ -20,30 +20,29 @@ export class DetailsComponent implements OnInit {
  * @property products to store product data
  * @property conversionOutput is to store decrypt id
  * @property page to set the starting page number
- * @property pagesize to set the page size 
+ * @property pagesize to set the page size
  * @property totalitems to store total records
  * @property to store search result
- * @property product to store perticula id's product 
+ * @property product to store perticula id's product
  */
 
- public  products:Product[];
- public conversionOutput:any;
- public totalItems = 0;
- public pageSize = 10;
- public page = 1;
- public searchResult:Product[];
+ public  products: Product[];
+ public conversionOutput: any;
 public product;
 
 /**
- * 
+ *
  * @param service inject productservice to subscribe service methods
  * @param route to take snapshot of id
  * @param router to navigate to other page
  */
-  constructor(private service:ProductsService,
-    private route:ActivatedRoute,
-    private router:Router,
-   ) { }
+  constructor(private service: ProductsService,
+    private route: ActivatedRoute,
+    private router: Router,
+   ) {
+     this.products = [];
+
+   }
 
    /**
     * when page initialize,we want details of perticular id's product
@@ -51,109 +50,52 @@ public product;
     */
   ngOnInit() {
     this.getByProductId();
- 
+
   }
 /**
  * to get the details of perticular product from service
  */
-  getByProductId()
-  {
-    const id=this.route.snapshot.paramMap.get('id')
-    this.conversionOutput = CryptoJS.AES.decrypt(id, "hskag").toString(CryptoJS.enc.Utf8);
+  getByProductId() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.conversionOutput = CryptoJS.AES.decrypt(id, 'hskag').toString(CryptoJS.enc.Utf8);
     console.log(this.conversionOutput);
     this.service.getById(this.conversionOutput).subscribe(
-      (prod)=>{this.product=prod,console.log(this.product);}
-      
-      
-    )
+      (prod) => {this.product = prod; }
+    );
 
   }
-  
 /**
- * get products from service using subscribing it 
+ * get products from service using subscribing it
  */
-getProducts()
-{
+getProducts() {
 
-  this.service.getProduct().subscribe(product =>{
-    this.totalItems = product.length;
-    if (this.totalItems > 0){
-    this. getPage();
-    }
+  this.service.getProduct().subscribe(prod => {
+    this.product = prod;
+
 });
 }
 
-/**
- * method to perform pagination by subscribing service method
- * and pass serachResult also to perform search with pagination
- */
-public getPage(): void {
-this.service.getPagination(this.page,this.pageSize,this.searchResult).subscribe(
- (obj)=>{this.products=obj}
-)
-}
-
 
 /**
-* 
-* @param pageSize to select page size 
-*/
-goToPage(pageSize: number): void {
-
- 
-  this.page = 1;
-  this.pageSize = pageSize;
- 
- this.getPage();
-
-}
-
-/**
- * 
- * @param page to get page action
- * @description to go to next and previous page
- */
-goNextPrev(page: any): void {
-  if (page === 'next') {
-    this.page++;
-  } else if (page === 'prev') {
-    this.page--;
-  }
-  this.getPage();
-}
-
-/**
- * 
- * @description calls get method to see searchable data
- */
-search(search) {
-   
-  this.searchResult=search;
- this.getProducts();
-}
-
-/**
- * 
+ *
  * @param id to edit the products of perticular id
  * here i routed tp edit page with encrypted id
  */
-public editProducts(id:number):void{
-   
-  let encryptedId = CryptoJS.AES.encrypt( id.toString().trim(),"hskag").toString();
-    this.router.navigate(['/product/edit/',encryptedId]);
+public editProducts(id: number): void {
+
+  const encryptedId = CryptoJS.AES.encrypt( id.toString().trim(), 'hskag').toString();
+    this.router.navigate(['/product/edit/', encryptedId]);
 
 }
 
 /**
- * 
+ *
  * @param id to delete the product of perticular id from service
  */
- 
-  public deleteProducts(id:number):void
-  {
-   
-      this.service.deleteProduct(id).subscribe(()=>this.getProducts() );
-      this.router.navigate(['/product/view'])
+
+  public deleteProducts(id: number): void {
+      this.service.deleteProduct(id).subscribe(() => this.getProducts() );
+      this.router.navigate(['/product/view']);
   }
 
 }
