@@ -2,7 +2,7 @@
  * @author Sonal Prajapati
  * @description this class represent for view  quotation.
  */
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import * as jspdf from 'jspdf';
@@ -40,9 +40,7 @@ export class ViewComponent implements OnInit, OnDestroy {
   public page = 1;
   public searchResult: Quotation[];
   public sortQoutation: Quotation[];
-  data1: any;
-  data2: any[];
-  data3: any[];
+
   // it  is used for the store the value which is subscribe
   private qoutationSubscription: Subscription;
   constructor(private router: Router, private quotationService: QuotationService) {
@@ -52,18 +50,7 @@ export class ViewComponent implements OnInit, OnDestroy {
   // initialize the page
   ngOnInit() {
     this.quotation();
-    // this.quotationService.forkJoin().subscribe(responce => {
-    //   this.data1 = responce[0];
-    //   this.data2 = responce[1];
-    //   // console.log(this.data1, this.data2);
-    //   this.qoutation = [...this.data1, ...this.data2];
-    //   console.log(this.qoutation);
-    //   for (let index = 0; index < this.data2.length; index++) {
-    //     const element = this.data2[index];
-    //     this.data1 = element.name;
-    //     console.log(index, this.data1);
-    //   }
-    // });
+
   }
 
   /**
@@ -78,9 +65,8 @@ export class ViewComponent implements OnInit, OnDestroy {
           this.quotationService.getCustomer(qoutation.customer_id).subscribe((customer: any) => {
             if (qoutation.customer_id === customer.id) {
               qoutation.customer_id = customer.name;
-              // console.log(qoutation.customer_id = customer.name);
             } else {
-              console.log('wrong in');
+              console.log('wrong ID');
             }
           });
         }
@@ -103,7 +89,7 @@ export class ViewComponent implements OnInit, OnDestroy {
     // this.quotationService.deleteQoutation(id1).subscribe((data) => {
     //   this.quotation();
     // });
-    this.router.navigate(['/qoutation/add']);
+    this.router.navigate(['/qoutation/add/id']);
   }
 
   /**

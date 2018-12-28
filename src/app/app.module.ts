@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 // import {NgbdModalFocus} from './shared/confirmation-box/confirmation-box.component'
-import { SharedModule } from './shared/shared.module';
+
 
 
 @NgModule({

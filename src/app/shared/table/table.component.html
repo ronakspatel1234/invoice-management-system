@@ -13,7 +13,7 @@
           <span class="px-2 py-1 badge badge-secondary" [status]="data[key]" imsStatus>{{data[key]}}</span>
         </td>
         <td *ngIf="key !=='status'">
-          <ng-container *ngIf="action" (click)="actionClick(Action.VIEW,data.id)">
+          <ng-container *ngIf="Action.EDIT" (click)="actionClick(Action.VIEW,data.id)">
             {{data[key]}}
           </ng-container>
         </td>

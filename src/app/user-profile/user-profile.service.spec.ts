@@ -9,7 +9,4 @@ describe('UserProfileService', () => {
     });
   });
 
-  it('should be created', inject([UserProfileService], (service: UserProfileService) => {
-    expect(service).toBeTruthy();
-  }));
 });

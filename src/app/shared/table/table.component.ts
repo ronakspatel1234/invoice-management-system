@@ -50,7 +50,6 @@ export class TableComponent {
   }
 
   public hasAction(action: Action): boolean {
-    // console.log(action['EDIT']);
     return true;
   }
 }
