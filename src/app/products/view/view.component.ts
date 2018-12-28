@@ -41,7 +41,7 @@ export class ViewComponent implements OnInit {
   public totalItems = 0;
   public pageSize = 10;
   public page = 1;
-  public searchResult: Product;
+  public searchResult: Product[];
   public orderResult: Product[];
   public action = [Action.EDIT, Action.DELETE, Action.VIEW];
 
@@ -54,7 +54,7 @@ export class ViewComponent implements OnInit {
    */
   constructor(private service: ProductsService,
     private router: Router) {
-
+    this.searchResult = [];
     this.orderResult = [];
     this.products = [];
   }
