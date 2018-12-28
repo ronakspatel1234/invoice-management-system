@@ -26,9 +26,21 @@ import { CustomCurrencyPipe } from '../../shared/custome-currency.pipe';
 
 export class ViewComponent implements OnInit, OnDestroy {
 
+  /**
+   * Declear the variable
+   */
   public payments: Payment[];
   public data: any[];
   public action = [Action.VIEW, Action.DELETE];
+  public totalItems: number;
+  public pageSize: number;
+  public page: number;
+  public searchData: string;
+  public sortColumn: string;
+  public orderBy: string;
+  public customCurrency: any;
+  private paymentSubscription: Subscription;
+
   // store the value of  table data
   public heading = {
     name: ['ID', 'Payment Number', 'Invoice Number', 'Issue Date', 'Customer', 'Amount'],
@@ -39,19 +51,21 @@ export class ViewComponent implements OnInit, OnDestroy {
   public sorting = {
     key: ['id', 'payment_number', 'date']
   };
-  public totalItems: number;
-  public pageSize: number;
-  public page: number;
-  public searchData: string;
-  public sortColumn: string;
-  public orderBy: string;
-  public customCurrency: any;
-  private paymentSubscription: Subscription;
 
+  /**
+   * Inject the service
+   * @param service - inject payment Service
+   * @param router - inject the router service for routing
+   * @param toastr - inject the toastr for tosast message
+   */
   constructor(private service: PaymentService,
     private router: Router,
     public toastr: ToastsManager,
     vcr: ViewContainerRef) {
+
+    /**
+     * Define the vraible
+     */
     this.totalItems = 0;
     this.pageSize = 10;
     this.page = 1;
@@ -72,11 +86,16 @@ export class ViewComponent implements OnInit, OnDestroy {
         .subscribe( (response) => {
             this.totalItems = response.headers.get('X-Total-Count');
             if (this.totalItems > 0) {
+              // console.log(response.body);
               this.getPaymentWithInvoice(response.body);
             }
         });
   }
 
+  /**
+   * getPaymentWithInvoice method are use to get the mutiple record from server
+   * @param payments - Get the payment deatils from server
+   */
   public getPaymentWithInvoice(payments: Payment[]) {
     this.data = [];
     payments.forEach((payment: Payment) => {
@@ -89,7 +108,7 @@ export class ViewComponent implements OnInit, OnDestroy {
               invoice_number: invoice.invoice_number,
               date: payment.date,
               Customer: customer.name,
-              quotation: quotation.grand_total
+              quotation: this.customCurrency.transform(quotation.grand_total)
             };
             this.data.push(obj);
           });
@@ -106,8 +125,30 @@ export class ViewComponent implements OnInit, OnDestroy {
 
   // Sort data acceding order and descending order
   public sort(e): void {
+    // console.log(e);
     this.page = 1;
+    this.sortColumn = e['value'];
+    this.orderBy = e['mode'];
     this.getPayment();
+    // console.log(e);
+    // this.data = this.data.sort((a: any, b: any) => {
+    //   let val1;
+    //   let val2;
+    //   if (e['value'] === 'IssueDate') {
+    //     val1 = new Date(a[e['value']]);
+    //     val2 = new Date(b[e['value']]);
+    //   } else {
+    //     val1 = a[e['value']];
+    //     val2 = b[e['value']];
+    //   }
+    //   if (val1 < val2) {
+    //     return e['mode'] === 'ASC' ? -1 : 1;
+    //   }
+    //   if (val1 > val2) {
+    //     return e['mode'] === 'ASC' ? 1 : -1;
+    //   }
+    //   return 0;
+    // });
   }
 
 
@@ -152,9 +193,14 @@ export class ViewComponent implements OnInit, OnDestroy {
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
       // Create a Payment Data PDF
       pdf.save('payment.pdf');
+      this.showSuccess();
     });
   }
 
+  /**
+   * actionClick method are get action from user and passed the Action Event
+   * @param actionEvent - Get action from user
+   */
   public actionClick(actionEvent: ActionEvent): void {
     // console.log(actionEvent.id);
     if (actionEvent.action === Action.DELETE) {
@@ -164,21 +210,42 @@ export class ViewComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * deletePayment method are use to delete the payment detail form server
+   * @param actionEvent - Get the action and id from the action event
+   */
   public deletePayment(actionEvent: ActionEvent): void {
+    // console.log('delete', actionEvent.id);
     if (window.confirm('Are sure you want to delete this Record ?')) {
       this.service.deletePayment(actionEvent)
         .subscribe(() => this.getPayment());
+      this.showSuccess();
     } else {
       this.router.navigate(['/payment/view']);
     }
   }
 
+  /**
+   * goToDetails method are use to navigate tho deatils apge
+   * @param actionEvent - Get the action and id from the action event
+   */
   public goToDetails(actionEvent: ActionEvent): void {
+    /**
+     * encrypted the payment id
+     */
     const encryptedId = CryptoJS.AES.encrypt(actionEvent.id.toString().trim(), 'hskag').toString();
     this.router.navigate(['/payment/details/', encryptedId]);
   }
 
-
+  /**
+   * Show the toastr message for Success message
+   */
+  public showSuccess() {
+    this.toastr.success('Success!');
+  }
+  /**
+   * ngOnDestroy are use the unsubscribe of subscripation
+   */
   ngOnDestroy() {
     this.paymentSubscription.unsubscribe();
   }

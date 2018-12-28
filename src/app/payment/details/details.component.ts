@@ -97,6 +97,10 @@ export class DetailsComponent implements OnInit {
       });
   }
 
+  /**
+   * deletePayment method are use to delete the payment deatils form server
+   * @param id - Get the id from user click
+   */
   public deletePayment(id: number): void {
     if (window.confirm('Are sure you want to delete this Record ?')) {
       this.service.deleteDetails(id)
@@ -130,6 +134,9 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  /**
+   * emailSendForm are used to emails send forms
+   */
   public emailSendForm() {
     this.emailForm = this.fb.group({
       to: ['', [Validators.required, Validators.email]],
@@ -139,6 +146,9 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  /**
+   * sendEmail method are use to send email using emailJs library
+   */
   public sendEmail() {
 
     emailjs.sendForm('gmail', 'template_ybU0VJ3l', '#myForm', 'user_xHGNb160hX3bcqvqcMRmf')
@@ -152,10 +162,16 @@ export class DetailsComponent implements OnInit {
       });
   }
 
+  /**
+   * Show the toastr message for success message
+   */
   public showSuccess() {
     this.toastr.success('Success!');
   }
 
+  /**
+     * Show the toastr message for eroor message
+     */
   public showError() {
     this.toastr.error('Oops!');
   }

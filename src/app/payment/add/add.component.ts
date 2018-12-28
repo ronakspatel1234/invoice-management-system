@@ -20,24 +20,33 @@ import { Invoice } from '../../invoices/invoices.model';
 })
 export class AddComponent implements OnInit {
 
+  /**
+   * Declear the variable
+   */
   public sentInvoice: Invoice[];
   public payment: Payment[];
   public paymentForm: FormGroup;
   public incrementPaymentNumber: any;
   private paymentDate: Date;
-  // public searchData: string;
 
+  /**
+   * Inject the service
+   * @param service - for payment service
+   * @param fb - for usnig form builder in reactive forms
+   * @param router - for using one page to another page routing
+   * @param datePipe - for transform the data format
+   * @param toastr - for using show the toastr message
+   * @param vcr - for using toaster message
+   */
   constructor(private service: PaymentService,
     private fb: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute,
     private datePipe: DatePipe,
     public toastr: ToastsManager,
     vcr: ViewContainerRef) {
     this.sentInvoice = [];
     this.paymentDate = new Date();
     this.toastr.setRootViewContainerRef(vcr);
-    // this.incrementPaymentNumber = 0;
   }
 
   ngOnInit() {
@@ -46,7 +55,10 @@ export class AddComponent implements OnInit {
     this.addPayment();
   }
 
-  getInvoice(): void {
+  /**
+   * get the invoice deatils those only Sent
+   */
+  public getInvoice(): void {
     this.service.getSentInvoice()
       .subscribe((sent) => {
         this.sentInvoice = sent;
@@ -54,22 +66,37 @@ export class AddComponent implements OnInit {
       });
   }
 
-  getPayments(): void {
+  /**
+   * Get payment deastils
+   */
+  public getPayments(): void {
     this.service.getAllPayments()
       .subscribe((lastPayment) => {
         this.payment = lastPayment;
 
         // Get Last record from database
         const lastPaymentNumber = this.payment.slice(-1)[0].payment_number;
-        const splitPaymentNumber = lastPaymentNumber.split('-');
-        const pays = splitPaymentNumber[0];
-        const stringToNumber = +splitPaymentNumber[1];
-        const numberIncriment = stringToNumber + 1;
-        const payNumber = pays + '-' + numberIncriment;
-        this.incrementPaymentNumber = payNumber;
+        this.paymentNumber(lastPaymentNumber);
       });
   }
 
+  /**
+   * incriment payment number
+   * @param lastPaymentNumber - Get lastPaymentNumber form get getPayment method
+   */
+  public paymentNumber(lastPaymentNumber) {
+    const splitPaymentNumber = lastPaymentNumber.split('-');
+    const pays = splitPaymentNumber[0];
+    const stringToNumber = +splitPaymentNumber[1];
+    const numberIncriment = stringToNumber + 1;
+    const payNumber = pays + '-' + numberIncriment;
+    this.incrementPaymentNumber = payNumber;
+    this.addPayment();
+  }
+
+  /**
+   * addpayment method are used to add payment using reactive forms
+   */
   public addPayment() {
     this.paymentForm = this.fb.group({
       invoice_id: ['', [Validators.required]],
@@ -78,10 +105,14 @@ export class AddComponent implements OnInit {
     });
   }
 
+  /**
+   * when user submit the payment form add new payment record on server
+   */
   public onSubmit(): void {
     const pay = Object.assign({}, this.paymentForm.value);
     if (window.confirm('Are sure you want to Payment ?')) {
       this.service.addPayment(pay).subscribe(() => {
+        this.showSuccess();
         this.updateStatus(pay);
       });
     } else {
@@ -89,6 +120,11 @@ export class AddComponent implements OnInit {
     }
   }
 
+  /**
+   * updateStatus are update the invoice status from Sent to Paid
+   * when success the process to payment
+   * @param pay - get invoice id
+   */
   private updateStatus(pay: Invoice) {
     pay.status = 'Paid';
     this.service.updateInvoiceStatus(pay).subscribe(() => {
@@ -97,6 +133,9 @@ export class AddComponent implements OnInit {
     });
   }
 
+  /**
+   * Show the toastr message for eroor message
+   */
   public showSuccess() {
     this.toastr.success('Success!');
   }
