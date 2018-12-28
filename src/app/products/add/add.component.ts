@@ -141,7 +141,6 @@ export class AddComponent implements OnInit {
 
     this.productService.addProduct(product).subscribe(
       () => {
-        console.log(product);
 
         this.router.navigate(['product/view']);
 

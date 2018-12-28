@@ -64,16 +64,7 @@ public product;
     );
 
   }
-/**
- * get products from service using subscribing it
- */
-getProducts() {
 
-  this.service.getProduct().subscribe(prod => {
-    this.product = prod;
-
-});
-}
 
 
 /**
@@ -94,7 +85,7 @@ public editProducts(id: number): void {
  */
 
   public deleteProducts(id: number): void {
-      this.service.deleteProduct(id).subscribe(() => this.getProducts() );
+      this.service.deleteProduct(id).subscribe(() => this.service.getProduct() );
       this.router.navigate(['/product/view']);
   }
 
