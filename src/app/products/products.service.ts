@@ -71,20 +71,19 @@ export class ProductsService {
    *
    * @param page set the starting page number
    * @param pagesize set the size of the page
-   * @param data for search
+   * @param search for search
    * @description this method to interact with json-server for pagination
    */
-  public getPagination(page: number, pagesize: number, data: any): Observable<Product[]> {
+  public getPagination(page: number, pagesize: number, search: any): Observable<Product[]> {
     const start = (page * pagesize) - pagesize;
     const end = (page * pagesize);
 
     let pageUrl = this.productUrl + '?_start=' + start + '&_end=' + end;
-    if (data && data !== ' ') {
-      pageUrl = pageUrl.concat('&q=' + data);
-    }
+    if (search && search !== ' ') {
+      pageUrl = pageUrl.concat('&q=' + search);
     return this.http.get<Product[]>(pageUrl);
   }
-
+  }
 
   /**
    *
