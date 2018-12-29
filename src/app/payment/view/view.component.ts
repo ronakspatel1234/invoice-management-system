@@ -30,11 +30,11 @@ export class ViewComponent implements OnInit, OnDestroy {
    * Declear the variable
    */
   public payments: Payment[];
-  public records: any[];
   public action = [Action.VIEW, Action.DELETE];
   public totalItems: number;
   public pageSize: number;
   public page: number;
+  public records: any[];
   public searchData: string;
   public sortColumn: string;
   public orderBy: string;
@@ -82,11 +82,11 @@ export class ViewComponent implements OnInit, OnDestroy {
    * Get the Pagination configuration of start page and Page size.
    */
   public getPayment(): void {
-    this.paymentSubscription = this.service.getPayment(this.page, this.pageSize, this.searchData, this.sortColumn, this.orderBy)
+    this.paymentSubscription = this.service.getPayment(this.page, this.pageSize, this.searchData, this.sortColumn,
+      this.orderBy)
         .subscribe( (response) => {
             this.totalItems = response.headers.get('X-Total-Count');
             if (this.totalItems > 0) {
-              // console.log(response.body);
               this.getPaymentWithInvoice(response.body);
             }
         });
@@ -125,7 +125,6 @@ export class ViewComponent implements OnInit, OnDestroy {
 
   // Sort data acceding order and descending order
   public sort(e): void {
-    // console.log(e);
     this.page = 1;
     this.sortColumn = e['value'];
     this.orderBy = e['mode'];
@@ -183,7 +182,6 @@ export class ViewComponent implements OnInit, OnDestroy {
    * @param actionEvent - Get action from user
    */
   public actionClick(actionEvent: ActionEvent): void {
-    // console.log(actionEvent.id);
     if (actionEvent.action === Action.DELETE) {
       this.deletePayment(actionEvent);
     } else if (actionEvent.action === Action.VIEW) {
@@ -214,7 +212,7 @@ export class ViewComponent implements OnInit, OnDestroy {
     /**
      * encrypted the payment id
      */
-    const encryptedId = CryptoJS.AES.encrypt(actionEvent.id.toString().trim(), 'hskag').toString();
+    const encryptedId = CryptoJS.AES.encrypt(actionEvent.id.toString().trim(), 'a').toString();
     this.router.navigate(['/payment/details/', encryptedId]);
   }
 

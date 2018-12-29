@@ -3,7 +3,9 @@
  * @description - Create for card status.
  */
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+// -------------------------------------------------- //
 import { Card } from './card/card.model';
+import { CustomCurrencyPipe } from '../../shared/custome-currency.pipe';
 
 
 @Component({
@@ -26,12 +28,14 @@ export class StatsCardComponent implements OnInit, OnChanges {
   public amountRecivable: Card;
   public totalRevenue: Card;
   public unpaidInvoice: Card;
+  customCurrency: any;
 
   constructor() {
     this.customer = new Card();
     this.amountRecivable = new Card();
     this.totalRevenue = new Card();
     this.unpaidInvoice = new Card();
+    this.customCurrency = new CustomCurrencyPipe();
   }
 
   ngOnInit() {
@@ -44,10 +48,10 @@ export class StatsCardComponent implements OnInit, OnChanges {
     this.customer.data = this.customers;
     // store data in amountRecivable.
     this.amountRecivable.title = 'Amount Recivable';
-    this.amountRecivable.data = this.dashboard.totalUnpaidInvoices;
+    this.amountRecivable.data = this.customCurrency.transform(this.dashboard.totalUnpaidInvoices);
     // store data in totalRevenue.
     this.totalRevenue.title = 'Total Revenue';
-    this.totalRevenue.data = this.dashboard.totalPaidInvoices;
+    this.totalRevenue.data = this.customCurrency.transform(this.dashboard.totalPaidInvoices);
     // store data in unpaidInvoice.
     this.unpaidInvoice.title = 'Unpaid Invoice';
     this.unpaidInvoice.data = this.dashboard.unpaidQuotationsId;

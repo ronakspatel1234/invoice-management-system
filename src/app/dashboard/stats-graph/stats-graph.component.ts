@@ -85,7 +85,7 @@ export class StatsGraphComponent implements OnInit {
       element.value.forEach(invoice => {
         for (let index = 0; index < quotations.length; index++) {
           if (invoice.invoice_id === quotations[index].invoice) {
-            value = value + quotations[index].quotation;
+            value +=  quotations[index].quotation;
             break;
           }
         }

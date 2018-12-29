@@ -63,8 +63,8 @@ export class UserProfileComponent implements OnInit {
       email: ['', [Validators.pattern(this.emailRegEx)]],
       mobile_number: ['', [Validators.pattern(this.numberRegEx), Validators.maxLength(10)]],
       password: ['', [Validators.required]],
-      new_password: [{ value: '', disabled: true }],
-      retype_password: [{ value: '', disabled: true }]
+      new_password: [{ value: '', disabled: true }, [Validators.required]],
+      retype_password: [{ value: '', disabled: true }, [Validators.required]]
     },
       {
         validator: UserProfileComponent.MatchPassword
@@ -100,7 +100,7 @@ export class UserProfileComponent implements OnInit {
     userProfile.mobile_number = this.userProfileForm.get('mobile_number').value;
     userProfile.name = this.userProfileForm.get('name').value;
     userProfile.password = this.userProfileForm.get('new_password').value;
-    if (window.confirm('Are sure you want to Payment ?')) {
+    if (window.confirm('Are sure you want to update records ?')) {
       this.service.updateUserProfile(userProfile).subscribe(obj => {
         localStorage.setItem('token', userProfile.email);
       });

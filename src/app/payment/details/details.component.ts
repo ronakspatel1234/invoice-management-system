@@ -62,7 +62,7 @@ export class DetailsComponent implements OnInit {
    */
   public getPaymentID(): void {
     const decryptId = this.route.snapshot.paramMap.get('id');
-    const decrypt = CryptoJS.AES.decrypt(decryptId, 'hskag').toString(CryptoJS.enc.Utf8);
+    const decrypt = CryptoJS.AES.decrypt(decryptId, 'a').toString(CryptoJS.enc.Utf8);
     const stringToNumber = +decrypt;
     const id = stringToNumber;
     /**
